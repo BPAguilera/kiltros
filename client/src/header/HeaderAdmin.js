@@ -14,9 +14,9 @@ function HeaderAdmin() {
       <div style={rightCornerStyle}>
       <a href="/HomeAdmin" className="boton"><FontAwesomeIcon title="Inicio" icon={faHome} size="2xl" style={{ color: 'black', }} /></a>
       <a href="/AddAlumno" className="boton"> <FontAwesomeIcon title="Agregar Alumno" icon={faChild} size="2xl" style={{ color: 'black', }} /></a>
-      <a href="/AddAlumno" className="boton"> <FontAwesomeIcon title="Agregar Profesor" icon={faPersonChalkboard} size="2xl" style={{ color: 'black', }} /></a>
-      <a href="/AddAlumno" className="boton"> <FontAwesomeIcon title="Agregar Administrador" icon={faUserTie} size="2xl" style={{ color: 'black', }} /></a>
-      <a href="/AddAlumno" className="boton"> <FontAwesomeIcon title="Agregar Cursos" icon={faBook} size="2xl" style={{ color: 'black', }} /></a>
+      <a href="/AddProfesor" className="boton"> <FontAwesomeIcon title="Agregar Profesor" icon={faPersonChalkboard} size="2xl" style={{ color: 'black', }} /></a>
+      <a href="/AddAdmin" className="boton"> <FontAwesomeIcon title="Agregar Administrador" icon={faUserTie} size="2xl" style={{ color: 'black', }} /></a>
+      <a href="/AddCurso" className="boton"> <FontAwesomeIcon title="Agregar Cursos" icon={faBook} size="2xl" style={{ color: 'black', }} /></a>
       <a href="/" className="boton"><FontAwesomeIcon title="Cerrar Sesion" icon={faRightFromBracket} size="2xl" style={{ color: 'black', }} /></a>
       </div>
     </header>
