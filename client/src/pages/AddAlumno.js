@@ -2,6 +2,8 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import Header from "../header/HeaderAdmin";
+import "../pages_css/AddAlumno.css"
 
 function AddAlumno() {
     const initialValues = {
@@ -27,6 +29,7 @@ function AddAlumno() {
     
     return (
         <div>
+            <Header/>
             <div className="createPostPage">
                 <Formik
                     initialValues={initialValues}

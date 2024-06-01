@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Link to="/HomeAdmin">Home Page</Link>
         <Routes>
           <Route path="/HomeAdmin" element={<HomeAdmin/>} exact />
           <Route path="/AddAlumno" element={<AddAlumno/>} exact />

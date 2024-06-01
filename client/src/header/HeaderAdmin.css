@@ -4,7 +4,7 @@
     top: 0; /* Fija el elemento en la parte superior de la ventana. */
     left: 0; /* Fija el elemento en el borde izquierdo de la ventana. */
     right: 0; /* Fija el elemento en el borde derecho de la ventana. */
-    background-color: #556581; /* Establece el color de fondo del elemento en un tono de azul/gris. */
+    background-color: #618264; /* Establece el color de fondo del elemento en un tono de azul/gris. */
     display: flex; /* Establece el modelo de caja de tipo flex para el elemento y sus hijos. */
     justify-content: space-between; /* Distribuye el espacio sobrante entre los elementos hijos, de modo que se coloquen a los lados opuestos del contenedor. */
     align-items: center; /* Centra verticalmente los elementos hijos en el contenedor. */
@@ -18,7 +18,7 @@
       font-size: 48px;
   }
   .boton {
-    background-color: #EAF2F8 ;
+    background-color: #618264 ;
     color: black; /* Texto en color negro */
     padding: 5px 10px;
     text-decoration: none;
