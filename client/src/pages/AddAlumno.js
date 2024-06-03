@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import Header from "../header/HeaderAdmin";
+import Sidebar from "../sidebar/SidebarAdmin";
 import "../pages_css/AddAlumno.css"
 
 function AddAlumno() {
@@ -28,8 +29,9 @@ function AddAlumno() {
     };
     
     return (
-        <div>
+        <div className='ContenidoAddAlumno'>
             <Header/>
+            <Sidebar/>
             <div className="createPostPage">
                 <Formik
                     initialValues={initialValues}

@@ -1,0 +1,41 @@
+/* Sidebar.css */
+.sidebar {
+    margin-top: 100px;
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #618264;
+    padding-top: 20px;
+    border-right: 2.5px solid white;
+  }
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 8px;
+    text-align: center;
+  }
+
+  .sidebar ul li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+  }
+  .boton-sidebar{
+    background-color: #79AC78 ;
+    color: black; /* Texto en color negro */
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 50px;/* Bordes redondeados */
+    cursor: pointer;
+  }
+  .sidebar ul li a:hover {
+    background-color: #B0D9B1;
+  }
+  

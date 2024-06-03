@@ -17,7 +17,7 @@
       /* Aumenta el tamaño de fuente del texto a 24 píxeles (ajusta según tus preferencias) */
       font-size: 48px;
   }
-  .boton {
+  .boton-header {
     background-color: #618264 ;
     color: black; /* Texto en color negro */
     padding: 5px 10px;

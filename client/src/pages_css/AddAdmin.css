@@ -1,0 +1,16 @@
+.ContenidoAddAdmin{
+    flex-direction: column;
+    height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
+    width: 100vw;
+    /* Ocupa todo el ancho de la pantalla */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #79AC78;
+}
+.SubContenidoAddAdmin{
+    margin-top: 100px;
+    margin-left: 160px;
+    background-color: #B0D9B1;
+}

@@ -1,0 +1,23 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Lucida Handwriting';
+    /* Evita los scrollbars */
+
+}
+
+.ContenidoHome {
+    flex-direction: column;
+    height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
+    width: 100vw;
+    /* Ocupa todo el ancho de la pantalla */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #79AC78;
+}

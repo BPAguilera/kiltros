@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPenNib } from '@fortawesome/free-solid-svg-icons';
 
 
+
 function HomeAdmin() {
     const [Alumno, setAlumnos] = useState([]);
     let navigate = useNavigate();
@@ -26,9 +27,10 @@ function HomeAdmin() {
     };
 
     return (
-        <div className="Contenido">
+        <div className="ContenidoAlumno">
             <Header />
-            <div className="Contenido-tabla">
+
+            <div className="SubContenidoAlumno">
                 <table className="Tabla-Alumnos">
                     <thead>
                         <tr>
