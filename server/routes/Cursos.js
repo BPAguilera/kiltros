@@ -7,6 +7,12 @@ router.get("/", async (req, res) => {
   res.json(listaCurso);
 });
 
+router.get("/id/:id", async (req, res) => {
+  const id = req.params.id;
+  const curso = await kl_curso.findByPk(id);
+  res.json(curso);
+});
+
 router.post("/", async (req, res) => {
   const curso = req.body;
   await kl_curso.create(curso);
@@ -21,7 +27,7 @@ router.delete("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
   const id = req.params.id; 
   const curso = req.body;
-  await kl_curso.update({ id_curso: curso.id_curso, nombre: curso.nombre, id_profesor: curso.id_profesor, },{where: {id: id,},},);
+  await kl_curso.update({ id_curso: curso.id_curso, nombre: curso.nombre, unidades: curso.unidades, id_profesor: curso.id_profesor},{where: {id: id,},},);
 });
 
 module.exports = router;

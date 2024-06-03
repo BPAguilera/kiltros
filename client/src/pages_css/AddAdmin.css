@@ -1,16 +1,93 @@
-.ContenidoAddAdmin{
+.AddAdminContainer {
+    display: flex;
     flex-direction: column;
     height: 100vh;
-    /* Ocupa toda la altura de la pantalla */
     width: 100vw;
-    /* Ocupa todo el ancho de la pantalla */
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #79AC78;
+    background-color: #79ac78;
+    align-items: center;
+    justify-content: center;
 }
-.SubContenidoAddAdmin{
-    margin-top: 100px;
+
+.AddAdminFormContainer {
     margin-left: 160px;
-    background-color: #B0D9B1;
+    margin-top: -40px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #618264;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.FormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.FormTableContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.FormTable {
+    border-collapse: collapse;
+    width: 700px;
+}
+
+.FormFieldLabel {
+    background-color: #4caf50;
+    color: white;
+    padding: 17px;
+}
+
+.FormFieldInput {
+    padding: 17px;
+}
+
+#inputCreatePost {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #899089;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #031704;
+}
+
+label {
+    font-size: 19px;
+    font-weight: bold;
+    color: #fff;
+    padding-right: 0px;
+}
+
+caption {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
 }

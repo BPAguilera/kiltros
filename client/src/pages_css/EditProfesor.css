@@ -1,0 +1,53 @@
+.mainContainer {
+    background-color: #79AC78; /* Color de fondo para el contenido de EditAlumno */
+    padding: 20px; /* Opcional: agregar relleno al contenedor */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+.formContainer {
+    background-color: #D0E7D2;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    text-align: center; /* Alinea el contenido del formulario al centro */
+}
+
+.formContainer label {
+    color: #618264;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left; /* Alinea el texto de las etiquetas a la izquierda */
+}
+
+.formContainer input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #618264;
+    border-radius: 4px;
+    text-align: center; /* Alinea el texto dentro de los campos de entrada al centro */
+}
+
+.formContainer input[type="submit"] {
+    background-color: #79AC78;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.formContainer input[type="submit"]:hover {
+    background-color: #618264;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 14px;
+    text-align: left; /* Alinea el mensaje de error a la izquierda */
+}

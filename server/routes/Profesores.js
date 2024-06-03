@@ -7,6 +7,12 @@ router.get("/", async (req, res) => {
   res.json(listaProfesor);
 });
 
+router.get("/id/:id", async (req, res) => {
+  const id = req.params.id;
+  const profesor = await kl_profesor.findByPk(id);
+  res.json(profesor);
+});
+
 router.post("/", async (req, res) => {
   const profesor = req.body;
   await kl_profesor.create(profesor);

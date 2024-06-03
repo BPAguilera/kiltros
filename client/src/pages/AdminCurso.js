@@ -37,8 +37,8 @@ function AdminCurso(){
                                 <tr>
                                     <th className="Titulos-Cursos">ID</th>
                                     <th className="Titulos-Cursos">Nombre</th>
-                                    <th className="Titulos-Cursos">ID Profesor</th>
                                     <th className="Titulos-Cursos">Unidades</th>
+                                    <th className="Titulos-Cursos">ID Profesor</th>
                                     <th className="Titulos-Cursos">Actualizar</th>
                                     <th className="Titulos-Cursos">Borrar</th>
                                 </tr>
@@ -48,13 +48,13 @@ function AdminCurso(){
                                     <tr key={value.id}>
                                         <td className="Relleno-Cursos">{value.id}</td>
                                         <td className="Relleno-Cursos">{value.nombre}</td>
-                                        <td className="Relleno-Cursos">{value.id_profesor}</td>
                                         <td className="Relleno-Cursos">{value.unidades}</td>
+                                        <td className="Relleno-Cursos">{value.id_profesor}</td>
                                         <td className="Relleno-Boton-Cursos">
-                                            <a onClick={() => navigate(`/EditAlumno/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
+                                            <a onClick={() => navigate(`/EditCurso/${value.id}`)}><FontAwesomeIcon title="Actualizar Curso" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>
                                         <td className="Relleno-Boton-Cursos">
-                                            <a onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></a>
+                                            <a onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Curso" icon={faTrash} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>
                                     </tr>
                                 ))}

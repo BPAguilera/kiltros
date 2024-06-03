@@ -5,15 +5,8 @@ html {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    font-family: 'Chinese Rocks';
-    color: white;
-    text-shadow: 
-        -2px -2px 0 black,  
-         2px -2px 0 black,
-        -2px  2px 0 black,
-         2px  2px 0 black; /* Sombreado del texto para simular el borde */
-    /* Evita los scrollbars */
-
+    font-family: 'Helvetica';
+    color: black;
 }
 
 .ContenidoHome {
