@@ -8,7 +8,7 @@ import { faTrash, faPenNib } from '@fortawesome/free-solid-svg-icons';
 
 
 
-function HomeAdmin() {
+function AdminAlumno() {
     const [Alumno, setAlumnos] = useState([]);
     let navigate = useNavigate();
 
@@ -21,7 +21,9 @@ function HomeAdmin() {
     const handleDelete = async (id) => {
         try {
             await axios.delete(`http://localhost:3001/alumnos/` + id);
+            window.location.reload();
         } catch (err) {
+
             console.log(err);
         }
     };
@@ -32,7 +34,7 @@ function HomeAdmin() {
 
             <div className="SubContenidoAlumno">
                 <h2 className="TituloAlumno">Listado de alumnos</h2>
-                <div className="ContenidoTabla">
+                <div className="ContenidoTablaAlumno">
                     <div className="TablaScroll">
                         <table className="TablaAlumnos">
                             <thead>
@@ -54,10 +56,10 @@ function HomeAdmin() {
                                         <td className="Relleno-Alumnos">{value.rut}</td>
                                         <td className="Relleno-Alumnos">{value.contrasena}</td>
                                         <td className="Relleno-Alumnos">{value.id_curso}</td>
-                                        <td className="Relleno-Boton">
+                                        <td className="Relleno-Boton-Alumnos">
                                             <a onClick={() => navigate(`/EditAlumno/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>
-                                        <td className="Relleno-Boton">
+                                        <td className="Relleno-Boton-Alumnos">
                                             <a onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>
                                     </tr>
@@ -72,4 +74,4 @@ function HomeAdmin() {
     );
 }
 
-export default HomeAdmin;
+export default AdminAlumno;

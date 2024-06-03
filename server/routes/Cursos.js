@@ -13,4 +13,15 @@ router.post("/", async (req, res) => {
   res.json(curso);
 });
 
+router.delete("/:id", async (req, res) => {
+  const id = req.params.id;
+  await kl_curso.destroy({where: {id: id,},});
+});
+
+router.put("/:id", async (req, res) => {
+  const id = req.params.id; 
+  const curso = req.body;
+  await kl_curso.update({ id_curso: curso.id_curso, nombre: curso.nombre, id_profesor: curso.id_profesor, },{where: {id: id,},},);
+});
+
 module.exports = router;

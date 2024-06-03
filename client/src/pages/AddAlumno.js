@@ -5,8 +5,11 @@ import axios from "axios";
 import Header from "../header/HeaderAdmin";
 import Sidebar from "../sidebar/SidebarAdmin";
 import "../pages_css/AddAlumno.css"
+import { useNavigate } from 'react-router-dom';
 
 function AddAlumno() {
+    const Navigate = useNavigate();
+    
     const initialValues = {
         id_alumno: "",
         nombre: "",
@@ -25,6 +28,8 @@ function AddAlumno() {
     
     const onSubmit = (data) => {
         axios.post("http://localhost:3001/alumnos", data).then((response) => {
+            Navigate("/AdminAlumno")
+
         });
     };
     

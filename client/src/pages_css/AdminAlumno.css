@@ -29,7 +29,7 @@
 .TituloAlumno{
     font-size: 32px;
 }
-.ContenidoTabla {
+.ContenidoTablaAlumno {
     border: 15px solid #B0D9B1;
     display: flex;
     /* Utiliza flexbox para centrar el contenido */
@@ -52,7 +52,7 @@
 
 .Titulos-Alumnos {
     background-color: #618264;
-    color: black;
+    color: white;
     height: 40px;
 }
 
@@ -63,7 +63,7 @@
     margin-right: 0px;
 }
 
-.Relleno-Boton {
+.Relleno-Boton-Alumnos {
     height: 10px;
     background-color: #D0E7D2;
 
