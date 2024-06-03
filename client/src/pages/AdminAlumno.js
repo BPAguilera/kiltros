@@ -31,36 +31,41 @@ function HomeAdmin() {
             <Header />
 
             <div className="SubContenidoAlumno">
-                <table className="Tabla-Alumnos">
-                    <thead>
-                        <tr>
-                            <th className="Titulos-Alumnos">ID</th>
-                            <th className="Titulos-Alumnos">Nombre</th>
-                            <th className="Titulos-Alumnos">Rut</th>
-                            <th className="Titulos-Alumnos">Contraseña</th>
-                            <th className="Titulos-Alumnos">ID CURSO</th>
-                            <th className="Titulos-Alumnos">Editar</th>
-                            <th className="Titulos-Alumnos">Borrar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {Alumno.map((value) => (
-                            <tr key={value.id}>
-                                <td className="Relleno-Alumnos">{value.id}</td>
-                                <td className="Relleno-Alumnos">{value.nombre}</td>
-                                <td className="Relleno-Alumnos">{value.rut}</td>
-                                <td className="Relleno-Alumnos">{value.contrasena}</td>
-                                <td className="Relleno-Alumnos">{value.id_curso}</td>
-                                <td className="Relleno-Boton">
-                                    <a onClick={() => navigate(`/EditAlumno/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
-                                </td>
-                                <td className="Relleno-Boton">
-                                    <a onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></a>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                <h2 className="TituloAlumno">Listado de alumnos</h2>
+                <div className="ContenidoTabla">
+                    <div className="TablaScroll">
+                        <table className="TablaAlumnos">
+                            <thead>
+                                <tr>
+                                    <th className="Titulos-Alumnos">ID</th>
+                                    <th className="Titulos-Alumnos">Nombre</th>
+                                    <th className="Titulos-Alumnos">Rut</th>
+                                    <th className="Titulos-Alumnos">Contraseña</th>
+                                    <th className="Titulos-Alumnos">ID CURSO</th>
+                                    <th className="Titulos-Alumnos">Editar</th>
+                                    <th className="Titulos-Alumnos">Borrar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {Alumno.map((value) => (
+                                    <tr key={value.id}>
+                                        <td className="Relleno-Alumnos">{value.id}</td>
+                                        <td className="Relleno-Alumnos">{value.nombre}</td>
+                                        <td className="Relleno-Alumnos">{value.rut}</td>
+                                        <td className="Relleno-Alumnos">{value.contrasena}</td>
+                                        <td className="Relleno-Alumnos">{value.id_curso}</td>
+                                        <td className="Relleno-Boton">
+                                            <a onClick={() => navigate(`/EditAlumno/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
+                                        </td>
+                                        <td className="Relleno-Boton">
+                                            <a onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></a>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
