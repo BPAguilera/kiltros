@@ -92,7 +92,7 @@ function EditAlumno() {
                                 placeholder="ID del Curso"
                             />
 
-                            <button type="submit">Editar Alumno</button>
+                            <button className="botonEdit" type="submit">Editar Alumno</button>
                         </Form>
                     </Formik>
                 </div>

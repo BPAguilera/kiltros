@@ -17,6 +17,7 @@
 .createPostPageAddProfesor{
     margin-left: 160px;
     margin-top: 110px;
+    
     border: 1px solid #333;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -31,7 +32,7 @@
 
 .createPostPageAddProfesor table {
     border-collapse: collapse;
-    width: 700px;
+    width: 100%;
 }
 
 .createPostPageAddProfesor td, .createPostPageAddProfesor th {
@@ -39,9 +40,7 @@
     padding: 17px;
 }
 
-.createPostPageAddProfesor tr:nth-child(even) {
-    background-color: #618264;
-}
+
 
 
 .createPostPageAddProfesor th {
@@ -89,7 +88,7 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 25px;
-    color: #fff; /* Cambia el color según sea necesario */
+    color: black; /* Cambia el color según sea necesario */
     text-align: center; /* Centra el texto */
     margin-top: 20px;
 }

@@ -14,12 +14,13 @@
 }
 
 
-.SubContenidoAddAdmin{
+.createPostPageAddAdmin{
     margin-left: 160px;
     margin-top: 110px;
     border: 1px solid #333;
     border-radius: 5px;
-    background-color: red;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #618264;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -30,7 +31,7 @@
 
 .createPostPageAddAdmin table {
     border-collapse: collapse;
-    width: 700px;
+    width: 100%;
 }
 
 .createPostPageAddAdmin td, .createPostPageAddAdmin th {
@@ -38,9 +39,6 @@
     padding: 17px;
 }
 
-.createPostPageAddAdmin tr:nth-child(even) {
-    background-color: #618264;
-}
 
 
 .createPostPageAddAdmin th {
@@ -73,19 +71,14 @@
     transition: background-color 0.3s ease;
 }
 
-.inputadmin{
-    width: 10%;
-    
-}
-
 .createPostPageAddAdmin button:hover {
     background-color: #031704;
 }
 
 .createPostPageAddAdmin label {
     font-size: 19px; /* Aumenta el tamaño de la fuente */
-    font-weight: bold; /* Opcional: Hace que el texto sea negrita */
-    color: #fff; /* Cambia el color del texto, si es necesario */
+    
+    color: black; /* Cambia el color del texto, si es necesario */
     padding-right: 0px; /* Espacio entre el texto y el campo de entrada */
 }
 
@@ -93,7 +86,7 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 25px;
-    color: #fff; /* Cambia el color según sea necesario */
+    color: black; /* Cambia el color según sea necesario */
     text-align: center; /* Centra el texto */
     margin-top: 20px;
 }

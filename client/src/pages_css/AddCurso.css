@@ -31,7 +31,7 @@
 
 .createPostPageAddCurso table {
     border-collapse: collapse;
-    width: 700px;
+    width: 100%;
 }
 
 .createPostPageAddCurso td, .createPostPageAddCurso th {
@@ -39,9 +39,6 @@
     padding: 17px;
 }
 
-.createPostPageAddCurso tr:nth-child(even) {
-    background-color: #618264;
-}
 
 
 .createPostPageAddCurso th {
@@ -89,7 +86,7 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 25px;
-    color: #fff; /* Cambia el color según sea necesario */
+    color: black; /* Cambia el color según sea necesario */
     text-align: center; /* Centra el texto */
     margin-top: 20px;
 }

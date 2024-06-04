@@ -65,7 +65,7 @@ function EditCurso() {
                             <Field name="id_profesor" />
 
 
-                            <button type="submit">Editar Curso</button>
+                            <button className="botonEdit" type="submit">Editar Curso</button>
                         </Form>
                     </Formik>
                 </div>

@@ -31,7 +31,7 @@
 
 .createPostPageAddAlumno table {
     border-collapse: collapse;
-    width: 700px;
+    width: 100%;
 }
 
 .createPostPageAddAlumno td, .createPostPageAddAlumno th {
@@ -39,9 +39,6 @@
     padding: 17px;
 }
 
-.createPostPageAddAlumno tr:nth-child(even) {
-    background-color: #618264;
-}
 
 
 .createPostPageAddAlumno th {
@@ -89,7 +86,18 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 25px;
-    color: #fff; /* Cambia el color según sea necesario */
+    color: black; /* Cambia el color según sea necesario */
     text-align: center; /* Centra el texto */
     margin-top: 20px;
+}
+
+.botonEdit{
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #899089;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }

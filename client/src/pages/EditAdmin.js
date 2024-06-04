@@ -4,7 +4,7 @@ import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useParams } from "react-router-dom";
 import Header from "../header/HeaderAdmin";
-import { Navigate, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import "../pages_css/EditAdmin.css";
 
 function EditAdmin() {
@@ -31,7 +31,7 @@ function EditAdmin() {
 
     const onSubmit = (data) => {
         axios.put(`http://localhost:3001/admins/${id}`, data).then((response) => {})
-        Navigate("/adminadmin");
+        navigate("/adminadmin");
     };
 
     return (
@@ -74,7 +74,7 @@ function EditAdmin() {
                                 name="contrasena"
                                 placeholder="Contraseña"
                             />
-                            <button type="submit">Editar Administrador</button>
+                            <button className="botonEdit" type="submit">Editar Administrador</button>
                         </Form>
                     </Formik>
                 </div>

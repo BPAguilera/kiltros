@@ -83,10 +83,9 @@ function EditProfesor() {
                                 autoComplete="off"
                                 id="contrasena"
                                 name="contrasena"
-                                type="password"
                                 placeholder="Contraseña del profesor"
                             />
-                            <button type="submit">Editar Profesor</button>
+                            <button className="botonEdit" type="submit">Editar Profesor</button>
                         </Form>
                     </Formik>
                 </div>

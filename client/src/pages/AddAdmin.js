@@ -31,9 +31,9 @@ function AddAdmin() {
 
     return (
         <div className='ContenidoAddAdmin'>
-            <Header />
-            <Sidebar />
-            <div className="SubContenidoAddAdmin">
+            <Header/>
+            <Sidebar/>
+            <div className="createPostPageAddAdmin">
                 <Formik
                     initialValues={initialValues}
                     onSubmit={onSubmit}
@@ -42,7 +42,7 @@ function AddAdmin() {
                     <Form className="formContainer">
                         <table>
                             <caption>Agregar Nuevo Administrador</caption>
-                            <tbody className="inputadmin">
+                            <tbody>
                                 <tr>
                                     <td><label>ID_Admin: </label></td>
                                     <td>
