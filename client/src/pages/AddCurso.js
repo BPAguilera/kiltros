@@ -33,55 +33,77 @@ function AddCurso() {
 
         
     };
-    
+
     return (
-        <div>
-            <Header />
+        <div className='ContenidoAddCurso'>
+            <Header/>
             <Sidebar/>
-            <div className="createPostPage">
+            <div className="createPostPageAddCurso">
                 <Formik
                     initialValues={initialValues}
                     onSubmit={onSubmit}
                     validationSchema={validationSchema}
                 >
                     <Form className="formContainer">
-                        <label>id_curso: </label>
-                        <ErrorMessage name="title" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="id_curso"
-                            placeholder=""
-                        />
-                        <label>nombre: </label>
-                        <ErrorMessage name="postText" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="nombre"
-                            placeholder=""
-                        />
-                        <label>id_profesor </label>
-                        <ErrorMessage name="username" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="id_profesor"
-                            placeholder=""
-                        />
-                        <label>unidades </label>
-                        <ErrorMessage name="unidades" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="unidades"
-                            placeholder=""
-                        />
-                        <button type="submit">Create Post</button>
+                        <table>
+                            <caption>Agregar Nuevo Curso</caption>
+                            <tbody>
+                                <tr>
+                                    <td><label>ID_Curso: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddCurso"
+                                            name="id_curso"
+                                            placeholder="Ingrese el ID del curso"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Nombre: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddCurso"
+                                            name="nombre"
+                                            placeholder="Ingrese el nombre del curso"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>ID_Profesor: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddCurso"
+                                            name="id_profesor"
+                                            placeholder="Ingrese el ID del profesor"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Unidades: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddCurso"
+                                            name="unidades"
+                                            placeholder="Ingrese las unidades"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2" style={{ textAlign: 'center' }}>
+                                        <button type="submit">Agregar Curso</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </Form>
                 </Formik>
             </div>
         </div>
     )
 }
+
 export default AddCurso;

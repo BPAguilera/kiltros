@@ -1,0 +1,95 @@
+.ContenidoAddCurso{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
+    width: 100vw;
+    /* Ocupa todo el ancho de la pantalla */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #79AC78;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.createPostPageAddCurso{
+    margin-left: 160px;
+    margin-top: 110px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #618264;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.createPostPageAddCurso table {
+    border-collapse: collapse;
+    width: 700px;
+}
+
+.createPostPageAddCurso td, .createPostPageAddCurso th {
+    border: 1px solid #ddd;
+    padding: 17px;
+}
+
+.createPostPageAddCurso tr:nth-child(even) {
+    background-color: #618264;
+}
+
+
+.createPostPageAddCurso th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#inputCreatePostAddCurso {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 18px; /* Espacio entre el input y otros elementos */
+    margin: 1px auto;
+}
+
+.createPostPageAddCurso button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #899089;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.createPostPageAddCurso button:hover {
+    background-color: #031704;
+}
+
+.createPostPageAddCurso label {
+    font-size: 19px; /* Aumenta el tamaño de la fuente */
+    font-weight: bold; /* Opcional: Hace que el texto sea negrita */
+    color: #fff; /* Cambia el color del texto, si es necesario */
+    padding-right: 0px; /* Espacio entre el texto y el campo de entrada */
+}
+
+.createPostPageAddCurso caption {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #fff; /* Cambia el color según sea necesario */
+    text-align: center; /* Centra el texto */
+    margin-top: 20px;
+}

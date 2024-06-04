@@ -1,67 +1,68 @@
-.AddAdminContainer {
+.ContenidoAddAdmin{
     display: flex;
     flex-direction: column;
     height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
     width: 100vw;
+    /* Ocupa todo el ancho de la pantalla */
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #79ac78;
+    background-color: #79AC78;
     align-items: center;
     justify-content: center;
 }
 
-.AddAdminFormContainer {
+
+.SubContenidoAddAdmin{
     margin-left: 160px;
-    margin-top: -40px;
+    margin-top: 110px;
     border: 1px solid #333;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #618264;
+    background-color: red;
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
-.FormContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.FormTableContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.FormTable {
+.createPostPageAddAdmin table {
     border-collapse: collapse;
     width: 700px;
 }
 
-.FormFieldLabel {
-    background-color: #4caf50;
+.createPostPageAddAdmin td, .createPostPageAddAdmin th {
+    border: 1px solid #ddd;
+    padding: 17px;
+}
+
+.createPostPageAddAdmin tr:nth-child(even) {
+    background-color: #618264;
+}
+
+
+.createPostPageAddAdmin th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
     color: white;
-    padding: 17px;
 }
 
-.FormFieldInput {
-    padding: 17px;
-}
-
-#inputCreatePost {
+#inputCreatePostAddAdmin {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
+    margin-top: 18px; /* Espacio entre el input y otros elementos */
+    margin: 1px auto;
 }
 
-button {
+.createPostPageAddAdmin button {
     padding: 15px 30px;
     font-size: 18px;
     color: #fff;
@@ -72,22 +73,27 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.inputadmin{
+    width: 10%;
+    
+}
+
+.createPostPageAddAdmin button:hover {
     background-color: #031704;
 }
 
-label {
-    font-size: 19px;
-    font-weight: bold;
-    color: #fff;
-    padding-right: 0px;
+.createPostPageAddAdmin label {
+    font-size: 19px; /* Aumenta el tamaño de la fuente */
+    font-weight: bold; /* Opcional: Hace que el texto sea negrita */
+    color: #fff; /* Cambia el color del texto, si es necesario */
+    padding-right: 0px; /* Espacio entre el texto y el campo de entrada */
 }
 
-caption {
+.createPostPageAddAdmin caption {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 25px;
-    color: #fff;
-    text-align: center;
+    color: #fff; /* Cambia el color según sea necesario */
+    text-align: center; /* Centra el texto */
     margin-top: 20px;
 }

@@ -37,59 +37,83 @@ function AddAlumno() {
         <div className='ContenidoAddAlumno'>
             <Header/>
             <Sidebar/>
-            <div className="createPostPage">
+            <div className="createPostPageAddAlumno">
                 <Formik
                     initialValues={initialValues}
                     onSubmit={onSubmit}
                     validationSchema={validationSchema}
                 >
                     <Form className="formContainer">
-                        <label>id_alumno: </label>
-                        <ErrorMessage name="title" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="id_alumno"
-                            placeholder=""
-                        />
-                        <label>nombre: </label>
-                        <ErrorMessage name="postText" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="nombre"
-                            placeholder=""
-                        />
-                        <label>rut: </label>
-                        <ErrorMessage name="username" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="rut"
-                            placeholder=""
-                        />
-                        <label>contrasena: </label>
-                        <ErrorMessage name="username" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="contrasena"
-                            placeholder=""
-                        />
-                        <label>id_curso: </label>
-                        <ErrorMessage name="username" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="id_curso"
-                            placeholder=""
-                        />
-                        <button type="submit">Create Post</button>
+                        <table>
+                            <caption>Agregar Nuevo Alumno</caption>
+                            <tbody>
+                                <tr>
+                                    <td><label>ID_Alumno: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddAlumno"
+                                            name="id_alumno"
+                                            placeholder="Ingrese el ID del alumno"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Nombre: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddAlumno"
+                                            name="nombre"
+                                            placeholder="Ingrese el nombre del alumno"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Rut: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddAlumno"
+                                            name="rut"
+                                            placeholder="Ingrese el rut del alumno"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Contraseña: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddAlumno"
+                                            name="contrasena"
+                                            placeholder="Ingrese la contraseña del alumno"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td><label>ID_Curso: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddAlumno"
+                                            name="id_curso"
+                                            placeholder="Ingrese el ID del curso"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2" style={{ textAlign: 'center' }}>
+                                        <button type="submit">Agregar Alumno</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </Form>
                 </Formik>
             </div>
         </div>
-  )
+    )
 }
 
 export default AddAlumno;

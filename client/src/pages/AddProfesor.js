@@ -32,49 +32,70 @@ function AddProfesor() {
     };
 
     return (
-        <div>
-            <Header />
-            <Sidebar />
-            <div className="createPostPage">
+        <div className='ContenidoAddProfesor'>
+            <Header/>
+            <Sidebar/>
+            <div className="createPostPageAddProfesor">
                 <Formik
                     initialValues={initialValues}
                     onSubmit={onSubmit}
                     validationSchema={validationSchema}
                 >
                     <Form className="formContainer">
-                        <label>id_profesor: </label>
-                        <ErrorMessage name="title" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="id_profesor"
-                            placeholder=""
-                        />
-                        <label>nombre: </label>
-                        <ErrorMessage name="postText" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="nombre"
-                            placeholder=""
-                        />
-                        <label>rut: </label>
-                        <ErrorMessage name="username" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="rut"
-                            placeholder=""
-                        />
-                        <label>contrasena: </label>
-                        <ErrorMessage name="username" component="span" />
-                        <Field
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="contrasena"
-                            placeholder=""
-                        />
-                        <button type="submit">Create Post</button>
+                        <table>
+                            <caption>Agregar Nuevo Profesor</caption>
+                            <tbody>
+                                <tr>
+                                    <td><label>ID_Profesor: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddProfesor"
+                                            name="id_profesor"
+                                            placeholder="Ingrese el ID del profesor"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Nombre: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddProfesor"
+                                            name="nombre"
+                                            placeholder="Ingrese el nombre del profesor"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Rut: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddProfesor"
+                                            name="rut"
+                                            placeholder="Ingrese el rut del profesor"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Contraseña: </label></td>
+                                    <td>
+                                        <Field
+                                            autoComplete="off"
+                                            id="inputCreatePostAddProfesor"
+                                            name="contrasena"
+                                            placeholder="Ingrese la contraseña del profesor"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2" style={{ textAlign: 'center' }}>
+                                        <button type="submit">Agregar Profesor</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </Form>
                 </Formik>
             </div>

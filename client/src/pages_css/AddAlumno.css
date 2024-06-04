@@ -1,4 +1,5 @@
 .ContenidoAddAlumno{
+    display: flex;
     flex-direction: column;
     height: 100vh;
     /* Ocupa toda la altura de la pantalla */
@@ -8,12 +9,14 @@
     top: 0;
     left: 0;
     background-color: #79AC78;
+    align-items: center;
+    justify-content: center;
 }
-.createPostPage{
+
+
+.createPostPageAddAlumno{
     margin-left: 160px;
     margin-top: 110px;
-    
-    /* Agregamos margen superior para evitar colisión con el encabezado */
     border: 1px solid #333;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -24,4 +27,69 @@
     align-items: center;
     justify-content: center;
 
+}
+
+.createPostPageAddAlumno table {
+    border-collapse: collapse;
+    width: 700px;
+}
+
+.createPostPageAddAlumno td, .createPostPageAddAlumno th {
+    border: 1px solid #ddd;
+    padding: 17px;
+}
+
+.createPostPageAddAlumno tr:nth-child(even) {
+    background-color: #618264;
+}
+
+
+.createPostPageAddAlumno th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#inputCreatePostAddAlumno {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 18px; /* Espacio entre el input y otros elementos */
+    margin: 1px auto;
+}
+
+.createPostPageAddAlumno button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #899089;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.createPostPageAddAlumno button:hover {
+    background-color: #031704;
+}
+
+.createPostPageAddAlumno label {
+    font-size: 19px; /* Aumenta el tamaño de la fuente */
+    font-weight: bold; /* Opcional: Hace que el texto sea negrita */
+    color: #fff; /* Cambia el color del texto, si es necesario */
+    padding-right: 0px; /* Espacio entre el texto y el campo de entrada */
+}
+
+.createPostPageAddAlumno caption {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #fff; /* Cambia el color según sea necesario */
+    text-align: center; /* Centra el texto */
+    margin-top: 20px;
 }
