@@ -1,24 +1,64 @@
-.ContenidoLogin{
-    flex-direction: column;
+.ContenidoLogin {
+    display: flex;
     height: 100vh;
-    /* Ocupa toda la altura de la pantalla */
     width: 100vw;
-    /* Ocupa todo el ancho de la pantalla */
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #79AC78;
+    background-image: url('../../public/LogoKiltros.png');
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Helvetica';
+    font-size: 28px;
+    
 }
-.LoginTable{
-    /* Agregamos margen superior para evitar colisión con el encabezado */
-    border: 1px solid #333;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #618264;
-    color: #fff;
+
+.FormLogin {
+    width: 30%;
+    height: 60%;
+    padding: 40px;
+    border: 3px solid white;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    color: white;
+    background-color: #618264;
+    font-family: 'Helvetica', Courier, monospace;
+    font-size: 32px;
+}
 
+.FormLogin label{
+    width: 10%;
+    font-size: 32px;
+    font-family: 'Helvetica', Courier, monospace;
+    padding: 10px;
+}
+
+.FormLogin input{
+    background-color: white;
+    width: 100%;
+    height: 8%;
+    border: 2px solid black;
+    border-radius: 20px;
+    color: black;
+    font-size: 24px;
+    align-self: center;
+    font-family: 'Helvetica', Courier, monospace;
+    
+}
+
+.FormLogin button{
+    display: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    height: 10%;
+    width: 30%;
+    align-self: center;
+}
+
+.FormLogin button:hover{
+    background-color: #D0E7D2;
+}
+.Logo{
+    height: 52px;
 }

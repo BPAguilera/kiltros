@@ -59,16 +59,17 @@ function Login() {
     
     return (
         <div className='ContenidoLogin'>
-            <div className="LoginTable">
-                <Formik
+            
+                <Formik 
                     initialValues={initialValues}
                     onSubmit={onSubmit}
                     validationSchema={validationSchema}
                 >
-                    <Form className="formContainer">
+                    <Form className="FormLogin">
+                    <h1>Iniciar sesion</h1>
                         <label>Usuario: </label>
                         <ErrorMessage name="username" component="span" />
-                        <Field
+                        <Field 
                             autocomplete="off"
                             id="inputCreatePost"
                             name="usuario"
@@ -76,16 +77,17 @@ function Login() {
                         />
                         <label>Contraseña: </label>
                         <ErrorMessage name="username" component="span" />
-                        <Field
+                        <Field 
                             autocomplete="off"
                             id="inputCreatePost"
                             name="contrasena"
+                            type="password"
                             placeholder="Contraseña"
                         />
-                        <button type="submit">Create Post</button>
+                        <button type="submit">Iniciar Sesion</button>
                     </Form>
                 </Formik>
-            </div>
+            
         </div>
     )
 }
