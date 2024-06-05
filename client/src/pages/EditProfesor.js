@@ -19,14 +19,12 @@ function EditProfesor() {
     });
 
     const initialValues = {
-        id_profesor: Data.id_profesor,
         nombre: Data.nombre,
         rut: Data.rut,
         contrasena: Data.contrasena,
     };
 
     const validationSchema = Yup.object().shape({
-        id_profesor: Yup.number().integer().required(),
         nombre: Yup.string().required(),
         rut: Yup.string().required(),
         contrasena: Yup.string().required(),
@@ -52,15 +50,6 @@ function EditProfesor() {
                         validationSchema={validationSchema}
                     >
                         <Form className="formContainer">
-                            <label htmlFor="id_profesor">ID del profesor: </label>
-                            <ErrorMessage name="id_profesor" component="span" />
-                            <Field
-                                autoComplete="off"
-                                id="id_profesor"
-                                name="id_profesor"
-                                placeholder="ID del profesor"
-                                readOnly
-                            />
                             <label htmlFor="nombre">Nombre: </label>
                             <ErrorMessage name="nombre" component="span" />
                             <Field

@@ -1,37 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import Header from "../header/HeaderAdmin";
 import Sidebar from "../sidebar/SidebarAdmin";
 import "../pages_css/AddCurso.css"
 
 function AddCurso() {
-    const Navigate = useNavigate()
+    const navigate = useNavigate()
+
+    const [Profes, setProfe] = useState([]);
+    useEffect(() => {
+        axios.get("http://localhost:3001/profesores").then((response) => {
+            setProfe(response.data);
+        });
+    }, []);
+
     const initialValues = {
-        id_curso: "",
         nombre: "",
         id_profesor: "",
         unidades:"",
-
     };
     
     const validationSchema = Yup.object().shape({
-        id_curso: Yup.number().integer().required(),
         nombre: Yup.string().required(),
         id_profesor: Yup.number().integer().required(),
         unidades: Yup.number().integer().required(),
- 
     });
     
     const onSubmit = (data) => {
         axios.post("http://localhost:3001/cursos", data).then((response) => {
-            Navigate("/admincurso")
+            navigate("/admincurso")
         });
-        
-
-        
     };
 
     return (
@@ -49,17 +50,6 @@ function AddCurso() {
                             <caption>Agregar Nuevo Curso</caption>
                             <tbody>
                                 <tr>
-                                    <td><label>ID_Curso: </label></td>
-                                    <td>
-                                        <Field
-                                            autoComplete="off"
-                                            id="inputCreatePostAddCurso"
-                                            name="id_curso"
-                                            placeholder="Ingrese el ID del curso"
-                                        />
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td><label>Nombre: </label></td>
                                     <td>
                                         <Field
@@ -71,14 +61,14 @@ function AddCurso() {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><label>ID_Profesor: </label></td>
+                                    <td><label>Profesor: </label></td>
                                     <td>
-                                        <Field
-                                            autoComplete="off"
-                                            id="inputCreatePostAddCurso"
-                                            name="id_profesor"
-                                            placeholder="Ingrese el ID del profesor"
-                                        />
+                                        <Field as="select" name="id_profesor">
+                                            <option value="" label="">Seleciona Profesor{" "}</option>
+                                            {Profes.map((profe) => (
+                                            <option key={profe.id} value={profe.id}>{profe.nombre}</option>
+                                            ))}
+                                        </Field>
                                     </td>
                                 </tr>
                                 <tr>

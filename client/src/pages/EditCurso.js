@@ -9,16 +9,22 @@ import "../pages_css/EditCurso.css";
 function EditCurso() {
     let { id } = useParams();
     const navigate = useNavigate();
-    const [Data, setData] = useState({});
 
+    const [Data, setData] = useState({});
     useEffect(() => {
         axios.get(`http://localhost:3001/cursos/id/${id}`).then((response) => {
             setData(response.data);
         });
     });
 
+    const [Profes, setProfe] = useState([]);
+    useEffect(() => {
+        axios.get("http://localhost:3001/profesores").then((response) => {
+            setProfe(response.data);
+        });
+    }, []);
+
     const initialValues = {
-        id_curso: Data.id_curso,
         nombre: Data.nombre,
         unidades: Data.unidades,
         id_profesor: Data.id_profesor,
@@ -48,22 +54,32 @@ function EditCurso() {
                         validationSchema={validationSchema}
                     >
                         <Form>
-                            <label>ID Curso:</label>
-                            <ErrorMessage name="id_curso" component="span" />
-                            <Field name="id_curso" readOnly />
-
                             <label>Nombre:</label>
                             <ErrorMessage name="nombre" component="span" />
-                            <Field name="nombre" />
+                            <Field
+                                autoComplete="off"
+                                name="nombre"
+                                placeholder=""
+                            />
 
                             <label>Unidades:</label>
                             <ErrorMessage name="Unidades" component="span" />
-                            <Field name="unidades" />
+                            <Field
+                                autoComplete="off"
+                                name="unidades"
+                                placeholder=""
+                            />
 
-                            <label>ID Profesor:</label>
+                            <label>Profesor a cargo:</label>
                             <ErrorMessage name="id_profesor" component="span" />
-                            <Field name="id_profesor" />
-
+                            <Field as="select" name="id_profesor">
+                                <option value="" label="">Seleciona Profesor{" "}</option>
+                                {Profes.map((profe) => (
+                                    <option key={profe.id} value={profe.id}>
+                                        {profe.nombre}
+                                    </option>
+                                ))}
+                            </Field>
 
                             <button className="botonEdit" type="submit">Editar Curso</button>
                         </Form>
@@ -75,4 +91,3 @@ function EditCurso() {
 }
 
 export default EditCurso;
-

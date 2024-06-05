@@ -5,26 +5,24 @@ import axios from "axios";
 import Header from "../header/HeaderAdmin";
 import Sidebar from "../sidebar/SidebarAdmin";
 import "../pages_css/AddAdmin.css"
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function AddAdmin() {
-    const Navigate = useNavigate()
+    const navigate = useNavigate();
+    
     const initialValues = {
-        id_admin: "",
         usuario: "",
         contrasena: "",
-
     };
 
     const validationSchema = Yup.object().shape({
-        id_admin: Yup.number().integer().required(),
         usuario: Yup.string().required(),
         contrasena: Yup.string().required(),
     });
 
     const onSubmit = (data) => {
         axios.post("http://localhost:3001/admins", data).then((response) => {
-            Navigate("/adminadmin")
+            navigate("/adminadmin")
         });
     };
 
@@ -43,17 +41,6 @@ function AddAdmin() {
                         <table>
                             <caption>Agregar Nuevo Administrador</caption>
                             <tbody>
-                                <tr>
-                                    <td><label>ID_Admin: </label></td>
-                                    <td>
-                                        <Field
-                                            autoComplete="off"
-                                            id="inputCreatePostAddAdmin"
-                                            name="id_admin"
-                                            placeholder="Ingrese el ID del administrador"
-                                        />
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td><label>Usuario: </label></td>
                                     <td>

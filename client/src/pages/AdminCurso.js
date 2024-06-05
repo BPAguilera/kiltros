@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../pages_css/AdminCurso.css";
 import Header from "../header/HeaderAdmin";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPenNib } from '@fortawesome/free-solid-svg-icons';
-
 
 function AdminCurso(){
     const [Curso, setCurso] = useState([]);
@@ -38,7 +37,7 @@ function AdminCurso(){
                                     <th className="Titulos-Cursos">ID</th>
                                     <th className="Titulos-Cursos">Nombre</th>
                                     <th className="Titulos-Cursos">Unidades</th>
-                                    <th className="Titulos-Cursos">ID Profesor</th>
+                                    <th className="Titulos-Cursos">Profesor</th>
                                     <th className="Titulos-Cursos">Actualizar</th>
                                     <th className="Titulos-Cursos">Borrar</th>
                                 </tr>

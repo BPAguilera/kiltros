@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const { kl_alumno } = require("../models");
+const { kl_alumno, kl_curso } = require("../models");
 
 router.get("/", async (req, res) => {
-  const alumnos = await kl_alumno.findAll();
+  const alumnos = await kl_alumno.findAll({include: [{model: kl_curso, required: true}]});
   res.json(alumnos);
 });
 
@@ -18,6 +18,10 @@ router.get("/curso/:id_curso", async (req, res) => {
   const alumno = await kl_alumno.findAll({where: {id_curso: id,},});
   res.json(alumno);
 });
+
+//kl_alumno.findAll();
+//kl_alumno.findAll({where: {id_curso: id,},});
+//kl_alumno.findAll({include: [{model: kl_curso, required: true}]}).then(posts => {/* ... */});
 
 router.post("/", async (req, res) => {
   const alumno = req.body;

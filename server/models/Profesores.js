@@ -1,9 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
     const kl_profesor = sequelize.define("kl_profesor", {
-      id_profesor: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
       nombre: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -17,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
     });
+    
+    kl_profesor.associate = function(models) {
+      kl_profesor.hasMany(models.kl_curso, {foreignKey: 'id_profesor'});
+      kl_profesor.hasMany(models.kl_recurso_profe, {foreignKey: 'id_profesor'});
+    };
   
     return kl_profesor;
 };
