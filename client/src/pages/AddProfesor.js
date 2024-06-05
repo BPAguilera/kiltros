@@ -11,14 +11,12 @@ function AddProfesor() {
     let navigate = useNavigate()
 
     const initialValues = {
-        id_profesor: "",
         nombre: "",
         rut: "",
         contrasena: "",
     };
 
     const validationSchema = Yup.object().shape({
-        id_profesor: Yup.number().integer().required(),
         nombre: Yup.string().required(),
         rut: Yup.number().integer().required(),
         contrasena: Yup.string().required(),
@@ -45,17 +43,6 @@ function AddProfesor() {
                         <table>
                             <caption>Agregar Nuevo Profesor</caption>
                             <tbody>
-                                <tr>
-                                    <td><label>ID_Profesor: </label></td>
-                                    <td>
-                                        <Field
-                                            autoComplete="off"
-                                            id="inputCreatePostAddProfesor"
-                                            name="id_profesor"
-                                            placeholder="Ingrese el ID del profesor"
-                                        />
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td><label>Nombre: </label></td>
                                     <td>

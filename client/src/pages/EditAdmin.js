@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Header from "../header/HeaderAdmin";
-import {useNavigate } from "react-router-dom";
 import "../pages_css/EditAdmin.css";
 
 function EditAdmin() {
@@ -19,7 +18,6 @@ function EditAdmin() {
     });
 
     const initialValues = {
-        id_admin: Data.id_admin,
         usuario: Data.usuario,
         contrasena: Data.contrasena,
     };
@@ -49,15 +47,6 @@ function EditAdmin() {
                         validationSchema={validationSchema}
                     >
                         <Form className="formContainer">
-                            <label htmlFor="id_admin">ID del administrador: </label>
-                            <ErrorMessage name="id_admin" component="span" />
-                            <Field
-                                autoComplete="off"
-                                id="id_admin"
-                                name="id_admin"
-                                placeholder="ID del administrador"
-                                readOnly
-                            />
                             <label htmlFor="usuario">Usuario: </label>
                             <ErrorMessage name="usuario" component="span" />
                             <Field

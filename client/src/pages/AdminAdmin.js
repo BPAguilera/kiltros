@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../pages_css/AdminAdmin.css";
 import Header from "../header/HeaderAdmin";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPenNib } from '@fortawesome/free-solid-svg-icons';
-
-
 
 function AdminAdmin(){
     const [Admin, setAdmin] = useState([]);
@@ -39,7 +37,6 @@ function AdminAdmin(){
                                 <tr>
                                     <th className="Titulos-Admin">ID</th>
                                     <th className="Titulos-Admin">Usuario</th>
-                                    <th className="Titulos-Admin">Contraseña</th>
                                     <th className="Titulos-Admin">Editar</th>
                                     <th className="Titulos-Admin">Borrar</th>
                                 </tr>
@@ -49,7 +46,6 @@ function AdminAdmin(){
                                     <tr key={value.id}>
                                         <td className="Relleno-Admin">{value.id}</td>
                                         <td className="Relleno-Admin">{value.usuario}</td>
-                                        <td className="Relleno-Admin">{value.contrasena}</td>
                                         <td className="Relleno-Boton-Admin">
                                             <a onClick={() => navigate(`/EditAdmin/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>

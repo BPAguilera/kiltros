@@ -9,16 +9,22 @@ import Header from "../header/HeaderAdmin";
 function EditAlumno() {
     let { id } = useParams();
     const navigate = useNavigate();
-    const [Data, setData] = useState({});
 
+    const [Data, setData] = useState({});
     useEffect(() => {
         axios.get(`http://localhost:3001/alumnos/id/${id}`).then((response) => {
             setData(response.data);
         });
     });
 
+    const [Cursos, setCurso] = useState([]);
+    useEffect(() => {
+        axios.get("http://localhost:3001/cursos").then((response) => {
+            setCurso(response.data);
+        });
+    }, []);
+
     const initialValues = {
-        id_alumno: Data.id_alumno,
         nombre: Data.nombre,
         rut: Data.rut,
         contrasena: Data.contrasena,
@@ -50,15 +56,6 @@ function EditAlumno() {
                         validationSchema={validationSchema}
                     >
                         <Form>
-                            <label>ID Alumno: </label>
-                            <ErrorMessage name="id_alumno" component="span" className="errorMessage" />
-                            <Field
-                                autoComplete="off"
-                                name="id_alumno"
-                                placeholder="ID del Alumno"
-                                readOnly
-                            />
-
                             <label>Nombre: </label>
                             <ErrorMessage name="nombre" component="span" className="errorMessage" />
                             <Field
@@ -86,11 +83,12 @@ function EditAlumno() {
 
                             <label>ID Curso: </label>
                             <ErrorMessage name="id_curso" component="span" className="errorMessage" />
-                            <Field
-                                autoComplete="off"
-                                name="id_curso"
-                                placeholder="ID del Curso"
-                            />
+                            <Field as="select" name="id_curso">
+                                <option value="" label="">Seleciona Curso{" "}</option>
+                                {Cursos.map((curso) => (
+                                <option key={curso.id} value={curso.id}>{curso.nombre}</option>
+                                ))}
+                            </Field>
 
                             <button className="botonEdit" type="submit">Editar Alumno</button>
                         </Form>

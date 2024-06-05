@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../pages_css/AdminProfesor.css";
 import Header from "../header/HeaderAdmin";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -38,7 +38,6 @@ function AdminProfesor(){
                                     <th className="Titulos-Profesor">ID</th>
                                     <th className="Titulos-Profesor">Nombre</th>
                                     <th className="Titulos-Profesor">Rut</th>
-                                    <th className="Titulos-Profesor">Contraseña</th>
                                     <th className="Titulos-Profesor">Editar</th>
                                     <th className="Titulos-Profesor">Borrar</th>
                                 </tr>
@@ -49,7 +48,6 @@ function AdminProfesor(){
                                         <td className="Relleno-Profesor">{value.id}</td>
                                         <td className="Relleno-Profesor">{value.nombre}</td>
                                         <td className="Relleno-Profesor">{value.rut}</td>
-                                        <td className="Relleno-Profesor">{value.contrasena}</td>
                                         <td className="Relleno-Boton-Profesor">
                                             <a onClick={() => navigate(`/EditProfesor/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>
