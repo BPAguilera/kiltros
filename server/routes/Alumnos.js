@@ -19,10 +19,6 @@ router.get("/curso/:id_curso", async (req, res) => {
   res.json(alumno);
 });
 
-//kl_alumno.findAll();
-//kl_alumno.findAll({where: {id_curso: id,},});
-//kl_alumno.findAll({include: [{model: kl_curso, required: true}]}).then(posts => {/* ... */});
-
 router.post("/", async (req, res) => {
   const alumno = req.body;
   await kl_alumno.create(alumno);

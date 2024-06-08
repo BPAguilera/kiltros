@@ -47,12 +47,12 @@ function Login() {
         }
         for (let i in Profe) {
             if (Profe[i].nombre === data.usuario && Profe[i].contrasena === data.contrasena) {
-                navigate('../HomeAdmin');
+                navigate('../HomeProfesor');
             }
         }
         for (let i in Alumno) {
             if (Alumno[i].nombre === data.usuario && Alumno[i].contrasena === data.contrasena) {
-                navigate('../HomeAdmin');
+                navigate('../HomeAlumno');
             }
         }
     };

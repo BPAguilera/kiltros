@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const { kl_curso } = require("../models");
+const { kl_curso, kl_profesor } = require("../models");
 
 router.get("/", async (req, res) => {
-  const listaCurso = await kl_curso.findAll();
+  const listaCurso = await kl_curso.findAll({include: [{model: kl_profesor, required: true}]});
   res.json(listaCurso);
 });
 

@@ -1,6 +1,8 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomeAdmin from './pages/HomeAdmin';
+import HomeAlumno from './pages/HomeAlumno';
+import HomeProfesor from './pages/HomeProfesor';
 import Login from './pages/Login';
 
 import AddAdmin from './pages/AddAdmin';
@@ -18,6 +20,13 @@ import EditAlumno from './pages/EditAlumno';
 import EditCurso from './pages/EditCurso';
 import EditProfesor from './pages/EditProfesor';
 
+import AlumnoTarea from './pages/AlumnoTarea';
+import AlumnoJuego from './pages/AlumnoJuego';
+
+import ProfesorCurso from './pages/ProfesorCurso';
+import ProfesorAlumno from './pages/ProfesorAlumno';
+import ProfesorTarea from './pages/ProfesorTarea';
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +34,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} exact />
           <Route path="/HomeAdmin/" element={<HomeAdmin />} exact />
+          <Route path="/HomeAlumno/" element={<HomeAlumno />} exact />
+          <Route path="/HomeProfesor/" element={<HomeProfesor />} exact />
 
           <Route path="/AddAdmin" element={<AddAdmin />} exact />
           <Route path="/AddAlumno" element={<AddAlumno />} exact />
@@ -41,7 +52,12 @@ function App() {
           <Route path="/EditCurso/:id" element={<EditCurso />} exact />
           <Route path="/EditProfesor/:id" element={<EditProfesor />} exact />
 
+          <Route path="/AlumnoTarea" element={<AlumnoTarea />} exact />
+          <Route path="/AlumnoJuego" element={<AlumnoJuego />} exact />
 
+          <Route path="/ProfesorCurso" element={<ProfesorCurso />} exact />
+          <Route path="/ProfesorAlumno/:id_curso" element={<ProfesorAlumno />} exact />
+          <Route path="/ProfesorTarea/:id_curso" element={<ProfesorTarea />} exact />
         </Routes>
       </Router>
     </div>
