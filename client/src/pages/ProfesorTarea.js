@@ -21,6 +21,8 @@ function ProfesorTarea(){
 
             <div className="SubContenidoAlumno">
                 <h2 className="TituloAlumno">Listado de tareas</h2>
+
+                <a onClick={() => navigate(`../ProfesorAddTarea/${id_curso}`)}> AGREGAR TAREA  </a>
                 <div className="ContenidoTablaAlumno">
                     <div className="TablaScroll">
                         <table className="TablaAlumnos">
@@ -35,9 +37,11 @@ function ProfesorTarea(){
                                     <tr key={value.id}>
                                         <td className="Relleno-Alumnos">{value.tipo_recurso}</td>
                                         <td className="Relleno-Alumnos">{value.nombre}</td>
+                                        <td className="Relleno-Alumnos"></td>
                                     </tr>
                                 ))}
                             </tbody>
+                           
                         </table>
                     </div>
                 </div>
