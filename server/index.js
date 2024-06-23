@@ -29,8 +29,12 @@ app.use("/recursos_alumno", tareaRouter);
 const recursoRouter = require("./routes/Recursos_Profesor");
 app.use("/recursos_profesor", recursoRouter);
 
+const logRouter = require("./routes/Login");
+app.use("/login", loginRouter);
+
+
 // Inicializamos la conexión
-db.sequelize.sync().then(() => {
+db.sequelize.sync().then(() => {3
   app.listen(3001, () => {
     console.log("Server running on port 3001");
   });

@@ -9,15 +9,17 @@ import { useNavigate } from 'react-router-dom';
 
 function AddAdmin() {
     const navigate = useNavigate();
-    
+
     const initialValues = {
         usuario: "",
         contrasena: "",
+        rol: "Admin",
     };
 
     const validationSchema = Yup.object().shape({
         usuario: Yup.string().required(),
         contrasena: Yup.string().required(),
+        rol: Yup.string().required()
     });
 
     const onSubmit = (data) => {
@@ -29,8 +31,8 @@ function AddAdmin() {
 
     return (
         <div className='ContenidoAddAdmin'>
-            <Header/>
-            <Sidebar/>
+            <Header />
+            <Sidebar />
             <div className="createPostPageAddAdmin">
                 <Formik
                     initialValues={initialValues}

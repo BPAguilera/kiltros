@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      rol: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     });
   
     return kl_admin;
