@@ -14,7 +14,6 @@ function HeaderAlumno() {
       </div>
       <div className="right-corner">
         <a href="/HomeAlumno" className="boton-header"><FontAwesomeIcon title="Inicio" icon={faHome} size="2xl" style={{ color: 'black' }} /></a>
-        <a href="/AlumnoTarea" className="boton-header"><FontAwesomeIcon title="Tareas" icon={faUserTie} size="2xl" style={{ color: 'black' }} /></a>
         <a href="/AlumnoJuego" className="boton-header"><FontAwesomeIcon title="Minijuegos" icon={faChild} size="2xl" style={{ color: 'black' }} /></a>
         <a href="/" className="boton-header"><FontAwesomeIcon title="Cerrar Sesion" icon={faRightFromBracket} size="2xl" style={{ color: 'black' }} /></a>
       </div>

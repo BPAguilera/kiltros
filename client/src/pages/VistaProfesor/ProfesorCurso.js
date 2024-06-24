@@ -1,48 +1,47 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "../../pages_css/AdminCurso.css";
 import Header from "../../header/HeaderProfesor";
+import Sidebar from "../../sidebar/SidebarProfesor";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 
 function ProfesorCurso(){
-    const [Curso, setCurso] = useState([]);
+    let { id_curso } = useParams();
     let navigate = useNavigate();
 
+    const [Alumno, setAlumnos] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:3001/cursos").then((response) => {
-            setCurso(response.data);
+        axios.get(`http://localhost:3001/alumnos/curso/${id_curso}`).then((response) => {
+            setAlumnos(response.data);
         });
     }, []);
 
     return(
         <div className="ContenidoHome">
             <Header />
+            <Sidebar/>
 
-            <div className="SubContenidoCurso">
-                <h2 className="TituloCurso">Listado de Cursos</h2>
-                <div className="ContenidoTablaCurso">
+            <div className="SubContenidoAlumno">
+                <h2 className="TituloAlumno">Listado de alumnos</h2>
+                <div className="ContenidoTablaAlumno">
                     <div className="TablaScroll">
-                        <table className="TablaCurso">
+                        <table className="TablaAlumnos">
                             <thead>
                                 <tr>
-                                    <th className="Titulos-Cursos">Nombre</th>
-                                    <th className="Titulos-Cursos">Unidades</th>
-                                    <th className="Titulos-Cursos">Alumnos</th>
-                                    <th className="Titulos-Cursos">Actividades</th>
+                                    <th className="Titulos-Alumnos">Nombre</th>
+                                    <th className="Titulos-Alumnos">Rut</th>
+                                    <th className="Titulos-Alumnos">Reasignar Alumno</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {Curso.map((value) => (
+                                {Alumno.map((value) => (
                                     <tr key={value.id}>
-                                        <td className="Relleno-Cursos">{value.nombre}</td>
-                                        <td className="Relleno-Cursos">{value.unidades}</td>
+                                        <td className="Relleno-Alumnos">{value.nombre}</td>
+                                        <td className="Relleno-Alumnos">{value.rut}</td>
                                         <td className="Relleno-Boton-Profesor">
-                                            <a onClick={() => navigate(`/ProfesorAlumno/${value.id}`)}><FontAwesomeIcon title="Alumnos" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
-                                        </td>
-                                        <td className="Relleno-Boton-Profesor">
-                                            <a onClick={() => navigate(`/ProfesorTarea/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
+                                            <a onClick={() => navigate(`/ProfesorCurso`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>
                                     </tr>
                                 ))}

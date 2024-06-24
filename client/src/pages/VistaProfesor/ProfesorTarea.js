@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../../pages_css/AdminCurso.css";
 import Header from "../../header/HeaderProfesor";
+import Sidebar from "../../sidebar/SidebarProfesor";
 
 function ProfesorTarea(){
     let { id_curso } = useParams();
@@ -18,6 +19,7 @@ function ProfesorTarea(){
     return(
         <div className="ContenidoHome">
             <Header />
+            <Sidebar/>
 
             <div className="SubContenidoAlumno">
                 <h2 className="TituloAlumno">Listado de tareas</h2>

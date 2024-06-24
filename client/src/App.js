@@ -55,7 +55,7 @@ function App() {
           <Route path="/AlumnoTarea" element={<AlumnoTarea />} exact />
           <Route path="/AlumnoJuego" element={<AlumnoJuego />} exact />
 
-          <Route path="/ProfesorCurso" element={<ProfesorCurso />} exact />
+          <Route path="/ProfesorCurso/:id_curso" element={<ProfesorCurso />} exact />
           <Route path="/ProfesorAlumno/:id_curso" element={<ProfesorAlumno />} exact />
           <Route path="/ProfesorTarea/:id_curso" element={<ProfesorTarea />} exact />
         </Routes>

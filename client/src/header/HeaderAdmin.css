@@ -1,4 +1,4 @@
-.fixed-header {
+.fixed-header-admin {
   height: 100px; /* Establece la altura del elemento a 100 píxeles. */
   position: fixed; /* Hace que el elemento sea fijo en la ventana, de modo que permanezca en su lugar incluso cuando se desplaza la página. */
   top: 0; /* Fija el elemento en la parte superior de la ventana. */
@@ -12,27 +12,27 @@
   z-index: 10000; /* Establece la posición del elemento en el eje Z (superposición). Un valor alto como 10000 asegura que el elemento esté por encima de la mayoría de otros elementos en la página. */
 }
 
-.left-corner {
+.left-corner-admin {
   margin-left: 10px; /* Espacio en la esquina izquierda */
 }
 
-.right-corner {
+.right-corner-admin {
   margin-right: 10px; /* Espacio en la esquina derecha */
   display: flex;
   align-items: center;
 }
 
-.center-content {
+.center-content-admin {
   flex: 1; /* Permite que el contenido del centro ocupe el espacio restante */
   text-align: center; /* Centra el texto horizontalmente */
   font-size: 24px; /* Ajusta el tamaño de fuente del texto centrado */
 }
 
-.fixed-header p {
+.fixed-header-admin p {
   font-size: 48px; /* Aumenta el tamaño de fuente del texto a 48 píxeles */
 }
 
-.boton-header {
+.boton-header-admin {
   background-color: #618264;
   color: black; /* Texto en color negro */
   padding: 5px 10px;

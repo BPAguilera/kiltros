@@ -1,0 +1,46 @@
+.fixed-header-profesor {
+    height: 100px; /* Establece la altura del elemento a 100 píxeles. */
+    position: fixed; /* Hace que el elemento sea fijo en la ventana, de modo que permanezca en su lugar incluso cuando se desplaza la página. */
+    top: 0; /* Fija el elemento en la parte superior de la ventana. */
+    left: 0; /* Fija el elemento en el borde izquierdo de la ventana. */
+    right: 0; /* Fija el elemento en el borde derecho de la ventana. */
+    background-color: #B1B2FF; /* Establece el color de fondo del elemento en un tono de azul/gris. */
+    display: flex; /* Establece el modelo de caja de tipo flex para el elemento y sus hijos. */
+    justify-content: space-between; /* Distribuye el espacio sobrante entre los elementos hijos, de modo que se coloquen a los lados opuestos del contenedor. */
+    align-items: center; /* Centra verticalmente los elementos hijos en el contenedor. */
+    border-bottom: 2.5px solid white; /* Agrega una línea de 2.5 píxeles de ancho en la parte inferior del elemento, con color blanco. */
+    z-index: 10000; /* Establece la posición del elemento en el eje Z (superposición). Un valor alto como 10000 asegura que el elemento esté por encima de la mayoría de otros elementos en la página. */
+  }
+  
+  .left-corner-profesor {
+    margin-left: 10px; /* Espacio en la esquina izquierda */
+  }
+  
+  .right-corner-profesor {
+    margin-right: 10px; /* Espacio en la esquina derecha */
+    display: flex;
+    align-items: center;
+  }
+  .right-corner-profesor a{
+    background-color: #B1B2FF;
+  }
+  
+  .center-content-profesor {
+    flex: 1; /* Permite que el contenido del centro ocupe el espacio restante */
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 24px; /* Ajusta el tamaño de fuente del texto centrado */
+  }
+  
+  .fixed-header-profesor p {
+    font-size: 48px; /* Aumenta el tamaño de fuente del texto a 48 píxeles */
+  }
+  
+  .boton-header-profesor {
+    background-color: #618264;
+    color: black; /* Texto en color negro */
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer;
+    margin-right: 10px; /* Espacio entre los botones */
+  }
