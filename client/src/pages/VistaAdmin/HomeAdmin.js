@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import "../pages_css/HomeAdmin.css";
-import Header from "../header/HeaderProfesor";
+import "../../pages_css/VistaAdmin/HomeAdmin.css";
+import Header from "../../header/HeaderAdmin";
 
-function HomeProfesor(){
+function HomeAdmin(){
 
     return(
         <div className="ContenidoHome">
             <Header />
+
         </div>
     );
 }
-export default HomeProfesor;
+export default HomeAdmin;

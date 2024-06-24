@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import Header from "../header/HeaderAdmin";
-import Sidebar from "../sidebar/SidebarAdmin";
-import "../pages_css/AddAlumno.css"
+import Header from "../../header/HeaderAdmin";
+import Sidebar from "../../sidebar/SidebarAdmin";
+import "../../pages_css/VistaAdmin/AddAlumno.css"
 import { useNavigate } from 'react-router-dom';
 
 function AddAlumno() {

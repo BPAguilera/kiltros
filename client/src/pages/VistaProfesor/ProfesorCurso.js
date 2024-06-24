@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../pages_css/AdminCurso.css";
-import Header from "../header/HeaderAdmin";
+import "../../pages_css/AdminCurso.css";
+import Header from "../../header/HeaderProfesor";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faPenNib } from '@fortawesome/free-solid-svg-icons';
+import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 
-function AdminCurso(){
+function ProfesorCurso(){
     const [Curso, setCurso] = useState([]);
     let navigate = useNavigate();
 
@@ -15,18 +15,11 @@ function AdminCurso(){
             setCurso(response.data);
         });
     }, []);
-    
-    const handleDelete = async (id) => {
-        try {
-            await axios.delete(`http://localhost:3001/cursos/` + id);
-        } catch (err) {
-            console.log(err);
-        }
-    };
 
     return(
-        <div className="ContenidoCurso">
+        <div className="ContenidoHome">
             <Header />
+
             <div className="SubContenidoCurso">
                 <h2 className="TituloCurso">Listado de Cursos</h2>
                 <div className="ContenidoTablaCurso">
@@ -34,26 +27,22 @@ function AdminCurso(){
                         <table className="TablaCurso">
                             <thead>
                                 <tr>
-                                    <th className="Titulos-Cursos">ID</th>
                                     <th className="Titulos-Cursos">Nombre</th>
+                                    <th className="Titulos-Cursos">Unidades</th>
+                                    <th className="Titulos-Cursos">Alumnos</th>
                                     <th className="Titulos-Cursos">Actividades</th>
-                                    <th className="Titulos-Cursos">Profesor</th>
-                                    <th className="Titulos-Cursos">Actualizar</th>
-                                    <th className="Titulos-Cursos">Borrar</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {Curso.map((value) => (
                                     <tr key={value.id}>
-                                        <td className="Relleno-Cursos">{value.id}</td>
                                         <td className="Relleno-Cursos">{value.nombre}</td>
                                         <td className="Relleno-Cursos">{value.unidades}</td>
-                                        <td className="Relleno-Cursos">{value.kl_profesor.nombre}</td>
-                                        <td className="Relleno-Boton-Cursos">
-                                            <a onClick={() => navigate(`/EditCurso/${value.id}`)}><FontAwesomeIcon title="Actualizar Curso" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
+                                        <td className="Relleno-Boton-Profesor">
+                                            <a onClick={() => navigate(`/ProfesorAlumno/${value.id}`)}><FontAwesomeIcon title="Alumnos" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>
-                                        <td className="Relleno-Boton-Cursos">
-                                            <a onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Curso" icon={faTrash} size="2xl" style={{ color: 'black', }} /></a>
+                                        <td className="Relleno-Boton-Profesor">
+                                            <a onClick={() => navigate(`/ProfesorTarea/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>
                                     </tr>
                                 ))}
@@ -63,7 +52,6 @@ function AdminCurso(){
                 </div>
             </div>
         </div>
-
     );
 }
-export default AdminCurso;
+export default ProfesorCurso;

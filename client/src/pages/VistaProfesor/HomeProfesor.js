@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import "../pages_css/HomeAdmin.css";
-import Header from "../header/HeaderAlumno";
+import "../../pages_css/VistaAdmin/HomeAdmin.css";
+import Header from "../../header/HeaderProfesor";
 
-function HomeAlumno(){
+function HomeProfesor(){
 
     return(
         <div className="ContenidoHome">
@@ -12,4 +12,4 @@ function HomeAlumno(){
         </div>
     );
 }
-export default HomeAlumno;
+export default HomeProfesor;

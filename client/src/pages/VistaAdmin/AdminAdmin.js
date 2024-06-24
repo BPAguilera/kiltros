@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../pages_css/AdminAdmin.css";
-import Header from "../header/HeaderAdmin";
+import "../../pages_css/VistaAdmin/AdminAdmin.css";
+import Header from "../../header/HeaderAdmin";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPenNib } from '@fortawesome/free-solid-svg-icons';
 

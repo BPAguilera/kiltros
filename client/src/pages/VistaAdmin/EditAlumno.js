@@ -3,8 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import "../pages_css/EditAlumno.css"
-import Header from "../header/HeaderAdmin";
+import "../../pages_css/VistaAdmin/EditAlumno.css"
+import Header from "../../header/HeaderAdmin";
 
 function EditAlumno() {
     let { id } = useParams();

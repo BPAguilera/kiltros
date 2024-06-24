@@ -3,8 +3,8 @@ import * as Yup from "yup";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useParams, useNavigate } from "react-router-dom";
-import Header from "../header/HeaderAdmin";
-import "../pages_css/EditAdmin.css";
+import Header from "../../header/HeaderAdmin";
+import "../../pages_css/VistaAdmin/EditAdmin.css";
 
 function EditAdmin() {
     let { id } = useParams(); // Obtén el ID de la URL

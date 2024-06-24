@@ -3,9 +3,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-import Header from "../header/HeaderAdmin";
-import Sidebar from "../sidebar/SidebarAdmin";
-import "../pages_css/AddCurso.css"
+import Header from "../../header/HeaderAdmin";
+import Sidebar from "../../sidebar/SidebarAdmin";
+import "../../pages_css/VistaAdmin/AddCurso.css"
 
 function AddCurso() {
     const navigate = useNavigate()

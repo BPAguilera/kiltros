@@ -1,31 +1,31 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomeAdmin from './pages/HomeAdmin';
-import HomeAlumno from './pages/HomeAlumno';
-import HomeProfesor from './pages/HomeProfesor';
+import HomeAdmin from './pages/VistaAdmin/HomeAdmin';
+import HomeAlumno from './pages/VistaAlumno/HomeAlumno';
+import HomeProfesor from './pages/VistaProfesor/HomeProfesor';
 import Login from './pages/Login';
 
-import AddAdmin from './pages/AddAdmin';
-import AddAlumno from './pages/AddAlumno';
-import AddCurso from './pages/AddCurso';
-import AddProfesor from './pages/AddProfesor';
+import AddAdmin from './pages/VistaAdmin/AddAdmin';
+import AddAlumno from './pages/VistaAdmin/AddAlumno';
+import AddCurso from './pages/VistaAdmin/AddCurso';
+import AddProfesor from './pages/VistaAdmin/AddProfesor';
 
-import AdminAdmin from './pages/AdminAdmin';
-import AdminAlumno from "./pages/AdminAlumno";
-import AdminCurso from "./pages/AdminCurso";
-import AdminProfesor from './pages/AdminProfesor';
+import AdminAdmin from './pages/VistaAdmin/AdminAdmin';
+import AdminAlumno from "./pages/VistaAdmin/AdminAlumno";
+import AdminCurso from "./pages/VistaAdmin/AdminCurso";
+import AdminProfesor from './pages/VistaAdmin/AdminProfesor';
 
-import EditAdmin from './pages/EditAdmin';
-import EditAlumno from './pages/EditAlumno';
-import EditCurso from './pages/EditCurso';
-import EditProfesor from './pages/EditProfesor';
+import EditAdmin from './pages/VistaAdmin/EditAdmin';
+import EditAlumno from './pages/VistaAdmin/EditAlumno';
+import EditCurso from './pages/VistaAdmin/EditCurso';
+import EditProfesor from './pages/VistaAdmin/EditProfesor';
 
-import AlumnoTarea from './pages/AlumnoTarea';
-import AlumnoJuego from './pages/AlumnoJuego';
+import AlumnoTarea from './pages/VistaAlumno/AlumnoTarea';
+import AlumnoJuego from './pages/VistaAlumno/AlumnoJuego';
 
-import ProfesorCurso from './pages/ProfesorCurso';
-import ProfesorAlumno from './pages/ProfesorAlumno';
-import ProfesorTarea from './pages/ProfesorTarea';
+import ProfesorCurso from './pages/VistaProfesor/ProfesorCurso';
+import ProfesorAlumno from './pages/VistaProfesor/ProfesorAlumno';
+import ProfesorTarea from './pages/VistaProfesor/ProfesorTarea';
 
 function App() {
   return (

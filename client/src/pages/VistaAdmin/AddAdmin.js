@@ -2,9 +2,9 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import Header from "../header/HeaderAdmin";
-import Sidebar from "../sidebar/SidebarAdmin";
-import "../pages_css/AddAdmin.css"
+import Header from "../../header/HeaderAdmin";
+import Sidebar from "../../sidebar/SidebarAdmin";
+import "../../pages_css/VistaAdmin/AddAdmin.css"
 import { useNavigate } from 'react-router-dom';
 
 function AddAdmin() {
