@@ -14,6 +14,7 @@ function HeaderProfesor() {
       </div>
       <div className="right-corner-profesor">
         <a href="/HomeProfesor" className="boton-header-profesor"><FontAwesomeIcon title="Inicio" icon={faHome} size="2xl" style={{ color: 'black' }} /></a>
+        <a href="/AddTarea" className="boton-header-profesor"><FontAwesomeIcon title="Agregar" icon={faHome} size="2xl" style={{ color: 'black' }} /></a>
         <a href="/" className="boton-header-profesor"><FontAwesomeIcon title="Cerrar Sesion" icon={faRightFromBracket} size="2xl" style={{ color: 'black' }} /></a>
       </div>
     </header>

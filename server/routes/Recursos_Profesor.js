@@ -1,6 +1,13 @@
 const express = require("express");
+const fileUpload = require('express-fileupload');
+const path = require("path");
+
+const assetsFolder = path.join(__dirname, '..', 'files');
+
 const router = express.Router();
-const { kl_recurso_profe, kl_profesor } = require("../models");
+router.use(fileUpload());
+
+const { kl_recurso_profe } = require("../models");
 
 router.get("/", async (req, res) => {
   const listaRecursoProfesor = await kl_recurso_profe.findAll();
@@ -14,9 +21,13 @@ router.get("/curso/:id_curso", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const recurso_profesor = req.body;
-  await kl_recurso_profe.create(recurso_profesor);
-  res.json(recurso_profesor);
+  //const recurso_profesor = req.body;
+  //await kl_recurso_profe.create(recurso_profesor);
+  //res.json(recurso_profesor);
+  
+  const { avatar } = req.files;
+  avatar.mv(path.join(assetsFolder, avatar.name));
+  console.log(req.files);
 });
 
 module.exports = router;

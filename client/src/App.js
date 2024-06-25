@@ -26,6 +26,7 @@ import AlumnoJuego from './pages/VistaAlumno/AlumnoJuego';
 import ProfesorCurso from './pages/VistaProfesor/ProfesorCurso';
 import ProfesorAlumno from './pages/VistaProfesor/ProfesorAlumno';
 import ProfesorTarea from './pages/VistaProfesor/ProfesorTarea';
+import AddTarea from './pages/VistaProfesor/AddTarea';
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
           <Route path="/ProfesorCurso/:id_curso" element={<ProfesorCurso />} exact />
           <Route path="/ProfesorAlumno/:id_curso" element={<ProfesorAlumno />} exact />
           <Route path="/ProfesorTarea/:id_curso" element={<ProfesorTarea />} exact />
+          <Route path="/AddTarea" element={<AddTarea />} exact />
         </Routes>
       </Router>
     </div>
