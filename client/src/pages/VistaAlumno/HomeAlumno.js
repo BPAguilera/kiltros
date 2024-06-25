@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import "../../pages_css/VistaAdmin/HomeAdmin.css";
-import Sidebar from "../../sidebar/SidebarAdmin";
+import "../../pages_css/VistaAlumno/HomeAlumno.css";
 import Header from "../../header/HeaderAlumno";
 
 function HomeAlumno(){

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../../pages_css/AdminAdmin.css";
+import "../../pages_css/VistaAlumno/AlumnoTarea.css";
 import Header from "../../header/HeaderAlumno";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenNib } from '@fortawesome/free-solid-svg-icons';
