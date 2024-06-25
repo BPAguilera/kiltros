@@ -10,7 +10,6 @@ function HomeAlumno(){
     return(
         <div className="ContenidoHome">
             <Header />
-            <Sidebar/>
             <div>
                 texto
             </div>

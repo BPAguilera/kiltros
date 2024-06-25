@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import "../pages_css/Login.css"
+import "../../pages_css/Logins/LoginAlumno.css"
 
 function Login() {
     let navigate = useNavigate();

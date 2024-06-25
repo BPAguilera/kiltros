@@ -1,0 +1,29 @@
+.ContenidoVistaProfesorCurso{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
+    width: 100vw;
+    /* Ocupa todo el ancho de la pantalla */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #79AC78;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.SubContenidoVistaProfesorCurso{
+    margin-top: 130px;
+    margin-left: 170px;
+    background-color: #79AC78;
+    width: 70%;
+    height: 80%;
+    /* Asegúrate de que ocupe el 100% del ancho disponible */
+    display: flex;
+    flex-direction: column;
+    /* Coloca los hijos en una columna */
+    align-items: center;
+    /* Centra el contenido horizontalmente */
+}

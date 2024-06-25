@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import "../../pages_css/AdminCurso.css";
+import "../../pages_css/VistaProfesor/ProfesorCurso.css";
 import Header from "../../header/HeaderProfesor";
 import Sidebar from "../../sidebar/SidebarProfesor";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,28 +19,28 @@ function ProfesorCurso(){
     }, []);
 
     return(
-        <div className="ContenidoHome">
+        <div className="ContenidoVistaProfesorCurso">
             <Header />
             <Sidebar/>
 
-            <div className="SubContenidoAlumno">
-                <h2 className="TituloAlumno">Listado de alumnos</h2>
+            <div className="SubContenidoVistaProfesorCurso">
+                <h2>Listado de alumnos</h2>
                 <div className="ContenidoTablaAlumno">
                     <div className="TablaScroll">
-                        <table className="TablaAlumnos">
+                        <table>
                             <thead>
                                 <tr>
-                                    <th className="Titulos-Alumnos">Nombre</th>
-                                    <th className="Titulos-Alumnos">Rut</th>
-                                    <th className="Titulos-Alumnos">Reasignar Alumno</th>
+                                    <th>Nombre</th>
+                                    <th>Rut</th>
+                                    <th>Reasignar Alumno</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {Alumno.map((value) => (
                                     <tr key={value.id}>
-                                        <td className="Relleno-Alumnos">{value.nombre}</td>
-                                        <td className="Relleno-Alumnos">{value.rut}</td>
-                                        <td className="Relleno-Boton-Profesor">
+                                        <td >{value.nombre}</td>
+                                        <td>{value.rut}</td>
+                                        <td>
                                             <a onClick={() => navigate(`/ProfesorCurso`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>
                                     </tr>
