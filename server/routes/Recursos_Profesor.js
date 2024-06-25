@@ -21,13 +21,14 @@ router.get("/curso/:id_curso", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  //const recurso_profesor = req.body;
-  //await kl_recurso_profe.create(recurso_profesor);
+  const recurso_profesor = req.body;
+  await kl_recurso_profe.create(recurso_profesor);
   //res.json(recurso_profesor);
-  
-  const { avatar } = req.files;
-  avatar.mv(path.join(assetsFolder, avatar.name));
-  console.log(req.files);
+  //console.log(req.body);
+
+  const { fileData } = req.files;
+  fileData.mv(path.join(assetsFolder, fileData.name));
+  //console.log(req.files);
 });
 
 module.exports = router;

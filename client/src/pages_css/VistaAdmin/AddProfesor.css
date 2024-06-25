@@ -13,6 +13,20 @@
     justify-content: center;
 }
 
+.input-admin {
+    width: 200px;/* Anchura del input */
+    height: 20px;/* Altura del input */
+    border: 2.5px solid #404249;/* Borde del input con grosor 1 píxel, estilo sólido y color gris claro (#ccc) */
+    padding: 5px;/* Espacio de relleno dentro del input */
+    background-color: #1e1f22;/* Color de fondo del input */
+    color: white;/* Color del texto dentro del input */
+    font-family: 'Helvetica Bold';
+    font-size: 12px; /* Tamaño de fuente de 36 píxeles */
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px; /* Margen hacia la izquierda de 10 píxeles */
+    margin-right: 10px; /* Margen hacia la derecha de 10 píxeles */
+  }
 
 .createPostPageAddProfesor{
     margin-left: 160px;
