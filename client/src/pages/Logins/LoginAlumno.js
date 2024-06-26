@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import "../../pages_css/Logins/LoginAlumno.css"
+import Header from "../../header/HeaderLogin";
 
 function Login() {
     let navigate = useNavigate();
@@ -59,7 +60,7 @@ function Login() {
     
     return (
         <div className='ContenidoLogin'>
-            
+            <Header/>
                 <Formik 
                     initialValues={initialValues}
                     onSubmit={onSubmit}

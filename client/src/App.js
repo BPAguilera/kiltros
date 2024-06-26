@@ -1,9 +1,13 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import LoginAdmin from './pages/Logins/LoginAdmin';
+import LoginAlumno from './pages/Logins/LoginAlumno';
+import LoginProfesor from './pages/Logins/LoginProfesor';
+
 import HomeAdmin from './pages/VistaAdmin/HomeAdmin';
 import HomeAlumno from './pages/VistaAlumno/HomeAlumno';
 import HomeProfesor from './pages/VistaProfesor/HomeProfesor';
-import LoginAlumno from './pages/Logins/LoginAlumno';
 
 import AddAdmin from './pages/VistaAdmin/AddAdmin';
 import AddAlumno from './pages/VistaAdmin/AddAlumno';
@@ -31,7 +35,10 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<LoginAlumno />} exact />
+          <Route path="/LoginAdmin" element={<LoginAdmin />} exact />
+          <Route path="/LoginAlumno" element={<LoginAlumno />} exact />
+          <Route path="/LoginProfesor" element={<LoginProfesor />} exact />
+
           <Route path="/HomeAdmin/" element={<HomeAdmin />} exact />
           <Route path="/HomeAlumno/" element={<HomeAlumno />} exact />
           <Route path="/HomeProfesor/" element={<HomeProfesor />} exact />

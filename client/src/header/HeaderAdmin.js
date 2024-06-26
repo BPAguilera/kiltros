@@ -19,7 +19,7 @@ function HeaderAdmin() {
         <a href="/AdminCurso" className="boton-header-admin"><FontAwesomeIcon title="Cursos" icon={faBook} size="2xl" style={{ color: 'black' }} /></a>
         <a href="/AdminProfesor" className="boton-header-admin"><FontAwesomeIcon title="Profesores" icon={faPersonChalkboard} size="2xl" style={{ color: 'black' }} /></a>
         <a href="/AddAlumno" className="boton-header-admin"><FontAwesomeIcon title="Agregar" icon={faPlus} size="2xl" style={{ color: 'black' }} /></a>
-        <a href="/" className="boton-header-admin"><FontAwesomeIcon title="Cerrar Sesion" icon={faRightFromBracket} size="2xl" style={{ color: 'black' }} /></a>
+        <a href="/LoginAdmin" className="boton-header-admin"><FontAwesomeIcon title="Cerrar Sesion" icon={faRightFromBracket} size="2xl" style={{ color: 'black' }} /></a>
       </div>
     </header>
   );
