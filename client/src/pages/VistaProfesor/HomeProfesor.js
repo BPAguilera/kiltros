@@ -8,8 +8,14 @@ function HomeProfesor() {
     const [cursos, setCursos] = useState([]);
     const navigate = useNavigate();
 
+
+
     useEffect(() => {
-        axios.get("http://localhost:3001/cursos")
+        const user = localStorage.getItem('authState');
+        const userParsed = user ? JSON.parse(user) : null;
+
+      
+        axios.get(`http://localhost:3001/cursos/profesor/${userParsed.id}`)
             .then((response) => {
                 setCursos(response.data);
             })

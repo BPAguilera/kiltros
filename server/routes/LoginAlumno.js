@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
     // const authtoken = {usuario: usuario, id: user.id, rol: user.rol, state: true};
     // console.log(authtoken);
     
-    return res.json({token: accessToken, usuario: user.nombre,id: user.id, rol: user.rol });
+    return res.json({token: accessToken, usuario: user.nombre,id: user.id, rol: user.rol, id_curso: user.id_curso });
 
   })
     

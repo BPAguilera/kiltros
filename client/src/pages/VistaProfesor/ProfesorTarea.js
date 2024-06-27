@@ -29,17 +29,17 @@ function ProfesorTarea() {
                                 <th>Fecha Inicio</th>
                                 <th>Nombre Actividad</th>
                                 <th>Descripción</th>
-                                <th>Archivo Profesor</th>
-                                <th>Archivo Alumno</th>
                                 <th>Archivo</th>
-                                <th>Fecha de Envio</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             {Tarea.map((value) => (
                                 <tr key={value.id}>
-                                    <td className="Relleno-Alumnos">{value.tipo_recurso}</td>
+                                    <td className="Relleno-Alumnos">{value.createdAt}</td>
                                     <td className="Relleno-Alumnos">{value.nombre}</td>
+                                    <td className="Relleno-Alumnos">{value.descripcion}</td>
+                                    <td className="Relleno-Alumnos">{value.archivo_profesor}</td>
                                 </tr>
                             ))}
                         </tbody>

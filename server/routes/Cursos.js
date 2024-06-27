@@ -7,9 +7,9 @@ router.get("/", async (req, res) => {
   res.json(listaCurso);
 });
 
-router.get("/id/:id", async (req, res) => {
-  const id = req.params.id;
-  const curso = await kl_curso.findByPk(id);
+router.get("/profesor/:id_profesor", async (req, res) => {
+  const id = req.params.id_profesor;
+  const curso = await kl_curso.findAll({where: {id_profesor: id,},});
   res.json(curso);
 });
 

@@ -11,7 +11,10 @@ function HomeAlumno(){
     let navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:3001/recursos_profesor").then((response) => {
+        const user = localStorage.getItem('authState');
+        const userParsed = user ? JSON.parse(user) : null;
+
+        axios.get(`http://localhost:3001/recursos_profesor/curso/${userParsed.id_curso}`).then((response) => {
             setTarea(response.data);
         });
     }, []);

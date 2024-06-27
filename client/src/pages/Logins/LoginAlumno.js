@@ -34,8 +34,8 @@ function LoginAlumno() {
             } else {
                 console.log(response.data)
                 localStorage.setItem("accessToken", response.data.token);
-                setAuthState({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true})
-                localStorage.setItem('authState', JSON.stringify({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true}));
+                setAuthState({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true,})
+                localStorage.setItem('authState', JSON.stringify({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true,id_curso: response.data.id_curso}));
                 //console.log(authContext);
                 navigate('../HomeAlumno');
             }
