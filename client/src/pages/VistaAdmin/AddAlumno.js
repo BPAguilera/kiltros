@@ -8,7 +8,7 @@ import "../../pages_css/VistaAdmin/AddAlumno.css"
 import { useNavigate } from 'react-router-dom';
 
 function AddAlumno() {
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [Cursos, setCurso] = useState([]);
     useEffect(() => {
@@ -16,32 +16,56 @@ function AddAlumno() {
             setCurso(response.data);
         });
     }, []);
-    
+
     const initialValues = {
         nombre: "",
         rut: "",
         contrasena: "",
-        id_curso:"",
+        id_curso: "",
+        rol: "alumno",
     };
-    
+
     const validationSchema = Yup.object().shape({
         nombre: Yup.string().required(),
         rut: Yup.number().integer().required(),
         contrasena: Yup.string().required(),
         id_curso: Yup.number().integer().required(),
     });
-    
-    const onSubmit = (data) => {
-        axios.post("http://localhost:3001/alumnos", data).then((response) => {
-            Navigate("/AdminAlumno")
 
-        });
+    const onSubmit = (data) => {
+        axios.post("http://localhost:3001/alumnos", data, { headers: { accessToken: localStorage.getItem("accessToken"), } })
+            .then((response) => {
+                if (response.data.error) {
+                    alert(response.data.error);
+                } else {
+                    console.log("alumno agregado");
+                    //setErrorMessage(""); // Limpiar el mensaje de error en caso de éxito
+                    navigate("/HomeAdmin");
+                }
+
+            })
+            .catch((error) => {
+                // Si ocurre un error, maneja la respuesta de error
+                if (error.response) {
+                    // El servidor respondió con un código de estado diferente de 2xx
+                    console.error('Error en respuesta del servidor:', error.response.data.error);
+                    //setErrorMessage(`Error: ${error.response.data.error}`);
+                } else if (error.request) {
+                    // La solicitud se hizo pero no se recibió respuesta
+                    console.error('No se recibió respuesta del servidor:', error.request);
+                    //setErrorMessage('Error: No se recibió respuesta del servidor.');
+                } else {
+                    // Algo pasó al preparar la solicitud
+                    console.error('Error al preparar la solicitud:', error.message);
+                    //setErrorMessage(`Error: ${error.message}`);
+                }
+            })
     };
-    
+
     return (
         <div className='ContenidoAddAlumno'>
-            <Header/>
-            <Sidebar/>
+            <Header />
+            <Sidebar />
             <div className="createPostPageAddAlumno">
                 <Formik
                     initialValues={initialValues}
@@ -86,14 +110,14 @@ function AddAlumno() {
                                     </td>
                                 </tr>
                                 <tr>
-                                <td><label>Curso: </label></td>
+                                    <td><label>Curso: </label></td>
                                     <td>
-                                    <Field as="select" name="id_curso">
-                                        <option value="" label="">Seleciona Curso{" "}</option>
-                                        {Cursos.map((curso) => (
-                                        <option key={curso.id} value={curso.id}>{curso.nombre}</option>
-                                        ))}
-                                    </Field>
+                                        <Field as="select" name="id_curso">
+                                            <option value="" label="">Seleciona Curso{" "}</option>
+                                            {Cursos.map((curso) => (
+                                                <option key={curso.id} value={curso.id}>{curso.nombre}</option>
+                                            ))}
+                                        </Field>
                                     </td>
                                 </tr>
                                 <tr>

@@ -1,0 +1,36 @@
+.contenido-prohibido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+  
+  .prohibido-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .prohibido-message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+  }
+  
+  .prohibido-link {
+    text-decoration: none;
+    color: #dc3545;
+    font-size: 1.2rem;
+    border: 2px solid #dc3545;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .prohibido-link:hover {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
