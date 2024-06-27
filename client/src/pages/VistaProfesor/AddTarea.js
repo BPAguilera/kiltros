@@ -10,6 +10,8 @@ function AddTarea() {
     let { id_curso } = useParams();
 
     const onSubmit = async (e) => {
+        e.preventDefault();
+
         const form = e.target;
         const formData = new FormData(form);
 

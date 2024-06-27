@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "../../pages_css/VistaAdmin/AdminAdmin.css";
 import Header from "../../header/HeaderAlumno";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 
 function AlumnoTarea(){
-    const [Tarea, setTarea] = useState([]);
     let navigate = useNavigate();
 
+    const [Tarea, setTarea] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:3001/recursos_profesor").then((response) => {
+        axios.get(`http://localhost:3001/recursos_profesor`).then((response) => {
             setTarea(response.data);
         });
     }, []);
 
     return(
         <div className="ContenidoHome">
-            <Header />
-
+            {/*}<Header />{*/}
             <div className="SubContenidoAdmin">
                 <h2 className="TituloAdmin">Listado de Tareas</h2>
                 <div className="ContenidoTablaAdmin">
@@ -40,7 +39,7 @@ function AlumnoTarea(){
                                         <td className="Relleno-Admin">{value.nombre}</td>
                                         <td className="Relleno-Admin">{value.id_profesor}</td>
                                         <td className="Relleno-Boton-Admin">
-                                            <a onClick={() => navigate(`/HomeAlumno`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
+                                            <button onClick={() => navigate(`/AddRespuesta/${value.id}`)}>Agregar</button>
                                         </td>
                                     </tr>
                                 ))}

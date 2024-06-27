@@ -22,6 +22,7 @@ import EditProfesor from './pages/VistaAdmin/EditProfesor';
 
 import AlumnoTarea from './pages/VistaAlumno/AlumnoTarea';
 import AlumnoJuego from './pages/VistaAlumno/AlumnoJuego';
+import AddRespuesta from './pages/VistaAlumno/AddRespuesta';
 
 import ProfesorCurso from './pages/VistaProfesor/ProfesorCurso';
 import ProfesorAlumno from './pages/VistaProfesor/ProfesorAlumno';
@@ -55,6 +56,7 @@ function App() {
 
           <Route path="/AlumnoTarea" element={<AlumnoTarea />} exact />
           <Route path="/AlumnoJuego" element={<AlumnoJuego />} exact />
+          <Route path="/AddRespuesta/:id_recurso_profesor" element={<AddRespuesta />} exact />
 
           <Route path="/ProfesorCurso/:id_curso" element={<ProfesorCurso />} exact />
           <Route path="/ProfesorAlumno/:id_curso" element={<ProfesorAlumno />} exact />
