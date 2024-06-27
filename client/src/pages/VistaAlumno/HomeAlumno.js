@@ -7,10 +7,30 @@ import Header from "../../header/HeaderAlumno";
 function HomeAlumno(){
 
     return(
-        <div className="ContenidoHome">
+        <div className="ContenidoHomeAlumno">
             <Header />
-            <div>
-                texto
+            <div className="SubContenidoAlumnoCurso">
+                <h2>Listado Actividades</h2>
+                <div className="tabla-container-alumno">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha Inicio</th>
+                                <th>Nombre Actividad</th>
+                                <th>descripción</th>
+                                <th>Archivo Profesor</th>
+                                <th>Archivo Alumno</th>
+                                <th></th>
+                                <th>Fecha de Envio</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

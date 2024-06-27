@@ -23,7 +23,7 @@ function HomeProfesor() {
             <Header />
             <div className="SubContenidoProfesorCurso">
                 <h2>Listado de Cursos</h2>
-                <div className="tabla-container">
+                <div className="tabla-container-profesor">
                     <table>
                         <thead>
                             <tr>

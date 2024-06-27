@@ -5,7 +5,7 @@ import "../../pages_css/VistaProfesor/ProfesorTarea.css";
 import Header from "../../header/HeaderProfesor";
 import Sidebar from "../../sidebar/SidebarProfesor";
 
-function ProfesorTarea(){
+function ProfesorTarea() {
     let { id_curso } = useParams();
     let navigate = useNavigate();
 
@@ -16,35 +16,30 @@ function ProfesorTarea(){
         });
     }, []);
 
-    return(
-        <div className="ContenidoHome">
+    return (
+        <div className="ContenidoProfesorTarea">
             <Header />
-            <Sidebar/>
-
-            <div className="SubContenidoAlumno">
-                <h2 className="TituloAlumno">Listado de tareas</h2>
-                <div className="ContenidoTablaAlumno">
-                    <div className="TablaScroll">
-                        <table className="TablaAlumnos">
-                            <thead>
-                                <tr>
-                                    <th className="Titulos-Alumnos">Tipo</th>
-                                    <th className="Titulos-Alumnos">Nombre</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {Tarea.map((value) => (
-                                    <tr key={value.id}>
-                                        <td className="Relleno-Alumnos">{value.tipo_recurso}</td>
-                                        <td className="Relleno-Alumnos">{value.nombre}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
+            <Sidebar />
+                <h2>Listado Actividades</h2>
+                <botton>Insertar</botton>
+                <div className="tabla-container-profesor-tarea">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha Inicio</th>
+                                <th>Nombre Actividad</th>
+                                <th>Descripción</th>
+                                <th>Archivo Profesor</th>
+                                <th>Archivo Alumno</th>
+                                <th>Archivo</th>
+                                <th>Fecha de Envio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </div>
     );
 }
 export default ProfesorTarea;

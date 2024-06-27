@@ -1,0 +1,65 @@
+.ContenidoALumnoJuego {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FFFFE0; /* Fondo amarillo claro */
+    align-items: center;
+}
+
+.SubContenidoALumnoJuego {
+    margin-top: 130px;
+    background-color: #FFFFE0; /* Fondo amarillo claro */
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SubContenidoALumnoJuego h2 {
+    font-size: xx-large;
+    color: #32CD32; /* Verde brillante */
+}
+
+.tabla-juegos {
+    width: 90vw; 
+    height: 60vh; 
+    border: 10px solid #FFA500; /* Borde naranja */
+    overflow-y: auto; 
+    background-color: #FFFFE0; /* Fondo amarillo claro */
+}
+
+.tabla-juegos table {
+    width: 100%;
+    background-color: #ADD8E6; /* Azul claro */
+    border-collapse: collapse;
+}
+
+.tabla-juegos thead tr {
+    background-color: #32CD32; /* Verde brillante */
+    font-size: x-large;
+    height: 50px;
+    color: white; /* Texto blanco */
+}
+
+.tabla-juegos tbody {
+    background-color: #FFD700; /* Fondo amarillo */
+}
+
+.tabla-juegos tbody button {
+    width: 100%;
+    height: 75px;
+    background-color: #32CD32; /* Verde brillante */
+    font-size: x-large;
+    color: white; /* Texto blanco */
+    border: 2px solid #FFA500; /* Borde naranja */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.tabla-juegos tbody button:hover {
+    background-color: #FFA500; /* Naranja */
+}

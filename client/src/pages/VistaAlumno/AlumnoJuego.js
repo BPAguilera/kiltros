@@ -7,26 +7,24 @@ import Header from "../../header/HeaderAlumno";
 function AlumnoJuego(){
 
     return(
-        <div className="ContenidoHome">
+        <div className="ContenidoALumnoJuego">
             <Header />
 
-            <div className="SubContenidoAdmin">
-                <h2 className="TituloAdmin">Listado de Tareas</h2>
-                <div className="ContenidoTablaAdmin">
-                    <div className="TablaScroll">
-                        <table className="TablaAdmin">
-                            <thead>
-                                <tr>
-                                    <th className="Titulos-Admin">Minijuegos</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td className="Relleno-Admin">Los Minijuegos no se encuentran disponibles :/</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div className="SubContenidoALumnoJuego">
+                <h2>Listado de Juegos</h2>
+                <div className="tabla-juegos">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th className="Titulos-Admin">Minijuegos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="Relleno-Admin">Los Minijuegos no se encuentran disponibles :/</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
