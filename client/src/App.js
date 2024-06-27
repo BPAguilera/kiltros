@@ -59,7 +59,7 @@ function App() {
           <Route path="/ProfesorCurso/:id_curso" element={<ProfesorCurso />} exact />
           <Route path="/ProfesorAlumno/:id_curso" element={<ProfesorAlumno />} exact />
           <Route path="/ProfesorTarea/:id_curso" element={<ProfesorTarea />} exact />
-          <Route path="/AddTarea" element={<AddTarea />} exact />
+          <Route path="/AddTarea/:id_curso" element={<AddTarea />} exact />
         </Routes>
       </Router>
     </div>

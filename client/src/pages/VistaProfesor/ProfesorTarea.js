@@ -23,6 +23,7 @@ function ProfesorTarea(){
 
             <div className="SubContenidoAlumno">
                 <h2 className="TituloAlumno">Listado de tareas</h2>
+                <button onClick={() => navigate(`/AddTarea/${id_curso}`)}>Agregar</button>
                 <div className="ContenidoTablaAlumno">
                     <div className="TablaScroll">
                         <table className="TablaAlumnos">
