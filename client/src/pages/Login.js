@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import "../pages_css/Login.css"
+import {AuthContext} from '../helpers/authContext'
 
 function Login() {
+
+    //const {setAuthStat} = useContext(AuthContext);
     let navigate = useNavigate();
 
     const [Admin, setAdmin] = useState([]);
@@ -39,55 +42,52 @@ function Login() {
         contrasena: Yup.string().required(),
     });
     
+    const [error, setError] = useState("");
+    
     const onSubmit = (data) => {
-        for (let i in Admin) {
-            if (Admin[i].usuario === data.usuario && Admin[i].contrasena === data.contrasena) {
+        axios.post("http://localhost:3001/login", data).then((response) => {
+            if(response.data.error) {
+                setError(response.data.error);
+            } else {
+                localStorage.setItem("accessToken", response.data);
+                //setAuthStat(true);
+                console.log(response);
                 navigate('../HomeAdmin');
             }
-        }
-        for (let i in Profe) {
-            if (Profe[i].nombre === data.usuario && Profe[i].contrasena === data.contrasena) {
-                navigate('../HomeProfesor');
-            }
-        }
-        for (let i in Alumno) {
-            if (Alumno[i].nombre === data.usuario && Alumno[i].contrasena === data.contrasena) {
-                navigate('../HomeAlumno');
-            }
-        }
+        }).catch((error) => {
+            setError("Error en el servidor");
+        });
     };
-    
     return (
         <div className='ContenidoLogin'>
-            
-                <Formik 
-                    initialValues={initialValues}
-                    onSubmit={onSubmit}
-                    validationSchema={validationSchema}
-                >
-                    <Form className="FormLogin">
-                    <h1>Iniciar sesion</h1>
-                        <label>Usuario: </label>
-                        <ErrorMessage name="username" component="span" />
-                        <Field 
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="usuario"
-                            placeholder="Usuario"
-                        />
-                        <label>Contraseña: </label>
-                        <ErrorMessage name="username" component="span" />
-                        <Field 
-                            autocomplete="off"
-                            id="inputCreatePost"
-                            name="contrasena"
-                            type="password"
-                            placeholder="Contraseña"
-                        />
-                        <button type="submit">Iniciar Sesion</button>
-                    </Form>
-                </Formik>
-            
+            <Formik 
+                initialValues={initialValues}
+                onSubmit={onSubmit}
+                validationSchema={validationSchema}
+            >
+                <Form className="FormLogin">
+                    <h1>Iniciar sesión</h1>
+                    {error && <div className="error">{error}</div>}
+                    <label>Usuario: </label>
+                    <ErrorMessage name="usuario" component="span" />
+                    <Field 
+                        autoComplete="off"
+                        id="inputCreatePost"
+                        name="usuario"
+                        placeholder="Usuario"
+                    />
+                    <label>Contraseña: </label>
+                    <ErrorMessage name="contrasena" component="span" />
+                    <Field 
+                        autoComplete="off"
+                        id="inputCreatePost"
+                        name="contrasena"
+                        type="password"
+                        placeholder="Contraseña"
+                    />
+                    <button type="submit">Iniciar Sesión</button>
+                </Form>
+            </Formik>
         </div>
     )
 }

@@ -29,7 +29,7 @@ app.use("/recursos_alumno", tareaRouter);
 const recursoRouter = require("./routes/Recursos_Profesor");
 app.use("/recursos_profesor", recursoRouter);
 
-const logRouter = require("./routes/Login");
+const loginRouter = require("./routes/Login");
 app.use("/login", loginRouter);
 
 

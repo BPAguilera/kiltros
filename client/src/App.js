@@ -27,9 +27,18 @@ import ProfesorCurso from './pages/ProfesorCurso';
 import ProfesorAlumno from './pages/ProfesorAlumno';
 import ProfesorTarea from './pages/ProfesorTarea';
 
+
+
+
+
 function App() {
+
+
+
+
   return (
     <div className="App">
+     
       <Router>
         <Routes>
           <Route path="/" element={<Login />} exact />
@@ -60,6 +69,7 @@ function App() {
           <Route path="/ProfesorTarea/:id_curso" element={<ProfesorTarea />} exact />
         </Routes>
       </Router>
+
     </div>
   );
 }
