@@ -27,6 +27,7 @@ import LoginAlumno from './pages/LoginAlumno';
 import ProfesorCurso from './pages/ProfesorCurso';
 import ProfesorAlumno from './pages/ProfesorAlumno';
 import ProfesorTarea from './pages/ProfesorTarea';
+import LoginProfesor from './pages/LoginProfesor';
 
 import Prohibido from './pages/Prohibido';
 
@@ -101,6 +102,7 @@ function App() {
             <Route path="/ProfesorCurso" element={<ProtectedRoute element={ProfesorCurso} rol={['profesor']} />} exact />
             <Route path="/ProfesorAlumno/:id_curso" element={<ProtectedRoute element={ProfesorAlumno} rol={['profesor']} />} exact />
             <Route path="/ProfesorTarea/:id_curso" element={<ProtectedRoute element={ProfesorTarea} rol={['profesor']} />} exact />
+            <Route path="/LoginProfesor" element={<LoginProfesor />} exact />
             <Route path="/Prohibido" element={<Prohibido/>} exact />
           </Routes>
         </Router>

@@ -16,12 +16,7 @@ function HeaderAdmin() {
   const logout = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("authState");
-    // setAuthState({
-    //   usuario: "",
-    //   id: 0,
-    //   rol: "",
-    //   state: false,
-    // });
+
     navigate('/');
   }
   return (

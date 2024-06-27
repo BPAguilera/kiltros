@@ -30,6 +30,7 @@ function AddAlumno() {
         rut: Yup.number().integer().required(),
         contrasena: Yup.string().required(),
         id_curso: Yup.number().integer().required(),
+
     });
 
     const onSubmit = (data) => {

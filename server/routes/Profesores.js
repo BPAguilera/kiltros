@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const { kl_profesor } = require("../models");
+const bcrypt = require("bcrypt");
+
+const {validationToken} = require("./middleware");
 
 router.get("/", async (req, res) => {
   const listaProfesor = await kl_profesor.findAll();
@@ -15,8 +18,23 @@ router.get("/id/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const profesor = req.body;
-  await kl_profesor.create(profesor);
-  res.json(profesor);
+  const exist = await kl_profesor.findOne({where: {nombre: profesor.nombre}});
+  if(!exist) {
+    bcrypt.hash(profesor.contrasena, 10).then((hash)=>{
+      kl_profesor.create({
+        nombre: profesor.nombre,
+        rut: profesor.rut,
+        contrasena: hash,
+        rol: profesor.rol,
+      })
+      return res.status(201).json(profesor); // 201 Created
+    }).catch((err) => {
+      console.log(err);
+      return res.status(500).json({error: "Error al crear profesor"}); // 500 Internal Server Error
+    });
+  } else {
+    return res.status(409).json({error: "profesor ya existe"}); // 409 Conflict
+  }
 });
 
 

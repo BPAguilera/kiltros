@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      rol: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      }
     });
     
     kl_profesor.associate = function(models) {
