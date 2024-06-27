@@ -32,7 +32,7 @@ function AddTarea() {
                     <label><input type="text" name="nombre" placeholder="Ingrese Nombre"/></label>
                     <label><input type="text" name="descripcion" placeholder="Ingrese Descripción" /></label>
                     <label><input type="file" name="fileData" ref={fileInput}/></label>
-                    <label><input type="text" name="id_profesor" defaultValue={2} readOnly/></label>
+                    <label><input type="text" name="id_profesor" defaultValue={1} readOnly/></label>
                     <label><input type="text" name="id_curso" defaultValue={id_curso} readOnly/></label>
                     <button type="submit">Agregar</button>
                 </form>

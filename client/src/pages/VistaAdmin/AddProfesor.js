@@ -14,6 +14,7 @@ function AddProfesor() {
         nombre: "",
         rut: "",
         contrasena: "",
+        rol: "profesor",
     };
 
     const validationSchema = Yup.object().shape({
@@ -24,9 +25,33 @@ function AddProfesor() {
     });
 
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/profesores", data).then((response) => {
-        });
-        navigate("/AdminProfesor")
+        axios.post("http://localhost:3001/profesores", data, { headers: { accessToken: localStorage.getItem("accessToken"), } })
+            .then((response) => {
+                if (response.data.error) {
+                    alert(response.data.error);
+                } else {
+                    console.log("profesor agregado");
+                    //setErrorMessage(""); // Limpiar el mensaje de error en caso de éxito
+                    navigate("/adminprofesor");
+                }
+
+            })
+            .catch((error) => {
+                // Si ocurre un error, maneja la respuesta de error
+                if (error.response) {
+                    // El servidor respondió con un código de estado diferente de 2xx
+                    console.error('Error en respuesta del servidor:', error.response.data.error);
+                    //setErrorMessage(`Error: ${error.response.data.error}`);
+                } else if (error.request) {
+                    // La solicitud se hizo pero no se recibió respuesta
+                    console.error('No se recibió respuesta del servidor:', error.request);
+                    //setErrorMessage('Error: No se recibió respuesta del servidor.');
+                } else {
+                    // Algo pasó al preparar la solicitud
+                    console.error('Error al preparar la solicitud:', error.message);
+                    //setErrorMessage(`Error: ${error.message}`);
+                }
+            });
     };
 
     return (

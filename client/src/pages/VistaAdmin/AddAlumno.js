@@ -40,7 +40,7 @@ function AddAlumno() {
                 } else {
                     console.log("alumno agregado");
                     //setErrorMessage(""); // Limpiar el mensaje de error en caso de éxito
-                    navigate("/HomeAdmin");
+                    navigate("/AdminAlumno");
                 }
 
             })
