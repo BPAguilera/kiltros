@@ -26,9 +26,11 @@ import EditProfesor from './pages/VistaAdmin/EditProfesor';
 
 import AlumnoTarea from './pages/VistaAlumno/AlumnoTarea';
 import AlumnoJuego from './pages/VistaAlumno/AlumnoJuego';
+import AddRespuesta from './pages/VistaAlumno/AddRespuesta';
 
 import ProfesorCurso from './pages/VistaProfesor/ProfesorCurso';
 import ProfesorTarea from './pages/VistaProfesor/ProfesorTarea';
+import AddTarea from './pages/VistaProfesor/AddTarea';
 
 import Prohibido from './pages/Prohibido';
 
@@ -101,9 +103,11 @@ function App() {
 
           <Route path="/AlumnoTarea" element={<ProtectedRoute element={AlumnoTarea} rol={['alumno']} />} exact />
           <Route path="/AlumnoJuego" element={<ProtectedRoute element={AlumnoJuego} rol={['alumno']} />} exact />
+          <Route path="/AddRespuesta/:id_recurso_profesor" element={<ProtectedRoute element={AddRespuesta} rol={['alumno']} />} exact />
 
           <Route path="/ProfesorCurso/:id_curso" element={<ProtectedRoute element={ProfesorCurso} rol={['profesor']} />} exact />
           <Route path="/ProfesorTarea/:id_curso" element={<ProtectedRoute element={ProfesorTarea} rol={['profesor']} />} exact />
+          <Route path="/AddTarea/:id_curso" element={<ProtectedRoute element={AddTarea} rol={['profesor']} />} exact />
         </Routes>
       </Router>
       </authContext.Provider>

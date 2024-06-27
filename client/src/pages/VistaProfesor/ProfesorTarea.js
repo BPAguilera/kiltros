@@ -10,10 +10,10 @@ function ProfesorTarea() {
     let navigate = useNavigate();
 
     const [Tarea, setTarea] = useState([]);
-    useEffect(() => {
-        axios.get(`http://localhost:3001/recursos_profesor/curso/${id_curso}`).then((response) => {
-            setTarea(response.data);
-        });
+        useEffect(() => {
+            axios.get(`http://localhost:3001/recursos_profesor/curso/${id_curso}`).then((response) => {
+                setTarea(response.data);
+            });
     }, []);
 
     return (
@@ -21,7 +21,7 @@ function ProfesorTarea() {
             <Header />
             <Sidebar />
                 <h2>Listado Actividades</h2>
-                <botton>Insertar</botton>
+                <button onClick={() => navigate(`/AddTarea/${id_curso}`)}>Agregar</button>
                 <div className="tabla-container-profesor-tarea">
                     <table>
                         <thead>
@@ -36,6 +36,12 @@ function ProfesorTarea() {
                             </tr>
                         </thead>
                         <tbody>
+                            {Tarea.map((value) => (
+                                <tr key={value.id}>
+                                    <td className="Relleno-Alumnos">{value.tipo_recurso}</td>
+                                    <td className="Relleno-Alumnos">{value.nombre}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>

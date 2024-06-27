@@ -40,7 +40,7 @@ function AlumnoTarea(){
                                         <td className="Relleno-Admin">{value.nombre}</td>
                                         <td className="Relleno-Admin">{value.id_profesor}</td>
                                         <td className="Relleno-Boton-Admin">
-                                            <a onClick={() => navigate(`/HomeAlumno`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
+                                            <a onClick={() => navigate(`/AddRespuesta/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                         </td>
                                     </tr>
                                 ))}
