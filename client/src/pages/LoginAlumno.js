@@ -6,7 +6,7 @@ import axios from "axios";
 import "../pages_css/Login.css"
 import {authContext} from '../helpers/authContext'
 
-function Login() {
+function LoginAlumno() {
 
     const {setAuthState} = useContext(authContext);
     let navigate = useNavigate();
@@ -26,15 +26,17 @@ function Login() {
     const [error, setError] = useState("");
     
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/login", data).then((response) => {
+        axios.post("http://localhost:3001/loginAlumno", data).then((response) => {
             //console.log(response.data.token)
             if(response.data.error) {
                 setError(response.data.error);
             } else {
+                console.log(response.data)
                 localStorage.setItem("accessToken", response.data.token);
                 setAuthState({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true})
                 localStorage.setItem('authState', JSON.stringify({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true}));
-                navigate('../HomeAdmin');
+                //console.log(authContext);
+                navigate('../HomeAlumno');
             }
         }).catch((error) => {
             console.log(error)
@@ -75,4 +77,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default LoginAlumno;

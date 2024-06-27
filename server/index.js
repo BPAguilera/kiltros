@@ -32,6 +32,8 @@ app.use("/recursos_profesor", recursoRouter);
 const loginRouter = require("./routes/Login");
 app.use("/login", loginRouter);
 
+const loginAlumnoRouter = require("./routes/LoginAlumno");
+app.use("/loginAlumno", loginAlumnoRouter);
 
 // Inicializamos la conexión
 db.sequelize.sync().then(() => {3

@@ -22,54 +22,89 @@ import EditProfesor from './pages/EditProfesor';
 
 import AlumnoTarea from './pages/AlumnoTarea';
 import AlumnoJuego from './pages/AlumnoJuego';
+import LoginAlumno from './pages/LoginAlumno';
 
 import ProfesorCurso from './pages/ProfesorCurso';
 import ProfesorAlumno from './pages/ProfesorAlumno';
 import ProfesorTarea from './pages/ProfesorTarea';
 
+import Prohibido from './pages/Prohibido';
 
-
-
+import { authContext } from './helpers/authContext'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import ProtectedRoute from './helpers/ProtectedRoute'; // Asegúrate de importar el componente
 
 function App() {
+  const [authState, setAuthState] = useState(() => {
+    const savedAuthState = localStorage.getItem('authState');
+    return savedAuthState ? JSON.parse(savedAuthState) : { usuario: "", id: 0, rol: "", state: false };
+  });
 
-
-
-
+  useEffect(() => {
+    axios.get("http://localhost:3001/login/auth", {
+      headers: {
+        accessToken: localStorage.getItem('accessToken'),
+      },
+    }).then((response) => {
+      //console.log(response)
+      if (response.data.error) {
+        const newAuthState = {
+          usuario: "",
+          id: 0,
+          rol: "",
+          state: false,
+        };
+        setAuthState(newAuthState);
+        localStorage.setItem('authState', JSON.stringify(newAuthState));
+      } else {
+        const newAuthState = {
+          usuario: response.data.usuario,
+          id: response.data.id,
+          rol: response.data.rol,
+          state: true,
+        };
+        setAuthState(newAuthState);
+        localStorage.setItem('authState', JSON.stringify(newAuthState));
+      }
+    });
+  }, []);
   return (
     <div className="App">
-     
-      <Router>
-        <Routes>
-          <Route path="/" element={<Login />} exact />
-          <Route path="/HomeAdmin/" element={<HomeAdmin />} exact />
-          <Route path="/HomeAlumno/" element={<HomeAlumno />} exact />
-          <Route path="/HomeProfesor/" element={<HomeProfesor />} exact />
+      <authContext.Provider value={{ authState, setAuthState }}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Login />} exact />
+            <Route path="/HomeAdmin" element={<ProtectedRoute element={HomeAdmin} rol={['Admin']} />} exact />
+            <Route path="/HomeAlumno" element={<ProtectedRoute element={HomeAlumno} rol={['alumno']} />} exact />
+            <Route path="/HomeProfesor" element={<ProtectedRoute element={HomeProfesor} rol={['profesor']} />} exact />
 
-          <Route path="/AddAdmin" element={<AddAdmin />} exact />
-          <Route path="/AddAlumno" element={<AddAlumno />} exact />
-          <Route path="/AddCurso" element={<AddCurso />} exact />
-          <Route path="/AddProfesor" element={<AddProfesor />} exact />
+            <Route path="/AddAdmin" element={<ProtectedRoute element={AddAdmin} rol={['Admin']} />} exact />
+            <Route path="/AddAlumno" element={<ProtectedRoute element={AddAlumno} rol={['Admin']} />} exact />
+            <Route path="/AddCurso" element={<ProtectedRoute element={AddCurso} rol={['Admin']} />} exact />
+            <Route path="/AddProfesor" element={<ProtectedRoute element={AddProfesor} rol={['Admin']} />} exact />
 
-          <Route path="/AdminAdmin" element={<AdminAdmin />} exact />
-          <Route path="/AdminAlumno" element={<AdminAlumno />} exact />
-          <Route path="/AdminCurso" element={<AdminCurso />} exact />
-          <Route path="/AdminProfesor" element={<AdminProfesor />} exact />
+            <Route path="/AdminAdmin" element={<ProtectedRoute element={AdminAdmin} rol={['Admin']} />} exact />
+            <Route path="/AdminAlumno" element={<ProtectedRoute element={AdminAlumno} rol={['Admin']} />} exact />
+            <Route path="/AdminCurso" element={<ProtectedRoute element={AdminCurso} rol={['Admin']} />} exact />
+            <Route path="/AdminProfesor" element={<ProtectedRoute element={AdminProfesor} rol={['Admin']} />} exact />
 
-          <Route path="/EditAdmin/:id" element={<EditAdmin />} exact />
-          <Route path="/EditAlumno/:id" element={<EditAlumno />} exact />
-          <Route path="/EditCurso/:id" element={<EditCurso />} exact />
-          <Route path="/EditProfesor/:id" element={<EditProfesor />} exact />
+            <Route path="/EditAdmin/:id" element={<ProtectedRoute element={EditAdmin} rol={['Admin']} />} exact />
+            <Route path="/EditAlumno/:id" element={<ProtectedRoute element={EditAlumno} rol={['Admin']} />} exact />
+            <Route path="/EditCurso/:id" element={<ProtectedRoute element={EditCurso} rol={['Admin']} />} exact />
+            <Route path="/EditProfesor/:id" element={<ProtectedRoute element={EditProfesor} rol={['Admin']} />} exact />
 
-          <Route path="/AlumnoTarea" element={<AlumnoTarea />} exact />
-          <Route path="/AlumnoJuego" element={<AlumnoJuego />} exact />
+            <Route path="/AlumnoTarea" element={<ProtectedRoute element={AlumnoTarea} rol={['alumno']} />} exact />
+            <Route path="/AlumnoJuego" element={<ProtectedRoute element={AlumnoJuego} rol={['alumno']} />} exact />
+            <Route path="/LoginAlumno" element={<LoginAlumno />} exact />
 
-          <Route path="/ProfesorCurso" element={<ProfesorCurso />} exact />
-          <Route path="/ProfesorAlumno/:id_curso" element={<ProfesorAlumno />} exact />
-          <Route path="/ProfesorTarea/:id_curso" element={<ProfesorTarea />} exact />
-        </Routes>
-      </Router>
-
+            <Route path="/ProfesorCurso" element={<ProtectedRoute element={ProfesorCurso} rol={['profesor']} />} exact />
+            <Route path="/ProfesorAlumno/:id_curso" element={<ProtectedRoute element={ProfesorAlumno} rol={['profesor']} />} exact />
+            <Route path="/ProfesorTarea/:id_curso" element={<ProtectedRoute element={ProfesorTarea} rol={['profesor']} />} exact />
+            <Route path="/Prohibido" element={<Prohibido/>} exact />
+          </Routes>
+        </Router>
+      </authContext.Provider>
     </div>
   );
 }
