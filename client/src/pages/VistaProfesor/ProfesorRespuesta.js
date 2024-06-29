@@ -5,48 +5,41 @@ import "../../pages_css/VistaProfesor/ProfesorTarea.css";
 import Header from "../../header/HeaderProfesor";
 import Sidebar from "../../sidebar/SidebarProfesor";
 
-function ProfesorTarea() {
-    let { id_curso } = useParams();
+function ProfesorRespuesta() {
+    let { id_recurso_profesor } = useParams();
     let navigate = useNavigate();
 
     const [Tarea, setTarea] = useState([]);
-        useEffect(() => {
-            axios.get(`http://localhost:3001/recursos_profesor/curso/${id_curso}`).then((response) => {
-                setTarea(response.data);
-            });
+    useEffect(() => {
+        axios.get(`http://localhost:3001/recursos_alumno/tarea/${id_recurso_profesor}`).then((response) => {
+            setTarea(response.data);
+        });
     }, []);
-
     return (
         <div className="ContenidoProfesorTarea">
             <Header />
             <Sidebar />
-                <h2>Listado Actividades</h2>
-                <button onClick={() => navigate(`/AddTarea/${id_curso}`)}>Agregar</button>
+                <h2>Listado Respuestas</h2>
                 <div className="tabla-container-profesor-tarea">
                     <table>
                         <thead>
                             <tr>
-                                <th>Fecha Inicio</th>
-                                <th>Nombre Actividad</th>
-                                <th>Descripción</th>
+                                <th>Fecha Entrega</th>
                                 <th>Archivo</th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             {Tarea.map((value) => (
                                 <tr key={value.id}>
                                     <td className="Relleno-Alumnos">{value.createdAt}</td>
-                                    <td className="Relleno-Alumnos">{value.nombre}</td>
-                                    <td className="Relleno-Alumnos">{value.descripcion}</td>
                                     <td className="Relleno-Alumnos">{value.archivo_profesor}</td>
-                                    <td><button onClick={() => navigate(`/ProfesorRespuesta/${value.id}`)}>Ver Respuestas</button></td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                 </div>
             </div>
-    );
+    )
 }
-export default ProfesorTarea;
+
+export default ProfesorRespuesta

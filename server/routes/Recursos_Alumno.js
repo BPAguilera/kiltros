@@ -14,6 +14,12 @@ router.get("/", async (req, res) => {
   res.json(listaRecursoAlumno);
 });
 
+router.get("/tarea/:id_recurso_profesor", async (req, res) => {
+  const id = req.params.id_recurso_profesor;
+  const tarea = await kl_recurso_alumno.findAll({where: {id_recurso_profesor: id,},});
+  res.json(tarea);
+});
+
 router.post("/", async (req, res) => {
   const tarea = req.body;
   await kl_recurso_alumno.create(tarea);

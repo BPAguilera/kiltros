@@ -30,6 +30,7 @@ import AddRespuesta from './pages/VistaAlumno/AddRespuesta';
 
 import ProfesorCurso from './pages/VistaProfesor/ProfesorCurso';
 import ProfesorTarea from './pages/VistaProfesor/ProfesorTarea';
+import ProfesorRespuesta from './pages/VistaProfesor/ProfesorRespuesta';
 import AddTarea from './pages/VistaProfesor/AddTarea';
 
 import Prohibido from './pages/Prohibido';
@@ -107,6 +108,7 @@ function App() {
 
           <Route path="/ProfesorCurso/:id_curso" element={<ProtectedRoute element={ProfesorCurso} rol={['profesor']} />} exact />
           <Route path="/ProfesorTarea/:id_curso" element={<ProtectedRoute element={ProfesorTarea} rol={['profesor']} />} exact />
+          <Route path="/ProfesorRespuesta/:id_recurso_profesor" element={<ProtectedRoute element={ProfesorRespuesta} rol={['profesor']} />} exact />
           <Route path="/AddTarea/:id_curso" element={<ProtectedRoute element={AddTarea} rol={['profesor']} />} exact />
         </Routes>
       </Router>
