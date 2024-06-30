@@ -10,20 +10,26 @@ router.use(fileUpload());
 const { kl_recurso_alumno } = require("../models");
 
 router.get("/", async (req, res) => {
-  const listaRecursoAlumno = await kl_recurso_alumno.findAll();
-  res.json(listaRecursoAlumno);
+  const respuesta = await kl_recurso_alumno.findAll();
+  res.json(respuesta);
+});
+
+router.get("/:id", async (req, res) => {
+  const id = req.params.id;
+  const respuesta = await kl_recurso_alumno.findByPk(id);
+  res.download("files/" + respuesta.archivo_alumno);
 });
 
 router.get("/tarea/:id_recurso_profesor", async (req, res) => {
   const id = req.params.id_recurso_profesor;
-  const tarea = await kl_recurso_alumno.findAll({where: {id_recurso_profesor: id,},});
-  res.json(tarea);
+  const respuesta = await kl_recurso_alumno.findAll({where: {id_recurso_profesor: id,},});
+  res.json(respuesta);
 });
 
 router.post("/", async (req, res) => {
-  const tarea = req.body;
+  const respuesta = req.body;
   await kl_recurso_alumno.create(tarea);
-  res.json(tarea);
+  res.json(respuesta);
   //console.log(req.body);
 
   const { fileData } = req.files;

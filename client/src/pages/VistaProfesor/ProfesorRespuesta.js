@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import FileDownload from "js-file-download";
 import "../../pages_css/VistaProfesor/ProfesorTarea.css";
 import Header from "../../header/HeaderProfesor";
 import Sidebar from "../../sidebar/SidebarProfesor";
@@ -15,6 +16,23 @@ function ProfesorRespuesta() {
             setTarea(response.data);
         });
     }, []);
+
+    const onButtonClick = (e) => {
+        e.preventDefault();
+
+        const id = e.currentTarget.getAttribute("id-value");
+        const file = e.currentTarget.getAttribute("file-value");
+    
+        axios({
+            method: 'get',
+            url: `http://localhost:3001/recursos_alumno/${id}`,
+            responseType: 'blob'
+        })
+        .then(function (res) {
+            FileDownload(res.data, file);
+        });
+    };
+
     return (
         <div className="ContenidoProfesorTarea">
             <Header />
@@ -24,6 +42,7 @@ function ProfesorRespuesta() {
                     <table>
                         <thead>
                             <tr>
+                                <th></th>
                                 <th>Fecha Entrega</th>
                                 <th>Archivo</th>
                             </tr>
@@ -31,8 +50,9 @@ function ProfesorRespuesta() {
                         <tbody>
                             {Tarea.map((value) => (
                                 <tr key={value.id}>
+                                    <td><button id-value={value.id} file-value={value.archivo_alumno} onClick={onButtonClick}>Descargar</button></td>
                                     <td className="Relleno-Alumnos">{value.createdAt}</td>
-                                    <td className="Relleno-Alumnos">{value.archivo_profesor}</td>
+                                    <td className="Relleno-Alumnos">{value.archivo_alumno}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -42,4 +62,4 @@ function ProfesorRespuesta() {
     )
 }
 
-export default ProfesorRespuesta
+export default ProfesorRespuesta;

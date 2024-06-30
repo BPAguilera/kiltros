@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
   res.json(recurso_profesor);
 });
 
-router.get("/tarea/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   const id = req.params.id;
   const recurso_profesor = await kl_recurso_profe.findByPk(id);
   res.download("files/" + recurso_profesor.archivo_profesor);

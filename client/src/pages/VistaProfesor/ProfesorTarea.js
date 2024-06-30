@@ -20,16 +20,17 @@ function ProfesorTarea() {
     const onButtonClick = (e) => {
         e.preventDefault();
 
-        const id = e.currentTarget.getAttribute("data-value");
-
+        const id = e.currentTarget.getAttribute("id-value");
+        const file = e.currentTarget.getAttribute("file-value");
+    
         axios({
             method: 'get',
-            url: `http://localhost:3001/recursos_profesor/tarea/${id}`,
+            url: `http://localhost:3001/recursos_profesor/${id}`,
             responseType: 'blob'
         })
-            .then(function (res) {
-                FileDownload(res.data, "download.pdf");
-            });
+        .then(function (res) {
+            FileDownload(res.data, file);
+        });
     };
 
     return (
@@ -53,7 +54,7 @@ function ProfesorTarea() {
                     <tbody>
                         {Tarea.map((value) => (
                             <tr key={value.id}>
-                                <td><button data-value={value.id} onClick={onButtonClick}>Descargar</button></td>
+                                <td><button id-value={value.id} file-value={value.archivo_profesor} onClick={onButtonClick}>Descargar</button></td>
                                 <td className="descripcion-columna">{value.createdAt}</td>
                                 <td className="descripcion-columna">{value.nombre}</td>
                                 <td className="descripcion-columna">{value.descripcion}</td>
