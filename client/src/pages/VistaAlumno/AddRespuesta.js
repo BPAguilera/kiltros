@@ -8,6 +8,8 @@ function AddRespuesta() {
     let navigate = useNavigate();
     const fileInput = createRef();
     let { id_recurso_profesor } = useParams();
+    const user = localStorage.getItem("authState");
+    const userParsed = user ? JSON.parse(user) : null;
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -36,7 +38,7 @@ function AddRespuesta() {
                             </label>
                             <label>
                                 ID Alumno:
-                                <input type="text" name="id_alumno" defaultValue={2} readOnly />
+                                <input type="text" name="id_alumno" defaultValue={userParsed.id} readOnly />
                             </label>
                             <label>
                                 ID Recurso Profesor:
