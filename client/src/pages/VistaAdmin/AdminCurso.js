@@ -19,6 +19,7 @@ function AdminCurso(){
     const handleDelete = async (id) => {
         try {
             await axios.delete(`http://localhost:3001/cursos/` + id);
+            window.location.reload();
         } catch (err) {
             console.log(err);
         }

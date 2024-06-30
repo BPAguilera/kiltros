@@ -22,7 +22,8 @@ router.get("/:id", async (req, res) => {
 
 router.get("/curso/:id_curso", async (req, res) => {
   const id = req.params.id_curso;
-  const recurso_profesor = await kl_recurso_profe.findAll({where: {id_curso: id,},});
+  const recurso_profesor = await kl_recurso_profe.findAll({where: {id_curso: id}});
+  //console.log(recurso_profesor);
   res.json(recurso_profesor);
 });
 
@@ -36,5 +37,12 @@ router.post("/", async (req, res) => {
   fileData.mv(path.join(assetsFolder, fileData.name));
   //console.log(req.files);
 });
+
+router.delete("/:id", async (req, res) => {
+  const id = req.params.id;
+  await kl_recurso_profe.destroy({where: {id: id,},});
+  return res.json("tarea eliminada con exito");
+});
+
 
 module.exports = router;

@@ -4,6 +4,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import FileDownload from "js-file-download";
 import "../../pages_css/VistaProfesor/ProfesorTarea.css";
 import Header from "../../header/HeaderProfesor";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash, faPenNib } from '@fortawesome/free-solid-svg-icons';
 import Sidebar from "../../sidebar/SidebarProfesor";
 
 function ProfesorTarea() {
@@ -22,15 +24,23 @@ function ProfesorTarea() {
 
         const id = e.currentTarget.getAttribute("id-value");
         const file = e.currentTarget.getAttribute("file-value");
-    
+
         axios({
             method: 'get',
             url: `http://localhost:3001/recursos_profesor/${id}`,
             responseType: 'blob'
         })
-        .then(function (res) {
-            FileDownload(res.data, file);
-        });
+            .then(function (res) {
+                FileDownload(res.data, file);
+            });
+    };
+    const handleDelete = async (id) => {
+        try {
+            await axios.delete(`http://localhost:3001/recursos_profesor/` + id);
+            window.location.reload();
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     return (
@@ -60,6 +70,9 @@ function ProfesorTarea() {
                                 <td className="descripcion-columna">{value.descripcion}</td>
                                 <td className="descripcion-columna">{value.archivo_profesor}</td>
                                 <td><button onClick={() => navigate(`/ProfesorRespuesta/${value.id}`)}>Ver Respuestas</button></td>
+                                <td className="Relleno-Boton-Profesor">
+                                    <button onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>

@@ -34,9 +34,9 @@ function LoginProfesor() {
             } else {
                 console.log(response.data)
                 localStorage.setItem("accessToken", response.data.token);
-                setAuthState({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true})
-                localStorage.setItem('authState', JSON.stringify({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true}));
-                //console.log(authContext);
+                setAuthState({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true, id_curso: 0})
+                localStorage.setItem('authState', JSON.stringify({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true, id_curso: 0}));
+                //console.log("miau"+localStorage.getItem('authState'));
                 navigate('../HomeProfesor');
             }
         }).catch((error) => {

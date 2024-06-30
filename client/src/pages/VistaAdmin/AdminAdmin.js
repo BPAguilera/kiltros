@@ -19,6 +19,7 @@ function AdminAdmin(){
     const handleDelete = async (id) => {
         try {
             await axios.delete(`http://localhost:3001/admins/` + id);
+            window.location.reload();
         } catch (err) {
             console.log(err);
         }
@@ -47,10 +48,11 @@ function AdminAdmin(){
                                         <td className="Relleno-Admin">{value.id}</td>
                                         <td className="Relleno-Admin">{value.usuario}</td>
                                         <td className="Relleno-Boton-Admin">
-                                            <a onClick={() => navigate(`/EditAdmin/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
+                                            <button onClick={() => navigate(`/EditAdmin/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></button>
                                         </td>
                                         <td className="Relleno-Boton-Admin">
-                                            <a onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></a>
+                                            <button onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></button>
+                                            
                                         </td>
                                     </tr>
                                 ))}

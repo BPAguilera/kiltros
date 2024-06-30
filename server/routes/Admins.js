@@ -17,34 +17,36 @@ router.get("/id/:id", async (req, res) => {
 });
 
 
-router.post("/", validationToken ,async (req, res) => {
+router.post("/", validationToken, async (req, res) => {
   const admin = req.body;
-  const exist = await kl_admin.findOne({where: {usuario: admin.usuario}});
-  if(!exist) {
-    bcrypt.hash(admin.contrasena, 10).then((hash)=>{
-      kl_admin.create({
+  const exist = await kl_admin.findOne({ where: { usuario: admin.usuario } });
+  if (!exist) {
+    try {
+      await kl_admin.create({
         usuario: admin.usuario,
-        contrasena: hash,
+        contrasena: admin.contrasena,
         rol: admin.rol,
-      })
+      });
       return res.status(201).json(admin); // 201 Created
-    }).catch((err) => {
-      return res.status(500).json({error: "Error al crear admin"}); // 500 Internal Server Error
-    });
+    } catch (err) {
+      return res.status(500).json({ error: "Error al crear admin" }); // 500 Internal Server Error
+    }
   } else {
-    return res.status(409).json({error: "usuario ya existe"}); // 409 Conflict
+    return res.status(409).json({ error: "usuario ya existe" }); // 409 Conflict
   }
 });
 
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
   await kl_admin.destroy({where: {id: id,},});
+  return res.json("admin eliminado con exito");
 });
 
 router.put("/:id", async (req, res) => {
   const id = req.params.id; 
   const admin = req.body;
   await kl_admin.update({ id_admin: admin.id_admin, usuario: admin.usuario, contrasena: admin.contrasena, },{where: {id: id,},},);
+
 });
 
 module.exports = router;

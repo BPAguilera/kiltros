@@ -27,9 +27,9 @@ router.get("/tarea/:id_recurso_profesor", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const respuesta = req.body;
+  const tarea = req.body;
   await kl_recurso_alumno.create(tarea);
-  res.json(respuesta);
+  res.json(tarea);
   //console.log(req.body);
 
   const { fileData } = req.files;

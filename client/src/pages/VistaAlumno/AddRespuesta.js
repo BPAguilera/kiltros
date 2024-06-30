@@ -19,7 +19,7 @@ function AddRespuesta() {
         formData.set("archivo_alumno", fileInput.current.files[0].name);
 
         axios.post("http://localhost:3001/recursos_alumno", formData).then((response) => {
-            navigate("/AlumnoTarea");
+            navigate("/homealumno");
         });
     };
 

@@ -5,6 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function SidebarProfesor() {
     let { id_curso } = useParams();
+    let realidcurso = localStorage.getItem("idCursoProfesor")
     let navigate = useNavigate();
 
     const [Alumnos, setAlumnos] = useState([]);
@@ -18,8 +19,8 @@ function SidebarProfesor() {
         <aside className="sidebar-Profesor">
             <nav>
                 <ul>
-                    <li><a href={`/ProfesorCurso/${id_curso}`} className="boton-sidebar-Profesor">Alumnos</a></li>
-                    <li><a href={`/ProfesorTarea/${id_curso}`} className="boton-sidebar-Profesor">Tareas</a></li>
+                    <li><a href={`/ProfesorCurso/${realidcurso}`} className="boton-sidebar-Profesor">Alumnos</a></li>
+                    <li><a href={`/ProfesorTarea/${realidcurso}`} className="boton-sidebar-Profesor">Tareas</a></li>
                 </ul>
             </nav>
         </aside>

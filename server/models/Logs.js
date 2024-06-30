@@ -1,10 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
     const kl_log = sequelize.define("kl_log", {
+      usuario: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       descripcion: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      fecha: {
+      rol: {
         type: DataTypes.STRING,
         allowNull: false,
       },

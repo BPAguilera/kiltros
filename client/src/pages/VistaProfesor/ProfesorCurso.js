@@ -9,6 +9,7 @@ import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 
 function ProfesorCurso(){
     let { id_curso } = useParams();
+    localStorage.setItem("idCursoProfesor", id_curso)
     let navigate = useNavigate();
 
     const [Alumno, setAlumnos] = useState([]);

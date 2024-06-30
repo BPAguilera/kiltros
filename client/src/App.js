@@ -24,7 +24,7 @@ import EditAlumno from './pages/VistaAdmin/EditAlumno';
 import EditCurso from './pages/VistaAdmin/EditCurso';
 import EditProfesor from './pages/VistaAdmin/EditProfesor';
 
-import AlumnoTarea from './pages/VistaAlumno/AlumnoTarea';
+import AlumnoTicket from './pages/VistaAlumno/AlumnoTicket';
 import AlumnoJuego from './pages/VistaAlumno/AlumnoJuego';
 import AddRespuesta from './pages/VistaAlumno/AddRespuesta';
 
@@ -32,6 +32,7 @@ import ProfesorCurso from './pages/VistaProfesor/ProfesorCurso';
 import ProfesorTarea from './pages/VistaProfesor/ProfesorTarea';
 import ProfesorRespuesta from './pages/VistaProfesor/ProfesorRespuesta';
 import AddTarea from './pages/VistaProfesor/AddTarea';
+import ProfesorTicket from './pages/VistaProfesor/ProfesorTicket';
 
 import Prohibido from './pages/Prohibido';
 
@@ -43,7 +44,7 @@ import ProtectedRoute from './helpers/ProtectedRoute'; // Asegúrate de importar
 function App() {
   const [authState, setAuthState] = useState(() => {
     const savedAuthState = localStorage.getItem('authState');
-    return savedAuthState ? JSON.parse(savedAuthState) : { usuario: "", id: 0, rol: "", state: false };
+    return savedAuthState ? JSON.parse(savedAuthState) : { usuario: "", id: 0, rol: "", state: false, id_curso: 0,};
   });
 
   useEffect(() => {
@@ -59,15 +60,20 @@ function App() {
           id: 0,
           rol: "",
           state: false,
+          id_curso: 0,
+          
         };
         setAuthState(newAuthState);
         localStorage.setItem('authState', JSON.stringify(newAuthState));
       } else {
+        console.log(response.data)
         const newAuthState = {
           usuario: response.data.usuario,
           id: response.data.id,
           rol: response.data.rol,
           state: true,
+          id_curso: response.data.id_curso,
+          
         };
         setAuthState(newAuthState);
         localStorage.setItem('authState', JSON.stringify(newAuthState));
@@ -79,13 +85,17 @@ function App() {
       <authContext.Provider value={{ authState, setAuthState }}>
       <Router>
         <Routes>
+          <Route path="/" element={<LoginAdmin/>} exact />
           <Route path="/LoginAdmin" element={<LoginAdmin />} exact />
           <Route path="/LoginAlumno" element={<LoginAlumno />} exact />
           <Route path="/LoginProfesor" element={<LoginProfesor />} exact />
+          <Route path="/Prohibido" element={<Prohibido />} exact />
 
-          <Route path="/HomeAdmin/" element={<HomeAdmin />} exact />
-          <Route path="/HomeAlumno/" element={<HomeAlumno />} exact />
-          <Route path="/HomeProfesor/" element={<HomeProfesor />} exact />
+          
+          <Route path="/HomeAdmin/" element={<ProtectedRoute element={HomeAdmin} rol={['Admin']} />} exact />
+          <Route path="/HomeAlumno/" element={<ProtectedRoute element={HomeAlumno} rol={['alumno']} />} exact />
+          <Route path="/HomeProfesor/" element={<ProtectedRoute element={HomeProfesor} rol={['profesor']} />} exact />
+         
 
           <Route path="/AddAdmin" element={<ProtectedRoute element={AddAdmin} rol={['Admin']} />} exact />
           <Route path="/AddAlumno" element={<ProtectedRoute element={AddAlumno} rol={['Admin']} />} exact />
@@ -102,10 +112,11 @@ function App() {
           <Route path="/EditCurso/:id" element={<ProtectedRoute element={EditCurso} rol={['Admin']} />} exact />
           <Route path="/EditProfesor/:id" element={<ProtectedRoute element={EditProfesor} rol={['Admin']} />} exact />
 
-          <Route path="/AlumnoTarea" element={<ProtectedRoute element={AlumnoTarea} rol={['alumno']} />} exact />
+          <Route path="/AlumnoTicket" element={<ProtectedRoute element={AlumnoTicket} rol={['alumno']} />} exact />
           <Route path="/AlumnoJuego" element={<ProtectedRoute element={AlumnoJuego} rol={['alumno']} />} exact />
           <Route path="/AddRespuesta/:id_recurso_profesor" element={<ProtectedRoute element={AddRespuesta} rol={['alumno']} />} exact />
 
+          <Route path="/ProfesorTicket" element={<ProtectedRoute element={ProfesorTicket} rol={['profesor']} />} exact />
           <Route path="/ProfesorCurso/:id_curso" element={<ProtectedRoute element={ProfesorCurso} rol={['profesor']} />} exact />
           <Route path="/ProfesorTarea/:id_curso" element={<ProtectedRoute element={ProfesorTarea} rol={['profesor']} />} exact />
           <Route path="/ProfesorRespuesta/:id_recurso_profesor" element={<ProtectedRoute element={ProfesorRespuesta} rol={['profesor']} />} exact />

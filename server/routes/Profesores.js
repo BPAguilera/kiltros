@@ -18,29 +18,31 @@ router.get("/id/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const profesor = req.body;
-  const exist = await kl_profesor.findOne({where: {nombre: profesor.nombre}});
-  if(!exist) {
-    bcrypt.hash(profesor.contrasena, 10).then((hash)=>{
-      kl_profesor.create({
+  const exist = await kl_profesor.findOne({ where: { nombre: profesor.nombre } });
+  if (!exist) {
+    try {
+      await kl_profesor.create({
         nombre: profesor.nombre,
         rut: profesor.rut,
-        contrasena: hash,
+        contrasena: profesor.contrasena,
         rol: profesor.rol,
-      })
+      });
       return res.status(201).json(profesor); // 201 Created
-    }).catch((err) => {
+    } catch (err) {
       console.log(err);
-      return res.status(500).json({error: "Error al crear profesor"}); // 500 Internal Server Error
-    });
+      return res.status(500).json({ error: "Error al crear profesor" }); // 500 Internal Server Error
+    }
   } else {
-    return res.status(409).json({error: "profesor ya existe"}); // 409 Conflict
+    return res.status(409).json({ error: "profesor ya existe" }); // 409 Conflict
   }
 });
+
 
 
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
   await kl_profesor.destroy({where: {id: id,},});
+  return res.json("profesor eliminado con exito");
 });
 
 router.put("/:id", async (req, res) => {

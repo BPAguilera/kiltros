@@ -33,8 +33,8 @@ function Login() {
                 setError(response.data.error);
             } else {
                 localStorage.setItem("accessToken", response.data.token);
-                setAuthState({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true})
-                localStorage.setItem('authState', JSON.stringify({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true}));
+                setAuthState({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true, id_curso: 0})
+                localStorage.setItem('authState', JSON.stringify({usuario: response.data.usuario, id: response.data.id, rol: response.data.rol, state: true, id_curso: 0,}));
                 navigate('../HomeAdmin');
             }
         }).catch((error) => {

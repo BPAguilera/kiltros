@@ -1,7 +1,7 @@
 import React from 'react';
 import './HeaderAlumno.css'; // Importa el archivo CSS para los estilos
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faGamepad, faPlus, faSignOutAlt, faPersonChalkboard, faUserTie, faBook } from '@fortawesome/free-solid-svg-icons';
+import { faTicket, faHome, faGamepad, faPlus, faSignOutAlt, faPersonChalkboard, faUserTie, faBook } from '@fortawesome/free-solid-svg-icons';
 import { authContext } from '../helpers/authContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +10,6 @@ function HeaderAlumno() {
   let navigate = useNavigate();
 
   const user = useContext(authContext);
-  console.log(user)
   const logout = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("authState");
@@ -25,6 +24,7 @@ function HeaderAlumno() {
         <p>AWA</p> {/* Texto centrado en el encabezado */}
       </div>
       <div className="right-corner-alumno">
+        <a href="/AlumnoTicket" className="boton-header-alumno"><FontAwesomeIcon title="Inicio" icon={faTicket} size="2xl" style={{ color: 'black' }} /></a>
         <a href="/HomeAlumno" className="boton-header-alumno"><FontAwesomeIcon title="Inicio" icon={faHome} size="2xl" style={{ color: 'black' }} /></a>
         <a href="/AlumnoJuego" className="boton-header-alumno"><FontAwesomeIcon title="Minijuegos" icon={faGamepad} size="2xl" style={{ color: 'black' }} /></a>
         <button onClick={logout}>
