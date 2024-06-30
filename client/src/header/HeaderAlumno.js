@@ -1,7 +1,7 @@
 import React from 'react';
 import './HeaderAlumno.css'; // Importa el archivo CSS para los estilos
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faChild, faPlus, faRightFromBracket, faPersonChalkboard, faUserTie, faBook } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faGamepad, faPlus, faSignOutAlt, faPersonChalkboard, faUserTie, faBook } from '@fortawesome/free-solid-svg-icons';
 import { authContext } from '../helpers/authContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -26,9 +26,9 @@ function HeaderAlumno() {
       </div>
       <div className="right-corner-alumno">
         <a href="/HomeAlumno" className="boton-header-alumno"><FontAwesomeIcon title="Inicio" icon={faHome} size="2xl" style={{ color: 'black' }} /></a>
-        <a href="/AlumnoJuego" className="boton-header-alumno"><FontAwesomeIcon title="Minijuegos" icon={faChild} size="2xl" style={{ color: 'black' }} /></a>
+        <a href="/AlumnoJuego" className="boton-header-alumno"><FontAwesomeIcon title="Minijuegos" icon={faGamepad} size="2xl" style={{ color: 'black' }} /></a>
         <button onClick={logout}>
-          <i className="boton-header"><FontAwesomeIcon title="Cerrar Sesion" icon={faRightFromBracket} size="2xl" style={{ color: 'black' }}></FontAwesomeIcon></i>
+          <i className="boton-header"><FontAwesomeIcon title="Cerrar Sesion" icon={faSignOutAlt} size="2xl" style={{ color: 'black' }}></FontAwesomeIcon></i>
         </button>
       </div>
     </header>

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Estilos generales para la página */
+.AppRespuesta {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f0e36f;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente */
+}
+
+.SubContenidoAddRespuesta {
+    margin-top: 100px;
+    background-color: #FFF59D;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+/* Estilos para el contenedor principal del formulario */
+.createPostPageAddRespuesta {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #FF5722;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 50%;
+    max-height: 100%;
+}
+
+/* Estilos para las etiquetas y los inputs */
+.createPostPageAddRespuesta label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #000000;
+    font-family: 'Fredoka One', cursive;
+}
+
+.createPostPageAddRespuesta input[type="text"],
+.createPostPageAddRespuesta input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.createPostPageAddRespuesta input[readonly] {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para el botón de envío */
+.createPostPageAddRespuesta button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #000000;
+    background-color: #FFECB3;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Fredoka One', cursive;
+}
+
+.createPostPageAddRespuesta button:hover {
+    background-color: #031704;
+}
+.SubContenidoAlumnoRespuesta {
+    margin-top: 130px;
+    background-color: #FFF59D; /* Amarillo suave */
+    width: 45%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}

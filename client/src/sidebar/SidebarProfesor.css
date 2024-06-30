@@ -1,0 +1,41 @@
+/* Sidebar.css */
+.sidebar-Profesor {
+    margin-top: 100px;
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #7f81f7;
+    padding-top: 20px;
+    border-right: 2.5px solid white;
+  }
+
+  .sidebar-Profesor ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar-Profesor ul li {
+    padding: 8px;
+    text-align: center;
+  }
+
+  .sidebar-Profesor ul li a {
+    color: #002366(153, 13, 13);
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+  }
+  .boton-sidebar-Profesor{
+    background-color: #B1B2FF ;
+    color: black; /* Texto en color negro */
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 50px;/* Bordes redondeados */
+    cursor: pointer;
+  }
+  .sidebar-Profesor ul li a:hover {
+    background-color: #B1B2FF;
+  }
+  

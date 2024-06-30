@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../../header/HeaderProfesor";
-import "../../pages_css/VistaAdmin/AddProfesor.css";
+import "../../pages_css/VistaProfesor/AddTarea.css";
 
 function AddTarea() {
     let navigate = useNavigate();
@@ -33,20 +33,40 @@ function AddTarea() {
     };
 
     return (
-        <div className="App">
+        <div className="AppTarea">
             <Header/>
-            <div className="createPostPageAddProfesor">
+            <div className="SubContenidoAddTarea">
+            <div className="createPostPageAddTarea">
                 <form onSubmit={onSubmit}>
-                    <label><input type="text" name="tipo_recurso" placeholder="Ingrese Tipo"/></label>
-                    <label><input type="text" name="nombre" placeholder="Ingrese Nombre"/></label>
-                    <label><input type="text" name="descripcion" placeholder="Ingrese Descripción" /></label>
-                    <label><input type="file" name="fileData" ref={fileInput}/></label>
-                    <label><input type="text" name="id_profesor" value={idProfesor} readOnly/></label>
-                    <label><input type="text" name="id_curso" defaultValue={id_curso} readOnly/></label>
+                    <label>
+                        Tipo de recurso:
+                        <input type="text" name="tipo_recurso" placeholder="Ingrese Tipo" />
+                    </label>
+                    <label>
+                        Nombre:
+                        <input type="text" name="nombre" placeholder="Ingrese Nombre" />
+                    </label>
+                    <label>
+                        Descripción:
+                        <input type="text" name="descripcion" placeholder="Ingrese Descripción" />
+                    </label>
+                    <label>
+                        Archivo:
+                        <input type="file" name="fileData" ref={fileInput} />
+                    </label>
+                    <label>
+                        ID Profesor:
+                        <input type="text" name="id_profesor" value={idProfesor} readOnly />
+                    </label>
+                    <label>
+                        ID Curso:
+                        <input type="text" name="id_curso" defaultValue={id_curso} readOnly />
+                    </label>
                     <button type="submit">Agregar</button>
                 </form>
             </div>
         </div>
+    </div>
     );
 }
 

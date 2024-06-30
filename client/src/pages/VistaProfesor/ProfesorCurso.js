@@ -26,8 +26,8 @@ function ProfesorCurso(){
             <div className="SubContenidoVistaProfesorCurso">
                 <h2>Listado de alumnos</h2>
                 
-                <div className="ContenidoTablaAlumno">
-                    <div className="TablaScroll">
+                <div className="tabla-container-profesor-Curso">
+                    <div className="TablaScroll-ProfeCurso">
                         <table>
                             <thead>
                                 <tr>

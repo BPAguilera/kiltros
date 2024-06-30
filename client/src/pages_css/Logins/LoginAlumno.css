@@ -1,4 +1,6 @@
-.ContenidoLogin {
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.ContenidoLoginAlumno {
     display: flex;
     height: 100vh;
     width: 100vw;
@@ -11,28 +13,34 @@
     
 }
 
-.FormLogin {
+.FormLoginAlumno {
     width: 30%;
     height: 60%;
     padding: 40px;
-    border: 3px solid white;
+    border: 3px solid #ADD8E6;
 
     display: flex;
     flex-direction: column;
-    color: white;
-    background-color: #618264;
-    font-family: 'Helvetica', Courier, monospace;
+    color: #000;
+    background-color: #FFF59D;
+    font-family: 'Fredoka One', cursive;
     font-size: 32px;
+    text-shadow: 2px 2px 0 white, 
+    -2px -2px 0 white,
+    2px -2px 0 white,
+    -2px 2px 0 white;
+
 }
 
-.FormLogin label{
+.FormLoginAlumno label{
     width: 10%;
     font-size: 32px;
-    font-family: 'Helvetica', Courier, monospace;
+    font-family: 'Fredoka One', cursive;
     padding: 10px;
+
 }
 
-.FormLogin input{
+.FormLoginAlumno input{
     background-color: white;
     width: 100%;
     height: 8%;
@@ -41,23 +49,25 @@
     color: black;
     font-size: 24px;
     align-self: center;
-    font-family: 'Helvetica', Courier, monospace;
+    font-family: 'Fredoka One', cursive;
     
 }
 
-.FormLogin button{
+.FormLoginAlumno button{
     display: center;
     margin-top: 30px;
     padding: 10px;
-    background-color: white;
+    background-color: #ADD8E6;
     border-radius: 10px;
     height: 10%;
     width: 30%;
     align-self: center;
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
 }
 
-.FormLogin button:hover{
-    background-color: #D0E7D2;
+.FormLoginAlumno button:hover{
+    background-color: #ADD8E6;
 }
 .Logo{
     height: 52px;

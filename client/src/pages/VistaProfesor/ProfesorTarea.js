@@ -37,7 +37,7 @@ function ProfesorTarea() {
             <Header />
             <Sidebar />
             <h2>Listado Actividades</h2>
-            <button onClick={() => navigate(`/AddTarea/${id_curso}`)}>Agregar</button>
+            <button className="boton-agregar-Tarea-Profesor" onClick={() => navigate(`/AddTarea/${id_curso}`)}>Agregar Tarea</button>
             <div className="tabla-container-profesor-tarea">
                 <table>
                     <thead>
@@ -54,10 +54,10 @@ function ProfesorTarea() {
                         {Tarea.map((value) => (
                             <tr key={value.id}>
                                 <td><button data-value={value.id} onClick={onButtonClick}>Descargar</button></td>
-                                <td className="Relleno-Alumnos">{value.createdAt}</td>
-                                <td className="Relleno-Alumnos">{value.nombre}</td>
-                                <td className="Relleno-Alumnos">{value.descripcion}</td>
-                                <td className="Relleno-Alumnos">{value.archivo_profesor}</td>
+                                <td className="descripcion-columna">{value.createdAt}</td>
+                                <td className="descripcion-columna">{value.nombre}</td>
+                                <td className="descripcion-columna">{value.descripcion}</td>
+                                <td className="descripcion-columna">{value.archivo_profesor}</td>
                                 <td><button onClick={() => navigate(`/ProfesorRespuesta/${value.id}`)}>Ver Respuestas</button></td>
                             </tr>
                         ))}

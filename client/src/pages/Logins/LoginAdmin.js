@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import {authContext} from '../../helpers/authContext'
-import "../../pages_css/Logins/LoginAlumno.css"
+import "../../pages_css/Logins/LoginAdmin.css"
 import Header from "../../header/HeaderLogin";
 
 function Login() {
@@ -43,14 +43,14 @@ function Login() {
         });
     };
     return (
-        <div className='ContenidoLogin'>
+        <div className='ContenidoLoginAdmin'>
             <Header/>
             <Formik 
                 initialValues={initialValues}
                 onSubmit={onSubmit}
                 validationSchema={validationSchema}
             >
-                <Form className="FormLogin">
+                <Form className="FormLoginAdmin">
                     <h1>Iniciar sesión</h1>
                     {error && <div className="error">{error}</div>}
                     <label>Usuario: </label>

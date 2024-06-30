@@ -1,29 +1,130 @@
-.ContenidoVistaProfesorCurso{
+/* Estilos para ProfesorCurso */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.ContenidoVistaProfesorCurso {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    /* Ocupa toda la altura de la pantalla */
     width: 100vw;
-    /* Ocupa todo el ancho de la pantalla */
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #79AC78;
+    background-color: #B1B2FF; /* Fondo azul/gris */
     align-items: center;
     justify-content: center;
 }
 
-
-.SubContenidoVistaProfesorCurso{
+.SubContenidoVistaProfesorCurso {
     margin-top: 130px;
     margin-left: 170px;
-    background-color: #79AC78;
+    background-color: #B1B2FF; /* Nuevo color de fondo verde */
     width: 70%;
     height: 80%;
-    /* Asegúrate de que ocupe el 100% del ancho disponible */
     display: flex;
     flex-direction: column;
-    /* Coloca los hijos en una columna */
     align-items: center;
-    /* Centra el contenido horizontalmente */
 }
+
+.ContenidoTablaProfesor {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.TablaScroll-ProfeCurso {
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.TablaScroll-ProfeCurso table {
+    width: 100%;
+    background-color: #ffffff; /* Fondo blanco */
+    border-collapse: collapse;
+}
+
+.TablaScroll-ProfeCurso thead tr {
+    background-color: #002366; /* Azul oscuro */
+    font-size: 1.5em;
+    height: 50px;
+    color: white; /* Texto blanco */
+    text-align: center;
+}
+
+.TablaScroll-ProfeCurso tbody {
+    background-color: #eef1ff; /* Azul muy claro */
+}
+
+.TablaScroll-ProfeCurso tbody td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para el contenedor de la tabla */
+.tabla-container-profesor-Curso {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 1200px;
+    height: 80%;
+    background-color: #9699f3; /* Fondo azul/gris */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto; /* Añade scroll si el contenido excede el tamaño */
+}
+
+/* Estilos para los encabezados de la tabla */
+.tabla-container-profesor-Curso table {
+    width: 100%;
+    background-color: #eef1ff; /* Fondo azul muy claro */
+    border-collapse: collapse;
+}
+
+.tabla-container-profesor-Curso thead tr {
+    background-color: #002366; /* Azul oscuro */
+    font-size: 1.5em;
+    height: 50px;
+    color: white; /* Texto blanco */
+    text-align: center;
+}
+
+.tabla-container-profesor-Curso tbody {
+    background-color: #eef1ff; /* Azul muy claro */
+}
+
+.tabla-container-profesor-Curso tbody td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para los botones dentro de la tabla */
+.tabla-container-profesor-Curso tbody button {
+    width: 100%;
+    height: 50px;
+    background-color: #aac4ff; /* Azul claro */
+    font-size: 1em;
+    color: #002366; /* Azul oscuro */
+    border: 2px solid #002366; /* Borde azul oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.tabla-container-profesor-Curso tbody button:hover {
+    background-color: #002366; /* Azul oscuro */
+    color: white; /* Texto blanco */
+
+}
+
+.SubContenidoVistaProfesorCurso h2 {
+    font-size: 2.5em;
+    color: #002366; /* Azul oscuro */
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+

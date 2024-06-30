@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+
+
 .ContenidoHomeAlumno {
     display: flex;
     flex-direction: column;
@@ -6,60 +10,97 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #FFFFE0; /* Fondo amarillo claro */
+    background-color: #FFEB3B; /* Amarillo brillante */
     align-items: center;
+    font-family: 'Fredoka One', cursive;
+
 }
 
 .SubContenidoAlumnoCurso {
     margin-top: 130px;
-    background-color: #FFFFE0; /* Fondo amarillo claro */
-    width: 100%;
+    background-color: #FFF59D; /* Amarillo suave */
+    width: 90%;
     height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .SubContenidoAlumnoCurso h2 {
     font-size: xx-large;
-    color: #32CD32; /* Verde brillante */
+    color: #FF5722; /* Naranja */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 #000, /* Negro */
+                 -2px -2px 0 #000,
+                 2px -2px 0 #000,
+                 -2px 2px 0 #000;
 }
 
 .tabla-container-alumno {
-    width: 90vw; 
-    height: 60vh; 
-    border: 10px solid #FFA500; /* Borde naranja */
-    overflow-y: auto; 
-    background-color: #FFFFE0; /* Fondo amarillo claro */
+    width: 100%;
+    height: 60vh;
+
+    overflow-y: auto;
+    background-color: #FFFDE7; /* Amarillo muy suave */
+    border-radius: 15px;
+    padding: 20px;
 }
 
 .tabla-container-alumno table {
     width: 100%;
-    background-color: #ADD8E6; /* Azul claro */
     border-collapse: collapse;
 }
 
 .tabla-container-alumno thead tr {
-    background-color: #32CD32; /* Verde brillante */
-    font-size: x-large;
+    background-color: #FF7043; /* Naranja brillante */
+    font-size: large;
     height: 50px;
     color: white; /* Texto blanco */
+    text-shadow: 1px 1px 0 #000, /* Negro */
+                 -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                 -1px 1px 0 #000;
 }
 
-.tabla-container-alumno tbody {
-    background-color: #FFD700; /* Fondo amarillo */
+.tabla-container-alumno table th,
+.tabla-container-alumno table td {
+    padding: 15px;
 }
 
-.tabla-container-alumno tbody button {
-    width: 100%;
-    height: 75px;
-    background-color: #32CD32; /* Verde brillante */
-    font-size: x-large;
-    color: white; /* Texto blanco */
-    border: 2px solid #FFA500; /* Borde naranja */
-    border-radius: 10px; /* Bordes redondeados */
+.tabla-container-alumno tbody tr {
+    background-color: #FFE082; /* Amarillo suave */
+    transition: background-color 0.3s ease;
 }
 
-.tabla-container-alumno tbody button:hover {
-    background-color: #FFA500; /* Naranja */
+.tabla-container-alumno tbody tr:hover {
+    background-color: #FFECB3; /* Amarillo más suave */
+}
+
+.tabla-container-alumno tbody a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #FF7043; /* Naranja brillante */
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.tabla-container-alumno tbody a:hover {
+    background-color: #F4511E; /* Naranja oscuro */
+}
+
+@media (max-width: 768px) {
+    .tabla-container-alumno {
+        width: 100%;
+        height: auto;
+    }
+
+    .tabla-container-alumno table th,
+    .tabla-container-alumno table td {
+        padding: 8px;
+    }
 }

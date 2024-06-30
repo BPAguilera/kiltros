@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import {authContext} from '../../helpers/authContext'
 import "../../pages_css/Logins/LoginAlumno.css"
-import Header from "../../header/HeaderLogin";
+import Header from "../../header/HeaderLoginAlumno";
 
 function LoginAlumno() {
 
@@ -45,14 +45,14 @@ function LoginAlumno() {
         });
     };
     return (
-        <div className='ContenidoLogin'>
+        <div className='ContenidoLoginAlumno'>
             <Header/>
             <Formik 
                 initialValues={initialValues}
                 onSubmit={onSubmit}
                 validationSchema={validationSchema}
             >
-                <Form className="FormLogin">
+                <Form className="FormLoginAlumno">
                     <h1>Iniciar sesión</h1>
                     {error && <div className="error">{error}</div>}
                     <label>Usuario: </label>

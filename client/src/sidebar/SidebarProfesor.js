@@ -1,9 +1,9 @@
-import './SidebarAdmin.css';
+import './SidebarProfesor.css';
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
-function Sidebar() {
+function SidebarProfesor() {
     let { id_curso } = useParams();
     let navigate = useNavigate();
 
@@ -15,15 +15,15 @@ function Sidebar() {
     }, [id_curso]);
 
     return (
-        <aside className="sidebar">
+        <aside className="sidebar-Profesor">
             <nav>
                 <ul>
-                    <li><a href={`/ProfesorCurso/${id_curso}`} className="boton-sidebar">Alumnos</a></li>
-                    <li><a href={`/ProfesorTarea/${id_curso}`} className="boton-sidebar">Tareas</a></li>
+                    <li><a href={`/ProfesorCurso/${id_curso}`} className="boton-sidebar-Profesor">Alumnos</a></li>
+                    <li><a href={`/ProfesorTarea/${id_curso}`} className="boton-sidebar-Profesor">Tareas</a></li>
                 </ul>
             </nav>
         </aside>
     );
 }
 
-export default Sidebar;
+export default SidebarProfesor;
