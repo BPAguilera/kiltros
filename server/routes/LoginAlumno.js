@@ -11,10 +11,13 @@ router.post("/", async (req, res) => {
   const {usuario,contrasena} = req.body;
   const user = await kl_alumno.findOne({where: {nombre: usuario}});
   if(!user) return res.json({error: "El usuario no existe"});
-  const accessToken = sign({usuario: user.nombre, id: user.id, rol: user.rol, id_curso: user.id_curso},
-    "secretoimportante");
+  if (contrasena === user.contrasena){
+    const accessToken = sign({usuario: user.nombre, id: user.id, rol: user.rol, id_curso: user.id_curso},
+      "secretoimportante");
+    
+    return res.json({token: accessToken, usuario: user.nombre,id: user.id, rol: user.rol, id_curso: user.id_curso });
+  }
   
-  return res.json({token: accessToken, usuario: user.nombre,id: user.id, rol: user.rol, id_curso: user.id_curso });
 });
 
 module.exports = router;

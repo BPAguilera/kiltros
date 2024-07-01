@@ -68,14 +68,6 @@ function ProfesorTicket() {
                                 />
                                 <ErrorMessage name="descripcion" component="div" />
                             </label>
-                            <label>
-                                Usuario:
-                                <Field type="text" name="usuario" readOnly />
-                            </label>
-                            <label>
-                                Rol:
-                                <Field type="text" name="rol" readOnly />
-                            </label>
                             <button type="submit">Agregar Ticket</button>
                         </Form>
                     </Formik>

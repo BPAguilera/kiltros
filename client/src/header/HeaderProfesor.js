@@ -17,7 +17,7 @@ function HeaderProfesor() {
   const logout = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("authState");
-    navigate('/LoginAdmin');
+    navigate('/LoginProfesor');
   }
   return (
     <header className="fixed-header-profesor"> {/* Aplica la clase 'fixed-header' */}
