@@ -13,4 +13,10 @@ router.post("/", async (req, res) => {
   res.json(log);
 });
 
+router.delete("/:id", async (req, res) => {
+  const id = req.params.id;
+  await kl_log.destroy({where: {id: id,},});
+  return res.json("ticket eliminado con exito");
+});
+
 module.exports = router;
