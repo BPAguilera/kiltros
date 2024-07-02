@@ -76,7 +76,7 @@ function HomeAlumno() {
                                 <th>Descripción</th>
                                 <th>Archivo Profesor</th>
                                 <th>Subir Archivo</th>
-                                <th>Fecha de Envío</th>
+                            
                             </tr>
                         </thead>
                         <tbody>
@@ -95,7 +95,6 @@ function HomeAlumno() {
                                     <td className="Relleno-Boton-Admin">
                                         <a onClick={() => navigate(`/AddRespuesta/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                     </td>
-                                    <td className="descripcion-columna">{formatDate(value.updatedAt)}</td>
                                 </tr>
                             ))}
                         </tbody>

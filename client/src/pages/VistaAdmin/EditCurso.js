@@ -13,7 +13,7 @@ function EditCurso() {
     const [Data, setData] = useState({}); // Estado para almacenar los datos del curso
     useEffect(() => {
         // Hook de efecto para obtener los datos del curso por ID
-        axios.get(`http://localhost:3001/cursos/id/${id}`).then((response) => {
+        axios.get(`http://localhost:3001/cursos/curso/${id}`).then((response) => {
             setData(response.data); // Almacena los datos recibidos en el estado
         });
     }, [id]); // Dependencia en "id" para ejecutar el efecto cuando cambie
@@ -28,14 +28,12 @@ function EditCurso() {
 
     const initialValues = {
         nombre: Data.nombre, // Valor inicial del nombre del curso
-        unidades: Data.unidades, // Valor inicial de las unidades del curso
         id_profesor: Data.id_profesor, // Valor inicial del ID del profesor
     };
 
     const validationSchema = Yup.object().shape({
         // Esquema de validación con Yup
         nombre: Yup.string().required(), // Campo nombre obligatorio
-        unidades: Yup.number().integer().required(), // Campo unidades obligatorio y debe ser entero
         id_profesor: Yup.number().integer().required(), // Campo id_profesor obligatorio y debe ser entero
     });
 
@@ -66,13 +64,6 @@ function EditCurso() {
                                 placeholder=""
                             />
 
-                            <label>Unidades:</label>
-                            <ErrorMessage name="Unidades" component="span" />
-                            <Field
-                                autoComplete="off"
-                                name="unidades"
-                                placeholder=""
-                            />
 
                             <label>Profesor a cargo:</label>
                             <ErrorMessage name="id_profesor" component="span" />

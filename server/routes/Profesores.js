@@ -48,7 +48,8 @@ router.delete("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
   const id = req.params.id; 
   const profesor = req.body;
-  await kl_profesor.update({ id_profesor: profesor.profesor, nombre: profesor.nombre, rut: profesor.rut, },{where: {id: id,},},);
+  console.log(req.body)
+  await kl_profesor.update({ id_profesor: profesor.profesor, nombre: profesor.nombre, rut: profesor.rut, contrasena: profesor.contrasena },{where: {id: id,},},);
 });
 
 module.exports = router;

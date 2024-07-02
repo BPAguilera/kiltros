@@ -40,7 +40,7 @@ function AlumnoTicket() {
                 alert(response.data.error);
             } else {
                 console.log("ticket agregado");
-                navigate("/homeprofesor");
+                navigate("/homealumno");
             }
         }).catch((error) => {
             console.error('Error en respuesta del servidor:', error.response.data.error);

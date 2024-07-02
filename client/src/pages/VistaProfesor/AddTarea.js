@@ -25,6 +25,8 @@ function AddTarea() {
         const formData = new FormData(form);
 
         formData.set("fileData", fileInput.current.files[0]);
+        formData.set("id_profesor", idProfesor);
+        formData.set("id_curso", id_curso);
         formData.set("archivo_profesor", fileInput.current.files[0].name);
 
         axios.post("http://localhost:3001/recursos_profesor", formData).then((response) => {
@@ -54,14 +56,7 @@ function AddTarea() {
                         Archivo:
                         <input type="file" name="fileData" ref={fileInput} />
                     </label>
-                    <label>
-                        ID Profesor:
-                        <input type="text" name="id_profesor" value={idProfesor} readOnly />
-                    </label>
-                    <label>
-                        ID Curso:
-                        <input type="text" name="id_curso" defaultValue={id_curso} readOnly />
-                    </label>
+                    
                     <button type="submit">Agregar</button>
                 </form>
             </div>
