@@ -83,7 +83,7 @@ function EditAlumno() {
 
                             <label>ID Curso: </label>
                             <ErrorMessage name="id_curso" component="span" className="errorMessage" />
-                            <Field as="select" name="id_curso">
+                            <Field as="select" name="id_curso" className="custom-select-edit-alumno">
                                 <option value="" label="">Seleciona Curso{" "}</option>
                                 {Cursos.map((curso) => (
                                 <option key={curso.id} value={curso.id}>{curso.nombre}</option>

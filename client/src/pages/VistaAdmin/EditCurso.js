@@ -67,7 +67,7 @@ function EditCurso() {
 
                             <label>Profesor a cargo:</label>
                             <ErrorMessage name="id_profesor" component="span" />
-                            <Field as="select" name="id_profesor">
+                            <Field as="select" name="id_profesor" className="custom-select-edit-curso">
                                 <option value="" label="">Seleciona Profesor{" "}</option>
                                 {Profes.map((profe) => (
                                     <option key={profe.id} value={profe.id}>

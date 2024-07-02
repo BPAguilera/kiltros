@@ -46,6 +46,26 @@
     background-color: #618264;
 }
 
+
+.custom-select-edit-alumno {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #79AC78;
+    background-color: #f0f0f0;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .custom-select-edit-alumno:focus {
+    outline: none;
+    border-color: #79AC78;
+    background-color: #e7f7e7;
+  }
+
 .errorMessage {
     color: red;
     font-size: 14px;
