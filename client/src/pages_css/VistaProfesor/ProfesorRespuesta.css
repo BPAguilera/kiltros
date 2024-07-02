@@ -1,7 +1,7 @@
-/* Estilos para ProfesorCurso */
+/* Estilos para ProfesorRespuesta */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-.ContenidoVistaProfesorCurso {
+.ContenidoVistaProfesorRespuesta {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -14,37 +14,32 @@
     justify-content: center;
 }
 
-.SubContenidoVistaProfesorCurso {
+.SubContenidoVistaProfesorRespuesta {
     margin-top: 50px;
     margin-left: 170px;
     background-color: #B1B2FF; /* Nuevo color de fondo verde */
     width: 70%;
     height: 80%;
+    max-height: 150%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.ContenidoTablaProfesor {
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
 
-.TablaScroll-ProfeCurso {
+.TablaScroll-ProfeRespuesta {
     width: 100%;
     max-height: 70vh;
     overflow-y: auto;
 }
 
-.TablaScroll-ProfeCurso table {
+.TablaScroll-ProfeRespuesta table {
     width: 100%;
     background-color: #ffffff; /* Fondo blanco */
     border-collapse: collapse;
 }
 
-.TablaScroll-ProfeCurso thead tr {
+.TablaScroll-ProfeRespuesta thead tr {
     background-color: #002366; /* Azul oscuro */
     font-size: 1.5em;
     height: 50px;
@@ -52,21 +47,22 @@
     text-align: center;
 }
 
-.TablaScroll-ProfeCurso tbody {
+.TablaScroll-ProfeRespuesta tbody {
     background-color: #eef1ff; /* Azul muy claro */
 }
 
-.TablaScroll-ProfeCurso tbody td {
+.TablaScroll-ProfeRespuesta tbody td {
     padding: 10px;
     text-align: center;
 }
 
 /* Estilos para el contenedor de la tabla */
-.tabla-container-profesor-Curso {
+.tabla-container-profesor-Respuesta {
     margin-top: 20px;
     width: 90%;
     max-width: 1200px;
-    height: 80%;
+    height: 100%;
+    max-height: 200%;
     background-color: #9699f3; /* Fondo azul/gris */
     display: flex;
     flex-direction: column;
@@ -79,13 +75,13 @@
 }
 
 /* Estilos para los encabezados de la tabla */
-.tabla-container-profesor-Curso table {
+.tabla-container-profesor-Respuesta table {
     width: 100%;
     background-color: #eef1ff; /* Fondo azul muy claro */
     border-collapse: collapse;
 }
 
-.tabla-container-profesor-Curso thead tr {
+.tabla-container-profesor-Respuesta thead tr {
     background-color: #002366; /* Azul oscuro */
     font-size: 1.5em;
     height: 50px;
@@ -93,17 +89,17 @@
     text-align: center;
 }
 
-.tabla-container-profesor-Curso tbody {
+.tabla-container-profesor-Respuesta tbody {
     background-color: #eef1ff; /* Azul muy claro */
 }
 
-.tabla-container-profesor-Curso tbody td {
+.tabla-container-profesor-Respuesta tbody td {
     padding: 10px;
     text-align: center;
 }
 
 /* Estilos para los botones dentro de la tabla */
-.tabla-container-profesor-Curso tbody button {
+.tabla-container-profesor-Respuesta tbody button {
     width: 100%;
     height: 50px;
     background-color: #aac4ff; /* Azul claro */
@@ -113,13 +109,13 @@
     border-radius: 10px; /* Bordes redondeados */
 }
 
-.tabla-container-profesor-Curso tbody button:hover {
+.tabla-container-profesor-Respuesta tbody button:hover {
     background-color: #002366; /* Azul oscuro */
     color: white; /* Texto blanco */
 
 }
 
-.SubContenidoVistaProfesorCurso h2 {
+.SubContenidoVistaProfesorRespuesta h2 {
     font-size: 2.5em;
     color: #002366; /* Azul oscuro */
     margin-bottom: 20px;
@@ -127,4 +123,3 @@
     font-family: 'Montserrat', sans-serif;
     
 }
-

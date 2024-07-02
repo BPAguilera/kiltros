@@ -104,3 +104,19 @@
         padding: 8px;
     }
 }
+
+.tabla-container-alumno button {
+    padding: 10px 25px;
+    font-size: 18px;
+    color: #000000;
+    background-color: #FFF59D;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Fredoka One', cursive;
+}
+
+.tabla-container-alumno button:hover {
+    background-color: #031704;
+}
