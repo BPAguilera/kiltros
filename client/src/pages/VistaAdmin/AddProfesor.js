@@ -9,6 +9,7 @@ import "../../pages_css/VistaAdmin/AddProfesor.css"
 
 function AddProfesor() {
     let navigate = useNavigate()
+    const [errorMessage, setErrorMessage] = ("");
 
     const initialValues = {
         nombre: "",
@@ -18,9 +19,9 @@ function AddProfesor() {
     };
 
     const validationSchema = Yup.object().shape({
-        nombre: Yup.string().required(),
-        rut: Yup.number().integer().required(),
-        contrasena: Yup.string().required(),
+        nombre: Yup.string().required('El nombre es obligatorio'),
+        rut: Yup.number().typeError('Debe ser un número').required('El rut es obligatorio'),
+        contrasena: Yup.string().required('La contraseña es obligatoria'),
 
     });
 
@@ -77,6 +78,7 @@ function AddProfesor() {
                                             name="nombre"
                                             placeholder="Ingrese el nombre del profesor"
                                         />
+                                        <ErrorMessage name="nombre" component="div" className="error" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -88,6 +90,7 @@ function AddProfesor() {
                                             name="rut"
                                             placeholder="Ingrese el rut del profesor"
                                         />
+                                        <ErrorMessage name="rut" component="div" className="error" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -99,6 +102,7 @@ function AddProfesor() {
                                             name="contrasena"
                                             placeholder="Ingrese la contraseña del profesor"
                                         />
+                                        <ErrorMessage name="contrasena" component="div" className="error" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -106,6 +110,13 @@ function AddProfesor() {
                                         <button type="submit">Agregar Profesor</button>
                                     </td>
                                 </tr>
+                                {errorMessage && (
+                                    <tr>
+                                        <td colSpan="2" style={{ color: 'red', textAlign: 'center' }}>
+                                            {errorMessage}
+                                        </td>
+                                    </tr>
+                                )}
                             </tbody>
                         </table>
                     </Form>
