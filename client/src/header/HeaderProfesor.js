@@ -30,8 +30,8 @@ function HeaderProfesor() {
       <div className="right-corner-profesor">
         <a href="/ProfesorTicket" className="boton-header-profesor"><FontAwesomeIcon title="Inicio" icon={faTicket} size="2xl" style={{ color: 'black' }} /></a>
         <a href="/HomeProfesor" className="boton-header-profesor"><FontAwesomeIcon title="Inicio" icon={faHome} size="2xl" style={{ color: 'black' }} /></a>
-        <button onClick={logout}>
-          <i className="boton-header"><FontAwesomeIcon title="Cerrar Sesion" icon={faRightFromBracket} size="2xl" style={{ color: 'black' }}></FontAwesomeIcon></i>
+        <button className="boton-header-profesor" onClick={logout}>
+          <FontAwesomeIcon title="Cerrar Sesion" icon={faRightFromBracket} size="2xl" style={{ color: 'black' }} />
         </button>
       </div>
     </header>

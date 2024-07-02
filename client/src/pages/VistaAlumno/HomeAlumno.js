@@ -49,6 +49,17 @@ function HomeAlumno() {
                 console.error("Error downloading file:", error);
             });
     };
+    const formatDate = (dateString) => {
+        const options = {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false // formato de 24 horas
+        };
+        return new Date(dateString).toLocaleString('es-ES', options).replace(',', '');
+    };
 
     return (
         <div className="ContenidoHomeAlumno">
@@ -59,7 +70,7 @@ function HomeAlumno() {
                     <table>
                         <thead>
                             <tr>
-                                <th></th>
+                                <th>Descargar</th>
                                 <th>Fecha Inicio</th>
                                 <th>Nombre Actividad</th>
                                 <th>Descripción</th>
@@ -77,13 +88,14 @@ function HomeAlumno() {
                             {Tarea.map((value) => (
                                 <tr key={value.id}>
                                     <td className="Relleno-Boton-Admin"><button id-value={value.id} file-value={value.archivo_profesor} onClick={onButtonClick}>Descargar</button></td>
-                                    <td className="Relleno-Admin">{value.tipo_recurso}</td>
+                                    <td className="descripcion-columna">{formatDate(value.createdAt)}</td>
                                     <td className="Relleno-Admin">{value.nombre}</td>
                                     <td className="Relleno-Admin">{value.descripcion}</td>
                                     <td className="Relleno-Admin">{value.archivo_profesor}</td>
                                     <td className="Relleno-Boton-Admin">
                                         <a onClick={() => navigate(`/AddRespuesta/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
                                     </td>
+                                    <td className="descripcion-columna">{formatDate(value.updatedAt)}</td>
                                 </tr>
                             ))}
                         </tbody>

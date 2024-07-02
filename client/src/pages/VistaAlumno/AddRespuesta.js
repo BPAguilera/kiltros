@@ -36,14 +36,6 @@ function AddRespuesta() {
                                 Archivo:
                                 <input type="file" name="fileData" ref={fileInput} />
                             </label>
-                            <label>
-                                ID Alumno:
-                                <input type="text" name="id_alumno" defaultValue={userParsed.id} readOnly />
-                            </label>
-                            <label>
-                                ID Recurso Profesor:
-                                <input type="text" name="id_recurso_profesor" defaultValue={id_recurso_profesor} readOnly />
-                            </label>
                             <button type="submit">Agregar</button>
                         </form>
                     </div>

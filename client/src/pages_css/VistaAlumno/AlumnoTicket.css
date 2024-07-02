@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 /* Estilos generales para la página */
-.AppRespuesta {
+.AppTicketAlumno {
     display: flex;
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: #FFF59D;
+    background-color: #FFEB3B;
     align-items: center;
     justify-content: center; /* Centra verticalmente */
 }
 
-.SubContenidoAddRespuesta {
+.SubContenidoAddTicketAlumno {
     margin-top: 100px;
     background-color: #FFF59D;
     width: 100%;
@@ -19,14 +19,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 
 
 /* Estilos para el contenedor principal del formulario */
-.createPostPageAddRespuesta {
-    margin-top: 20px;
+.createPostPageAddTicketAlumno {
+    margin-top: 60px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -36,12 +35,11 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
-    max-width: 50%;
-    max-height: 100%;
+    max-width: 25%;
 }
 
 /* Estilos para las etiquetas y los inputs */
-.createPostPageAddRespuesta label {
+.createPostPageAddTicketAlumno label {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -49,11 +47,11 @@
     margin-bottom: 15px;
     font-size: 18px;
     color: #000000;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.createPostPageAddRespuesta input[type="text"],
-.createPostPageAddRespuesta input[type="file"] {
+.createPostPageAddTicketAlumno input[type="text"],
+.createPostPageAddTicketAlumno input[type="file"] {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -63,33 +61,23 @@
     margin-top: 5px;
 }
 
-.createPostPageAddRespuesta input[readonly] {
+.createPostPageAddTicketAlumno input[readonly] {
     background-color: #f9f9f9;
 }
 
 /* Estilos para el botón de envío */
-.createPostPageAddRespuesta button {
-    padding: 15px 30px;
+.createPostPageAddTicketAlumno button {
+    padding: 10px 25px;
     font-size: 18px;
     color: #000000;
-    background-color: #FFECB3;
+    background-color: #FFF59D;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.createPostPageAddRespuesta button:hover {
+.createPostPageAddTicketAlumno button:hover {
     background-color: #031704;
-}
-.SubContenidoAlumnoRespuesta {
-    margin-top: 130px;
-    background-color: #FFF59D; /* Amarillo suave */
-    width: 45%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
 }

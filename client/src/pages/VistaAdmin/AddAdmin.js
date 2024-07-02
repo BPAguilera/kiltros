@@ -19,8 +19,8 @@ function AddAdmin() {
     };
 
     const validationSchema = Yup.object().shape({
-        usuario: Yup.string().required(),
-        contrasena: Yup.string().required(),
+        usuario: Yup.string().required('El Usuario es obligatorio'),
+        contrasena: Yup.string().required('La contraseña es obligatoria'),
         rol: Yup.string().required()
     });
     
@@ -41,15 +41,12 @@ function AddAdmin() {
                 if (error.response) {
                     // El servidor respondió con un código de estado diferente de 2xx
                     console.error('Error en respuesta del servidor:', error.response.data.error);
-                    setErrorMessage(`Error: ${error.response.data.error}`);
                 } else if (error.request) {
                     // La solicitud se hizo pero no se recibió respuesta
                     console.error('No se recibió respuesta del servidor:', error.request);
-                    setErrorMessage('Error: No se recibió respuesta del servidor.');
                 } else {
                     // Algo pasó al preparar la solicitud
                     console.error('Error al preparar la solicitud:', error.message);
-                    setErrorMessage(`Error: ${error.message}`);
                 }
             });
     };
@@ -78,6 +75,7 @@ function AddAdmin() {
                                             name="usuario"
                                             placeholder="Ingrese el nombre del usuario"
                                         />
+                                        <ErrorMessage name="usuario" component="div" className="error" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -89,6 +87,8 @@ function AddAdmin() {
                                             name="contrasena"
                                             placeholder="Ingrese la contraseña del administrador"
                                         />
+                                        <ErrorMessage name="contrasena" component="div" className="error" />
+
                                     </td>
                                 </tr>
                                 <tr>

@@ -49,10 +49,10 @@ function AdminProfesor(){
                                         <td className="Relleno-Profesor">{value.nombre}</td>
                                         <td className="Relleno-Profesor">{value.rut}</td>
                                         <td className="Relleno-Boton-Profesor">
-                                            <a onClick={() => navigate(`/EditProfesor/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
+                                            <button onClick={() => navigate(`/EditProfesor/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></button>
                                         </td>
                                         <td className="Relleno-Boton-Profesor">
-                                            <a onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></a>
+                                            <button onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></button>
                                         </td>
                                     </tr>
                                 ))}

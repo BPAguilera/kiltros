@@ -34,7 +34,6 @@ function ProfesorCurso(){
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Rut</th>
-                                    <th>Reasignar Alumno</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,9 +41,6 @@ function ProfesorCurso(){
                                     <tr key={value.id}>
                                         <td >{value.nombre}</td>
                                         <td>{value.rut}</td>
-                                        <td>
-                                            <a onClick={() => navigate(`/ProfesorCurso`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
-                                        </td>
                                     </tr>
                                 ))}
                             </tbody>

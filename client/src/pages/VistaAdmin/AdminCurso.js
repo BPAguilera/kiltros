@@ -37,7 +37,6 @@ function AdminCurso(){
                                 <tr>
                                     <th className="Titulos-Cursos">ID</th>
                                     <th className="Titulos-Cursos">Nombre</th>
-                                    <th className="Titulos-Cursos">Actividades</th>
                                     <th className="Titulos-Cursos">Profesor</th>
                                     <th className="Titulos-Cursos">Actualizar</th>
                                     <th className="Titulos-Cursos">Borrar</th>
@@ -48,13 +47,12 @@ function AdminCurso(){
                                     <tr key={value.id}>
                                         <td className="Relleno-Cursos">{value.id}</td>
                                         <td className="Relleno-Cursos">{value.nombre}</td>
-                                        <td className="Relleno-Cursos">{value.unidades}</td>
                                         <td className="Relleno-Cursos">{value.kl_profesor.nombre}</td>
                                         <td className="Relleno-Boton-Cursos">
-                                            <a onClick={() => navigate(`/EditCurso/${value.id}`)}><FontAwesomeIcon title="Actualizar Curso" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
+                                            <button onClick={() => navigate(`/EditCurso/${value.id}`)}><FontAwesomeIcon title="Actualizar Curso" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></button>
                                         </td>
                                         <td className="Relleno-Boton-Cursos">
-                                            <a onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Curso" icon={faTrash} size="2xl" style={{ color: 'black', }} /></a>
+                                            <button onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Curso" icon={faTrash} size="2xl" style={{ color: 'black', }} /></button>
                                         </td>
                                     </tr>
                                 ))}

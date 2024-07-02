@@ -27,8 +27,8 @@ function HeaderAlumno() {
         <a href="/AlumnoTicket" className="boton-header-alumno"><FontAwesomeIcon title="Inicio" icon={faTicket} size="2xl" style={{ color: 'black' }} /></a>
         <a href="/HomeAlumno" className="boton-header-alumno"><FontAwesomeIcon title="Inicio" icon={faHome} size="2xl" style={{ color: 'black' }} /></a>
         <a href="/AlumnoJuego" className="boton-header-alumno"><FontAwesomeIcon title="Minijuegos" icon={faGamepad} size="2xl" style={{ color: 'black' }} /></a>
-        <button onClick={logout}>
-          <i className="boton-header"><FontAwesomeIcon title="Cerrar Sesion" icon={faSignOutAlt} size="2xl" style={{ color: 'black' }}></FontAwesomeIcon></i>
+        <button className="boton-header-alumno" onClick={logout}>
+          <FontAwesomeIcon title="Cerrar Sesion" icon={faSignOutAlt} size="2xl" style={{ color: 'black' }} />
         </button>
       </div>
     </header>

@@ -4,10 +4,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      unidades: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
     });
 
     kl_curso.associate = function(models) {

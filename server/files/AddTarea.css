@@ -1,4 +1,4 @@
-.ContenidoAddAlumno{
+.ContenidoAddTarea{
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -14,9 +14,10 @@
 }
 
 
-.createPostPageAddAlumno{
+.createPostPageAddTarea{
     margin-left: 160px;
     margin-top: 110px;
+    
     border: 1px solid #333;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -29,19 +30,20 @@
 
 }
 
-.createPostPageAddAlumno table {
+.createPostPageAddTarea table {
     border-collapse: collapse;
     width: 100%;
 }
 
-.createPostPageAddAlumno td, .createPostPageAddAlumno th {
+.createPostPageAddTarea td, .createPostPageAddTarea th {
     border: 1px solid #ddd;
     padding: 17px;
 }
 
 
 
-.createPostPageAddAlumno th {
+
+.createPostPageAddTarea th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -49,7 +51,7 @@
     color: white;
 }
 
-#inputCreatePostAddAlumno {
+#inputCreatePostAddTarea {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -60,7 +62,7 @@
     margin: 1px auto;
 }
 
-.createPostPageAddAlumno button {
+.createPostPageAddTarea button {
     padding: 15px 30px;
     font-size: 18px;
     color: #fff;
@@ -71,57 +73,22 @@
     transition: background-color 0.3s ease;
 }
 
-.createPostPageAddAlumno button:hover {
+.createPostPageAddTarea button:hover {
     background-color: #031704;
 }
 
-.createPostPageAddAlumno label {
+.createPostPageAddTarea label {
     font-size: 19px; /* Aumenta el tamaño de la fuente */
     font-weight: bold; /* Opcional: Hace que el texto sea negrita */
     color: #fff; /* Cambia el color del texto, si es necesario */
     padding-right: 0px; /* Espacio entre el texto y el campo de entrada */
 }
 
-.createPostPageAddAlumno caption {
+.createPostPageAddTarea caption {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 25px;
     color: black; /* Cambia el color según sea necesario */
     text-align: center; /* Centra el texto */
     margin-top: 20px;
-}
-
-.botonEdit{
-    padding: 15px 30px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #899089;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.custom-select {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 2px solid #79AC78;
-    background-color: #f0f0f0;
-    color: #333;
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .custom-select:focus {
-    outline: none;
-    border-color: #79AC78;
-    background-color: #e7f7e7;
-  }
-
-  .error {
-    color: rgb(126, 49, 49);
-    font-size: 0.9em;
-    margin-top: 5px;
 }

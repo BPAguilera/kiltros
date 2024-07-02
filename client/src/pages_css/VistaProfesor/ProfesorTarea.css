@@ -77,23 +77,102 @@
     padding: 10px;
     text-align: center;
 }
+/* ProfesorTarea.css */
 
-/* Media Query para pantallas pequeñas */
-@media (max-width: 768px) {
-    .ContenidoProfesorTarea {
-        width: 100%;
-    }
-
-    .tabla-container-profesor-tarea {
-        width: 100%;
-        height: auto;
-    }
-
-    .tabla-container-profesor-tarea table th,
-    .tabla-container-profesor-tarea table td {
-        padding: 8px;
-    }
+/* Estilos para el contenido principal */
+.ContenidoProfesorTarea {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #7074f1; /* Fondo azul/gris */
+    align-items: center;
+    justify-content: center;
 }
+
+.SubContenidoVistaProfesorTarea {
+    margin-top: 100px;
+    margin-left: 10%;
+    margin-right: 52%;
+    background-color: #B1B2FF; /* Nuevo color de fondo verde */
+    width: 200%;
+    height: 200%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para el contenedor de la tabla */
+.tabla-container-profesor-tarea {
+    margin-top: -15px;
+    margin-left: 28%;
+    margin-right: 2%;
+    width: 90%;
+    max-width: 1200px;
+    height: 70%;
+    max-height: fit-content;
+    background-color: #9699f3; /* Fondo azul/gris */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto; /* Añade scroll si el contenido excede el tamaño */
+}
+
+/* Estilos para los encabezados de la tabla */
+.tabla-container-profesor-tarea table {
+    width: 100%;
+    background-color: #eef1ff; /* Fondo azul muy claro */
+    border-collapse: collapse;
+}
+
+.tabla-container-profesor-tarea thead tr {
+    background-color: #002366; /* Azul oscuro */
+    font-size: 1.2em;
+    height: 50px;
+    color: white; /* Texto blanco */
+    text-align: center;
+}
+
+.tabla-container-profesor-tarea tbody {
+    background-color: #eef1ff; /* Azul muy claro */
+}
+
+.tabla-container-profesor-tarea tbody td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para los botones dentro de la tabla */
+.tabla-container-profesor-tarea tbody button {
+    width: 100%;
+    height: 50px;
+    background-color: #aac4ff; /* Azul claro */
+    font-size: 1em;
+    color: #002366; /* Azul oscuro */
+    border: 2px solid #002366; /* Borde azul oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.tabla-container-profesor-tarea tbody button:hover {
+    background-color: #002366; /* Azul oscuro */
+    color: white; /* Texto blanco */
+}
+
+/* Estilos para las celdas de la tabla */
+.descripcion-columna {
+    color: #002366; /* Color azul oscuro */
+    padding: 10px;
+    text-align: center; 
+}
+
+
 
 .boton-agregar-Tarea-Profesor {
     background-color: #aac4ff; /* Azul claro */
@@ -101,9 +180,12 @@
     padding: 10px 20px; /* Ajusta el padding según sea necesario */
     border: 2px solid #002366; /* Borde azul oscuro */
     border-radius: 10px; /* Bordes redondeados */
-    font-size: 2em; /* Ajusta el tamaño de la fuente según sea necesario */
+    font-size: 19px; /* Ajusta el tamaño de la fuente según sea necesario */
     cursor: pointer; /* Cambia el cursor a pointer para indicar que es clickeable */
-    margin-top: 53px; /* Margen superior para separar del contenido anterior */
+    margin-top: -55px; /* Margen superior para separar del contenido anterior */
+    margin-left: 53%;
+    margin-right: 1%;
+    margin-bottom: 30px;
     transition: background-color 0.3s, color 0.3s; /* Transición suave para hover */
 }
 

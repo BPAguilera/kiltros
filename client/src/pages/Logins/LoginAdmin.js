@@ -11,8 +11,9 @@ function Login() {
 
     const {setAuthState} = useContext(authContext);
     let navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = useState("");
 
-
+    
 
     const initialValues = {
         usuario: "",
@@ -54,7 +55,7 @@ function Login() {
                     <h1>Iniciar sesión</h1>
                     {error && <div className="error">{error}</div>}
                     <label>Usuario: </label>
-                    <ErrorMessage name="usuario" component="span" />
+                    <ErrorMessage name="usuario" component="span" className="error"/>
                     <Field 
                         autoComplete="off"
                         id="inputCreatePost"
@@ -62,7 +63,7 @@ function Login() {
                         placeholder="Usuario"
                     />
                     <label>Contraseña: </label>
-                    <ErrorMessage name="contrasena" component="span" />
+                    <ErrorMessage name="contrasena" component="span" className="error"/>
                     <Field 
                         autoComplete="off"
                         id="inputCreatePost"
@@ -70,6 +71,13 @@ function Login() {
                         type="password"
                         placeholder="Contraseña"
                     />
+                    {errorMessage && (
+                    <tr>
+                        <td colSpan="2" style={{ color: 'red', textAlign: 'center' }}>
+                            {errorMessage}
+                        </td>
+                    </tr>
+                    )}
                     <button type="submit">Iniciar Sesión</button>
                 </Form>
             </Formik>

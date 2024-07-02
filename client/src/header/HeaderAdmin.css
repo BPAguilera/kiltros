@@ -30,9 +30,21 @@
 
 .fixed-header-admin p {
   font-size: 48px; /* Aumenta el tamaño de fuente del texto a 48 píxeles */
+  color: black; /* Color de texto blanco */
+
 }
 
 .boton-header-admin {
+  background-color: #ffffff;
+  color: black; /* Texto en color negro */
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer;
+  margin-right: 10px; /* Espacio entre los botones */
+}
+
+.boton-header {
   background-color: #618264;
   color: black; /* Texto en color negro */
   padding: 5px 10px;

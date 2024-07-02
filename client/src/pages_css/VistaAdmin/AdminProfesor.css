@@ -17,7 +17,7 @@
 .SubContenidoProfesor {
     margin-top: 130px;
     background-color: #79AC78;
-    width: 100%;
+    width: 85%;
     height: 80%;
     /* Asegúrate de que ocupe el 100% del ancho disponible */
     display: flex;

@@ -52,10 +52,10 @@ function AdminAlumno() {
                                         <td className="Relleno-Alumnos">{value.rut}</td>
                                         <td className="Relleno-Alumnos">{value.kl_curso.nombre}</td>
                                         <td className="Relleno-Boton-Alumnos">
-                                            <a onClick={() => navigate(`/EditAlumno/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></a>
+                                            <button onClick={() => navigate(`/EditAlumno/${value.id}`)}><FontAwesomeIcon title="Actualizar Alumno" icon={faPenNib} size="2xl" style={{ color: 'black', }} /></button>
                                         </td>
                                         <td className="Relleno-Boton-Alumnos">
-                                            <a onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></a>
+                                            <button onClick={() => handleDelete(value.id)}><FontAwesomeIcon title="Eliminar Alumno" icon={faTrash} size="2xl" style={{ color: 'black', }} /></button>
                                         </td>
                                     </tr>
                                 ))}

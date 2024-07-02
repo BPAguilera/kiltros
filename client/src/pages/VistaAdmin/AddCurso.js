@@ -9,6 +9,7 @@ import "../../pages_css/VistaAdmin/AddCurso.css"
 
 function AddCurso() {
     const navigate = useNavigate()
+    const [errorMessage, setErrorMessage] = useState("");
 
     const [Profes, setProfe] = useState([]);
     useEffect(() => {
@@ -20,13 +21,11 @@ function AddCurso() {
     const initialValues = {
         nombre: "",
         id_profesor: "",
-        unidades:"",
     };
     
     const validationSchema = Yup.object().shape({
-        nombre: Yup.string().required(),
-        id_profesor: Yup.number().integer().required(),
-        unidades: Yup.number().integer().required(),
+        nombre: Yup.string().required('El nombre es obligatorio'),
+        id_profesor: Yup.number().integer().required('El Profesor es obligatorio'),
     });
     
     const onSubmit = (data) => {
@@ -56,30 +55,21 @@ function AddCurso() {
                                             autoComplete="off"
                                             id="inputCreatePostAddCurso"
                                             name="nombre"
-                                            placeholder="Ingrese el nombre del curso"
+                                            placeholder="Ejemplo: 1°A"
                                         />
+                                        <ErrorMessage name="nombre" component="div" className="error" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label>Profesor: </label></td>
                                     <td>
-                                        <Field as="select" name="id_profesor">
+                                        <Field as="select" name="id_profesor" className="custom-select">
                                             <option value="" label="">Seleciona Profesor{" "}</option>
                                             {Profes.map((profe) => (
                                             <option key={profe.id} value={profe.id}>{profe.nombre}</option>
                                             ))}
                                         </Field>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><label>Unidades: </label></td>
-                                    <td>
-                                        <Field
-                                            autoComplete="off"
-                                            id="inputCreatePostAddCurso"
-                                            name="unidades"
-                                            placeholder="Ingrese las unidades"
-                                        />
+                                        <ErrorMessage name="id_profesor" component="div" className="error" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -87,6 +77,13 @@ function AddCurso() {
                                         <button type="submit">Agregar Curso</button>
                                     </td>
                                 </tr>
+                                {errorMessage && (
+                                    <tr>
+                                        <td colSpan="2" style={{ color: 'red', textAlign: 'center' }}>
+                                            {errorMessage}
+                                        </td>
+                                    </tr>
+                                )}
                             </tbody>
                         </table>
                     </Form>

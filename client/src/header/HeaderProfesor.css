@@ -40,8 +40,8 @@
 }
 
 .boton-header-profesor {
-  background-color: #B1B2FF; /* Verde */
-  color: black;
+  background-color: #d4d4ff; /* Verde */
+  color: rgb(255, 255, 255);
   padding: 5px 10px;
   text-decoration: none;
   border-radius: 25px;
