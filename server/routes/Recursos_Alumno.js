@@ -7,10 +7,10 @@ const assetsFolder = path.join(__dirname, '..', 'files');
 const router = express.Router();
 router.use(fileUpload());
 
-const { kl_recurso_alumno } = require("../models");
+const { kl_recurso_alumno, kl_alumno } = require("../models");
 
 router.get("/", async (req, res) => {
-  const respuesta = await kl_recurso_alumno.findAll();
+  const respuesta = await kl_recurso_alumno.findAll({include: [{model: kl_alumno, required: true}]});
   res.json(respuesta);
 });
 
@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
 
 router.get("/tarea/:id_recurso_profesor", async (req, res) => {
   const id = req.params.id_recurso_profesor;
-  const respuesta = await kl_recurso_alumno.findAll({where: {id_recurso_profesor: id,},});
+  const respuesta = await kl_recurso_alumno.findAll({where: {id_recurso_profesor: id,},include: [{model: kl_alumno, required: true}]});
   res.json(respuesta);
 });
 

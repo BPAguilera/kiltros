@@ -58,6 +58,7 @@ function ProfesorRespuesta() {
                                 <tr>
                                     <th>Descargar</th>
                                     <th>Fecha Entrega</th>
+                                    <th>Alumno</th>
                                     <th>Archivo</th>
                                 </tr>
                             </thead>
@@ -66,6 +67,7 @@ function ProfesorRespuesta() {
                                     <tr key={value.id}>
                                         <td><button id-value={value.id} file-value={value.archivo_alumno} onClick={onButtonClick}>Descargar</button></td>
                                         <td>{formatDate(value.createdAt)}</td>
+                                        <td>{value.kl_alumno.nombre}</td>
                                         <td>{value.archivo_alumno}</td>
                                     </tr>
                                 ))}
